@@ -42,6 +42,8 @@ Ollama 模型标签和量化制品也有自己的元数据；具体部署以实�
 
 本仓库的实验报告含少量注明来源的参考文本示例；冻结协议保留样本 ID、配置和从官方 train 文本按固定规则计算的词表。这些数据引用及衍生数据材料保留 ASCEND 的 CC-BY-SA-4.0，适用范围与原创程序代码的 MIT 分开。处理过程为训练文本导出、标注跨度移除、频次排序和固定抽样，规则与 revision 见[实验说明](experiments/glossary/README.md)及[冻结协议](experiments/glossary/protocols/ascend-val200-train-vocab30-v2/README.md)。没有分发原始音频、完整转写语料或下载缓存。
 
+后续 [725 条剩余 validation 协议](experiments/glossary/protocols/ascend-val-remaining725-train-vocab30-v1/)沿用上述 train 词表并排除旧 200 条；[六事件审查](experiments/glossary/ASCEND_SIX_EVENT_REVIEW.md)及其 `six_event_audit.json` 含少量原参考文本和对应模型输出。原参考及从数据派生的选样／词表材料继续适用 CC-BY-SA-4.0；本地回听工具只引用用户机器上的音频文件，源码包不附音频。
+
 ## 学术使用与后续扩展
 
 评价或发表模型结果时，请引用所用上游模型卡列出的论文，以及 ASCEND 数据论文。项目方法入口包括 [ClearerVoice-Studio 论文](https://arxiv.org/abs/2506.19398)、[Qwen3-ASR 技术报告](https://arxiv.org/abs/2601.21337)和 [SepFormer 论文](https://arxiv.org/abs/2010.13154)；人物分段与 WeSpeaker 的具体论文由上述官方模型卡列出。
