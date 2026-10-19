@@ -1,0 +1,53 @@
+[project]
+# All relative paths in this file resolve against this directory.
+root = ".."
+
+[workers]
+diarize_python = ".venvs/diarize/bin/python"
+separate_python = ".venvs/separate/bin/python"
+match_python = ".venvs/diarize/bin/python"
+transcribe_python = ".venvs/asr/bin/python"
+timeout_seconds = 3600
+
+[pipeline]
+output_dir = "runs"
+sample_rate = 16000
+max_duration_seconds = 1800
+separation_chunk_seconds = 12.0
+context_seconds = 0.5
+asr_chunk_seconds = 20.0
+min_reference_seconds = 1.0
+reference_seconds = 12.0
+
+[diarize]
+backend = "pyannote"
+model = "pyannote/speaker-diarization-community-1"
+device = "cuda:0"
+token_env = "HF_TOKEN"
+
+[separate]
+backend = "clearvoice"
+model = "MossFormer2_SS_16K"
+device = "cuda:0"
+
+[match]
+backend = "pyannote_embedding"
+model = "pyannote/wespeaker-voxceleb-resnet34-LM"
+device = "cuda:0"
+token_env = "HF_TOKEN"
+min_margin = 0.05
+
+[transcribe]
+backend = "qwen"
+model = "Qwen/Qwen3-ASR-1.7B"
+aligner = "Qwen/Qwen3-ForcedAligner-0.6B"
+device = "cuda:0"
+dtype = "bfloat16"
+language = "Chinese"
+
+[summary]
+url = "http://127.0.0.1:11434"
+model = "qwen3:8b"
+timeout_seconds = 180
+chunk_chars = 10000
+num_ctx = 8192

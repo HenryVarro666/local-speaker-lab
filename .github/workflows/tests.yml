@@ -1,0 +1,136 @@
+name: Offline tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Package installation uses PyPI. Test execution uses synthetic data and mocked
+# model backends; no model weights, real recordings or corpora are downloaded.
+env:
+  HF_TOKEN: ""
+  HF_HUB_OFFLINE: "1"
+  HF_DATASETS_OFFLINE: "1"
+  TRANSFORMERS_OFFLINE: "1"
+  HF_HUB_DISABLE_TELEMETRY: "1"
+  CUDA_VISIBLE_DEVICES: ""
+  OMP_NUM_THREADS: "1"
+  OPENBLAS_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+  PYTHONUTF8: "1"
+  GRADIO_ANALYTICS_ENABLED: "False"
+
+jobs:
+  tests:
+    name: ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            requirements/bootstrap.txt
+            requirements/dev.txt
+      - name: Install core and development dependencies
+        run: |
+          python -m pip install --upgrade --only-binary=:all: -r requirements/bootstrap.txt
+          python -m pip install --build-constraint requirements/bootstrap.txt -r requirements/dev.txt
+          python -m pip install --no-build-isolation --editable ".[dev]"
+      - name: Check dependency compatibility
+        run: python -m pip check
+      - name: Run portable offline tests
+        # Run both pytest functions and unittest classes on every supported
+        # platform/version. FFmpeg and Gradio are required in integration.
+        run: python -m pytest -q -rs --junitxml=test-results/pytest.xml
+      - name: Upload portable test reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: portable-tests-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: test-results/
+          if-no-files-found: warn
+
+  integration:
+    name: Full offline integration / Python 3.12
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements/locks/app-linux-py312.txt
+            requirements/bootstrap.txt
+            requirements/dev.txt
+            pyproject.toml
+      - name: Install audio system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libsndfile1
+      - name: Install locked application and test dependencies
+        run: |
+          python -m pip install --upgrade --only-binary=:all: -r requirements/bootstrap.txt
+          python -m pip install --build-constraint requirements/bootstrap.txt -r requirements/locks/app-linux-py312.txt -r requirements/dev.txt
+          python -m pip install --no-build-isolation --no-deps --editable .
+      - name: Check dependency compatibility
+        run: python -m pip check
+      - name: Check shell syntax and Python compilation
+        run: |
+          bash -n deploy_ubuntu.sh
+          bash -n scripts/install_ubuntu.sh
+          bash -n scripts/run.sh
+          python -m compileall -q src scripts tests
+      - name: Run the full offline pytest suite
+        # Real local FFmpeg/HTTP/subprocess checks run against synthetic input;
+        # audio model runtimes, credentials and weights are not installed.
+        run: python -m pytest -q --junitxml=test-results/pytest.xml
+      - name: Save environment diagnostics
+        if: always()
+        run: |
+          mkdir -p test-results
+          python -VV > test-results/python-version.txt
+          python -m pip freeze > test-results/installed-versions.txt
+      - name: Upload integration reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: offline-integration-reports
+          path: test-results/
+          if-no-files-found: warn
+      - name: Build the source transfer archive
+        run: |
+          python scripts/package.py
+          cd dist
+          sha256sum -c local-speaker-lab.zip.sha256
+          python -m zipfile -t local-speaker-lab.zip
+      - name: Upload source bundle
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: local-speaker-lab-source
+          path: |
+            dist/local-speaker-lab.zip
+            dist/local-speaker-lab.zip.sha256
+            dist/deploy_ubuntu.sh
+          if-no-files-found: error

@@ -1,0 +1,5 @@
+# Shared installation/build tools, independent of each model's runtime snapshot.
+# Keep setuptools aligned with pyproject.toml and the worker lock snapshots.
+pip==25.3
+setuptools==84.0.0
+wheel==0.45.1

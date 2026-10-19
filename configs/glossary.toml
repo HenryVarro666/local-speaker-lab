@@ -1,0 +1,10 @@
+# Independent single-speaker evaluation; run in the existing .venvs/asr environment.
+# First run resolves/downloads a Hugging Face snapshot and logs its resolved path.
+# Freeze revision to that snapshot's commit for subsequent comparisons.
+[asr]
+model = "Qwen/Qwen3-ASR-1.7B"
+revision = ""
+device = "cuda:0"
+dtype = "bfloat16"
+language = "Chinese"
+max_new_tokens = 512

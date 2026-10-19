@@ -1,0 +1,5 @@
+# Compatibility baseline: Blackwell-capable CUDA 12.8 wheels, legacy audio APIs.
+# The local-version suffix prevents a dependency resolver replacing GPU wheels.
+torch==2.8.0+cu128
+torchaudio==2.8.0+cu128
+torchvision==0.23.0+cu128

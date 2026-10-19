@@ -1,0 +1,2 @@
+{"id":"dev-001","audio":"audio/dev-001.wav","reference":"这个 endpoint 的 latency 有点高。","split":"dev","group":"term_mixed"}
+{"id":"test-001","audio":"audio/test-001.wav","reference":"我今天下午开会，晚上再回复你。","split":"test","group":"no_term"}

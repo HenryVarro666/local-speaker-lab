@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-speaker-lab"
+version = "0.1.4"
+description = "Local two-speaker separation, diarized ASR and evidence-linked meeting notes"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.13,<2",
+  "soundfile>=0.12,<1",
+]
+
+[project.optional-dependencies]
+ui = ["gradio==6.30.0"]
+dev = [
+  "pytest>=8,<10",
+  "packaging>=24,<27",
+  "PyYAML>=6,<7",
+  "build>=1.3,<2",
+  "setuptools==84.0.0",
+  "wheel==0.45.1",
+]
+
+[project.scripts]
+speaker-lab = "speaker_lab.cli:main"
+speaker-lab-ui = "speaker_lab.app:main"
+
+[project.urls]
+Repository = "https://github.com/HenryVarro666/local-speaker-lab"
+Issues = "https://github.com/HenryVarro666/local-speaker-lab/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

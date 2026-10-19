@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, cite this repository and the upstream models and data listed in THIRD_PARTY_NOTICES.md."
+type: software
+title: Local Speaker Lab
+authors:
+  - family-names: Cao
+    given-names: Chao
+version: 0.1.4
+repository-code: "https://github.com/HenryVarro666/local-speaker-lab"
+license: MIT

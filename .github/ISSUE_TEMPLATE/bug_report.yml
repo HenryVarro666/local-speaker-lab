@@ -1,0 +1,45 @@
+name: 问题报告
+description: 提供可复现的本地运行、识别或评测问题。
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: 请使用可公开的最小复现，并先将录音内容、个人词表和日志中的个人信息脱敏。
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及功能
+      options:
+        - 普通话＋英文听写或词表实验
+        - 双人分离与说话人流水线
+        - 安装与本地运行
+        - 评测或报告
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 运行环境
+      description: 项目版本或 commit、操作系统、Python 版本、CPU/GPU、后端及模型 revision；不涉及的项目可以省略。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 最小复现
+      description: 命令、相关配置和操作步骤；尽量使用合成数据或示例文件。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为与实际行为
+      description: 如果是识别问题，请同时给出期望文本、实际文本和词表条件。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 相关日志或报告
+      description: 粘贴已脱敏的错误信息，或链接到可公开的文本报告。

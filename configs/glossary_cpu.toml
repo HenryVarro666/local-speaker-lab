@@ -1,0 +1,11 @@
+# Portable CPU baseline. Run from the repository root.
+# First use downloads the pinned model; later runs can use --offline.
+# Matches the experiment settings in glossary_cpu_pilot.toml without a local cache path.
+[asr]
+model = "Qwen/Qwen3-ASR-1.7B"
+revision = "7278e1e70fe206f11671096ffdd38061171dd6e5"
+device = "cpu"
+dtype = "float32"
+language = "Chinese"
+max_new_tokens = 256
+torch_threads = 8

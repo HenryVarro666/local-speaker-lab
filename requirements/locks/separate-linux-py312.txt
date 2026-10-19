@@ -1,0 +1,218 @@
+# Dependency resolution snapshot for Ubuntu x86_64 / Python 3.12.
+# Generated with uv; model inference on RTX 5080 must still be verified.
+audioread==3.1.0
+    # via librosa
+beautifulsoup4==4.15.0
+    # via gdown
+certifi==2026.10.18
+    # via requests
+cffi==2.1.1
+    # via soundfile
+charset-normalizer==3.5.2
+    # via requests
+clearvoice==0.1.2
+    # via -r requirements/separate.txt
+click==8.5.0
+    # via scenedetect
+cloudpickle==3.1.2
+    # via joblib
+decorator==5.3.1
+    # via librosa
+einops==0.8.2
+    # via
+    #   clearvoice
+    #   rotary-embedding-torch
+filelock==4.2.4
+    # via
+    #   gdown
+    #   huggingface-hub
+    #   torch
+fsspec==2026.9.0
+    # via
+    #   huggingface-hub
+    #   torch
+gdown==6.4.2
+    # via clearvoice
+hf-xet==1.7.0
+    # via huggingface-hub
+huggingface-hub==0.36.0
+    # via
+    #   -r requirements/separate.txt
+    #   clearvoice
+idna==3.20
+    # via requests
+jinja2==3.1.6
+    # via torch
+joblib==1.6.0
+    # via
+    #   clearvoice
+    #   librosa
+    #   scikit-learn
+lazy-loader==0.6
+    # via librosa
+librosa==0.10.2.post1
+    # via clearvoice
+llvmlite==0.50.0
+    # via numba
+markupsafe==3.0.4
+    # via jinja2
+mpmath==1.3.0
+    # via sympy
+msgpack==1.2.3
+    # via librosa
+narwhals==2.27.1
+    # via scikit-learn
+networkx==3.7
+    # via torch
+numba==0.68.0
+    # via librosa
+numpy==1.26.4
+    # via
+    #   -r requirements/separate.txt
+    #   clearvoice
+    #   librosa
+    #   numba
+    #   opencv-python
+    #   scenedetect
+    #   scikit-learn
+    #   scipy
+    #   soxr
+    #   torchvision
+nvidia-cublas-cu12==12.8.4.1
+    # via
+    #   nvidia-cudnn-cu12
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-cuda-cupti-cu12==12.8.90
+    # via torch
+nvidia-cuda-nvrtc-cu12==12.8.93
+    # via torch
+nvidia-cuda-runtime-cu12==12.8.90
+    # via torch
+nvidia-cudnn-cu12==9.10.2.21
+    # via torch
+nvidia-cufft-cu12==11.3.3.83
+    # via torch
+nvidia-cufile-cu12==1.13.1.3
+    # via torch
+nvidia-curand-cu12==10.3.9.90
+    # via torch
+nvidia-cusolver-cu12==11.7.3.90
+    # via torch
+nvidia-cusparse-cu12==12.5.8.93
+    # via
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-cusparselt-cu12==0.7.1
+    # via torch
+nvidia-nccl-cu12==2.27.3
+    # via torch
+nvidia-nvjitlink-cu12==12.8.93
+    # via
+    #   nvidia-cufft-cu12
+    #   nvidia-cusolver-cu12
+    #   nvidia-cusparse-cu12
+    #   torch
+nvidia-nvtx-cu12==12.8.90
+    # via torch
+opencv-python==4.10.0.84
+    # via clearvoice
+packaging==26.3
+    # via
+    #   clearvoice
+    #   huggingface-hub
+    #   lazy-loader
+    #   pooch
+pillow==13.0.0
+    # via torchvision
+platformdirs==4.13.5
+    # via
+    #   pooch
+    #   scenedetect
+pooch==1.9.0
+    # via librosa
+pycparser==3.11
+    # via cffi
+pydub==0.25.1
+    # via clearvoice
+pysocks==1.7.1
+    # via requests
+python-speech-features==0.6
+    # via clearvoice
+pyyaml==6.0.3
+    # via
+    #   huggingface-hub
+    #   yamlargparse
+requests==2.34.2
+    # via
+    #   gdown
+    #   huggingface-hub
+    #   pooch
+rotary-embedding-torch==0.8.3
+    # via clearvoice
+scenedetect==0.6.6
+    # via clearvoice
+scikit-learn==1.9.1
+    # via
+    #   clearvoice
+    #   librosa
+scipy==1.16.3
+    # via
+    #   -r requirements/separate.txt
+    #   clearvoice
+    #   librosa
+    #   scikit-learn
+setuptools==84.0.0
+    # via
+    #   torch
+    #   triton
+soundfile==0.12.1
+    # via
+    #   -r requirements/separate.txt
+    #   clearvoice
+    #   librosa
+soupsieve==3.0.3
+    # via beautifulsoup4
+soxr==1.1.0
+    # via librosa
+sympy==1.14.0
+    # via torch
+threadpoolctl==3.7.0
+    # via scikit-learn
+torch==2.8.0+cu128
+    # via
+    #   -c requirements/constraints-torch.txt
+    #   clearvoice
+    #   rotary-embedding-torch
+    #   torchaudio
+    #   torchvision
+torchaudio==2.8.0+cu128
+    # via
+    #   -c requirements/constraints-torch.txt
+    #   clearvoice
+torchinfo==1.8.0
+    # via clearvoice
+torchvision==0.23.0+cu128
+    # via
+    #   -c requirements/constraints-torch.txt
+    #   clearvoice
+tqdm==4.70.1
+    # via
+    #   clearvoice
+    #   gdown
+    #   huggingface-hub
+    #   scenedetect
+triton==3.4.0
+    # via torch
+typing-extensions==4.16.0
+    # via
+    #   beautifulsoup4
+    #   huggingface-hub
+    #   librosa
+    #   torch
+urllib3==2.8.0
+    # via
+    #   gdown
+    #   requests
+yamlargparse==1.31.1
+    # via clearvoice

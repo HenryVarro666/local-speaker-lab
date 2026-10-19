@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "experiment": "ASCEND validation 200 / frozen train glossary v2 / three paired conditions",
+  "dataset": {
+    "repo_id": "CAiRE/ASCEND",
+    "revision": "737e9800ae31be9932ba8464c80366559bd28424",
+    "evaluation_split": "validation",
+    "glossary_split": "train",
+    "license": "CC-BY-SA-4.0"
+  },
+  "selection": {
+    "seed": 20261018,
+    "min_duration_seconds": 1,
+    "max_duration_seconds": 12,
+    "requested_group_counts": {
+      "mixed": 100,
+      "mandarin": 50,
+      "english": 50
+    },
+    "selection": "per-language sha256(seed:id), no lexical or model-error filtering",
+    "count": 200,
+    "groups": {
+      "mixed": 100,
+      "mandarin": 50,
+      "english": 50
+    },
+    "total_audio_seconds": 725.2109375
+  },
+  "selected_ids_file": "selected_ids.json",
+  "vocabulary": {
+    "correct_file": "correct.json",
+    "unrelated_file": "unrelated.json",
+    "items_each": 30,
+    "unigrams_each": 20,
+    "bigrams_each": 10,
+    "provenance": "scripts/build_ascend_train_glossary.py; fixed rules, mixed train only, no validation-driven choices",
+    "condition_aliases": {
+      "none": "empty context",
+      "personal": "correct train-derived glossary; legacy CLI name",
+      "unrelated": "fixed unrelated glossary"
+    }
+  },
+  "model": {
+    "repo_id": "Qwen/Qwen3-ASR-1.7B",
+    "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+    "device": "cpu",
+    "dtype": "float32",
+    "language": "Chinese",
+    "max_new_tokens": 256,
+    "torch_threads": 8,
+    "seed": 20261018,
+    "do_sample": false,
+    "num_beams": 1
+  },
+  "normalization": "nfkc_han_latin_digits_v1",
+  "reference_run": "runs/glossary-ascend-val200-train-vocab30-cpu-001",
+  "reference_input_sha256": {
+    "manifest": "8b8a98411247fb87071c1bc79e910e05c0f2a1e3826155bab6409c03bc8ba019",
+    "source_manifest": "301dc5fadd04e4503cd536f40a82c8882d81321ed1833663688edbaa78c39128",
+    "sampler": "c48fc22b7f1356e2f8b7be6f0fad0106f8048d8ab24b72b20616bb58b73a0e76"
+  },
+  "portable_files_sha256": {
+    "analysis_plan.json": "8dc3e18d8bd2d517ea1a9bbeb3a70a822b323266493c294fc6ac4bcd2b17fc6f",
+    "correct.json": "a8d5d34aca20cee94a3e265dbdec38a3fb725d2eb4f51eae93f23e248b9b8590",
+    "selected_ids.json": "7d47640264890a1d5f858c85aae971d22a561cfe09d4b39117ea59eae44c98e9",
+    "unrelated.json": "42b77131c7ed6c5e0cf7793438068eabb4183dc5d40eafbc800653b8c0d6daa5"
+  },
+  "notes": [
+    "These are copies of inputs frozen before inference; original run inputs remain unchanged.",
+    "No audio, validation references or predictions are bundled here. Recreate from the pinned official dataset.",
+    "Manifest byte hashes describe the recorded Windows artifact; use frozen IDs plus audio/content checks across platforms.",
+    "This is a development validation subset, not a full official test benchmark."
+  ]
+}

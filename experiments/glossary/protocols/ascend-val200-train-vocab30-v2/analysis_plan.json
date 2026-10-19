@@ -1,0 +1,37 @@
+{
+  "sample": "Fixed 200 validation clips:100mixed50mandarin50english;1-12sec;sha256(seed:id) seed20261018;original24nested",
+  "frozen_manifest_sha256": "8b8a98411247fb87071c1bc79e910e05c0f2a1e3826155bab6409c03bc8ba019",
+  "frozen_correct_sha256": "a8d5d34aca20cee94a3e265dbdec38a3fb725d2eb4f51eae93f23e248b9b8590",
+  "frozen_unrelated_sha256": "42b77131c7ed6c5e0cf7793438068eabb4183dc5d40eafbc800653b8c0d6daa5",
+  "primary": [
+    "reference term miss-to-hit corrections",
+    "reference term hit-to-miss newly introduced misses",
+    "gained and lost false-term mentions anchored to reference alignment"
+  ],
+  "secondary": [
+    "micro MER and per-clip edit changes",
+    "negative-clip false terms",
+    "inference totals p50 p95 RTF"
+  ],
+  "slices": [
+    "all",
+    "language",
+    "covered",
+    "uncovered"
+  ],
+  "term_matching": "unchanged nfkc_han_latin_digits_v1 longest complete term; fixed deterministic edit alignment; no aliases",
+  "false_term_taxonomy": [
+    "substitution",
+    "insertion",
+    "fragment_of_reference_term",
+    "other_alignment"
+  ],
+  "uncertainty": "1000 paired clip bootstrap resamples stratified by language, seed20261018; not speaker-clustered",
+  "restrictions": [
+    "no lexicon or prompt changes",
+    "no validation-answer-driven sample selection",
+    "no additional model tuning",
+    "all600timed predictions must be complete before main analysis",
+    "prior24 comparison is consistency check, not independent evidence"
+  ]
+}
