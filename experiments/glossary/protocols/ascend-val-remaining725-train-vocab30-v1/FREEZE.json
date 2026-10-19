@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "frozen_utc": "2026-10-19T05:57:34.039948+00:00",
+  "rule": "Do not modify these frozen files after inference starts; append execution records outside this directory.",
+  "sha256": {
+    "analysis_plan.json": "0cd8d4dccb5df7b996f9d33cab25095d3c691541feb7f7ecac6281062ee13ef6",
+    "config.toml": "2d2186ea80d3ac9ee5f922a77ae79fc1f2ceb129d7080f957c364440b2ce44d6",
+    "correct.json": "a8d5d34aca20cee94a3e265dbdec38a3fb725d2eb4f51eae93f23e248b9b8590",
+    "environment.json": "b9cf3a487286f753b357839124bac3b9c6a7304a8c93e0f9e620ecdcbf05c182",
+    "protocol.json": "b44f2737e9cfeb54370257df3006b25cb5e25f85d1997675a8404288295eb8a3",
+    "README.md": "b1cd779058d0397675e749a68b3837681e995d7ab8ebe7d29ee4d1b3f65c8cee",
+    "selected_ids.json": "e6a7009758c7cb5a14acd7ede38a54ff021684e1e248b4e25cb4fac5d30799f1",
+    "selection_audit.json": "c486bb3631e3cfbc0b1c754fe48caa96182dbf5e7d0034fbb5f1fbb38d9002f9",
+    "unrelated.json": "42b77131c7ed6c5e0cf7793438068eabb4183dc5d40eafbc800653b8c0d6daa5"
+  }
+}

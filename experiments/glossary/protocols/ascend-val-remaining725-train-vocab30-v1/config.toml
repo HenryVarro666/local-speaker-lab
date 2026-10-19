@@ -1,0 +1,9 @@
+# Windows CPU pilot. Run from the project root after caching this exact snapshot.
+[asr]
+model = ".cache/huggingface/hub/models--Qwen--Qwen3-ASR-1.7B/snapshots/7278e1e70fe206f11671096ffdd38061171dd6e5"
+revision = "7278e1e70fe206f11671096ffdd38061171dd6e5"
+device = "cpu"
+dtype = "float32"
+language = "Chinese"
+max_new_tokens = 256
+torch_threads = 8

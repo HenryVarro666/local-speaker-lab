@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-10-19T05:54:52.849400+00:00",
+  "scope": "text, scoring and audio-byte audit; no listening",
+  "reviewer_prediction_aware": true,
+  "audio_input_capability": "tool returned audio content omitted because you do not support audio input",
+  "model_consensus_is_not_truth": true,
+  "primary_scores_unchanged": true,
+  "source_dataset": "CAiRE/ASCEND",
+  "dataset_revision": "737e9800ae31be9932ba8464c80366559bd28424",
+  "source_sha256": {
+    "manifest": "301dc5fadd04e4503cd536f40a82c8882d81321ed1833663688edbaa78c39128",
+    "predictions": "319ae81ec1bfa029b3d6dba3002670945188a691ad1345cad1519aa4172c112d",
+    "correct": "a8d5d34aca20cee94a3e265dbdec38a3fb725d2eb4f51eae93f23e248b9b8590",
+    "scorer": "9791da526da42748dd28e632a7d9017aa7930a1dd633c6062e4686da5b803a5a"
+  },
+  "events": [
+    {
+      "id": "00621",
+      "group": "mixed",
+      "reference": "嗯那我也想请问你在读幼稚园的时候以及你读elementary school的时候是不是就已经有这个bed time的时间了呢",
+      "reference_license": "CC-BY-SA-4.0",
+      "predictions": {
+        "none": {
+          "text": "那那我想请问，你在读幼稚园的时候，以及你读Elementary School的时候，是不是就已经有这个bedtime的时间了呢？",
+          "score": {
+            "S": 2,
+            "D": 2,
+            "I": 0,
+            "N": 41,
+            "term_ref_mentions": 2,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 1,
+            "term_false_mentions": 0,
+            "mer": 0.0975609756097561,
+            "term_recall": 0.5,
+            "term_precision": 1.0
+          }
+        },
+        "personal": {
+          "text": "嗯，那我也想请问你在读幼稚园的时候，以及你读 elementary school 的时候，是不是就已经有这个 bedtime 的时间了呢？",
+          "score": {
+            "S": 1,
+            "D": 1,
+            "I": 0,
+            "N": 41,
+            "term_ref_mentions": 2,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 1,
+            "term_false_mentions": 0,
+            "mer": 0.04878048780487805,
+            "term_recall": 0.5,
+            "term_precision": 1.0
+          }
+        },
+        "unrelated": {
+          "text": "那那我也想请问你在读幼稚园的时候，以及你读 elementary school 的时候，是不是就已经有这个 bedtime 的时间了呢？",
+          "score": {
+            "S": 2,
+            "D": 1,
+            "I": 0,
+            "N": 41,
+            "term_ref_mentions": 2,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 1,
+            "term_false_mentions": 0,
+            "mer": 0.07317073170731707,
+            "term_recall": 0.5,
+            "term_precision": 1.0
+          }
+        }
+      },
+      "audio": {
+        "relative_to_source_manifest": "audio/00621.wav",
+        "sha256": "a47269f8aff2514057a2f2175ae4077f94cba0d8bd31273784752cf64dbf26b5",
+        "frames": 179520,
+        "sample_rate": 16000,
+        "channels": 1,
+        "subtype": "PCM_16",
+        "duration_seconds": 11.22
+      },
+      "diagnosis": "word_boundary",
+      "text_and_scoring_verified": true,
+      "audio_bytes_verified": true,
+      "listened": false,
+      "acoustic_adjudication": "unresolved",
+      "heard_text": null
+    },
+    {
+      "id": "00062",
+      "group": "mixed",
+      "reference": "玩smart phone什么时候不可以",
+      "reference_license": "CC-BY-SA-4.0",
+      "predictions": {
+        "none": {
+          "text": "玩 smartphone 什么时候不可以？",
+          "score": {
+            "S": 1,
+            "D": 1,
+            "I": 0,
+            "N": 10,
+            "term_ref_mentions": 1,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 1,
+            "mer": 0.2,
+            "term_recall": 0.0,
+            "term_precision": 0.0
+          }
+        },
+        "personal": {
+          "text": "玩smartphone什么时候不可以？",
+          "score": {
+            "S": 1,
+            "D": 1,
+            "I": 0,
+            "N": 10,
+            "term_ref_mentions": 1,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 1,
+            "mer": 0.2,
+            "term_recall": 0.0,
+            "term_precision": 0.0
+          }
+        },
+        "unrelated": {
+          "text": "玩 smartphone 什么时候不可以？",
+          "score": {
+            "S": 1,
+            "D": 1,
+            "I": 0,
+            "N": 10,
+            "term_ref_mentions": 1,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 1,
+            "mer": 0.2,
+            "term_recall": 0.0,
+            "term_precision": 0.0
+          }
+        }
+      },
+      "audio": {
+        "relative_to_source_manifest": "audio/00062.wav",
+        "sha256": "6ac356221ee811bbcdad11b9c96781cde0573f17d2ac8eb998ddaaffd937158f",
+        "frames": 39680,
+        "sample_rate": 16000,
+        "channels": 1,
+        "subtype": "PCM_16",
+        "duration_seconds": 2.48
+      },
+      "diagnosis": "word_boundary",
+      "text_and_scoring_verified": true,
+      "audio_bytes_verified": true,
+      "listened": false,
+      "acoustic_adjudication": "unresolved",
+      "heard_text": null
+    },
+    {
+      "id": "00957",
+      "group": "mixed",
+      "reference": "hiking的话我觉得Hong Kong is the really suitable place to",
+      "reference_license": "CC-BY-SA-4.0",
+      "predictions": {
+        "none": {
+          "text": "Happy的话，我觉得香港 is a really suitable place to。",
+          "score": {
+            "S": 4,
+            "D": 0,
+            "I": 0,
+            "N": 14,
+            "term_ref_mentions": 1,
+            "term_hyp_mentions": 0,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 0,
+            "mer": 0.2857142857142857,
+            "term_recall": 0.0,
+            "term_precision": null
+          }
+        },
+        "personal": {
+          "text": "Happy的话，我觉得香港 is a really suitable place to.",
+          "score": {
+            "S": 4,
+            "D": 0,
+            "I": 0,
+            "N": 14,
+            "term_ref_mentions": 1,
+            "term_hyp_mentions": 0,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 0,
+            "mer": 0.2857142857142857,
+            "term_recall": 0.0,
+            "term_precision": null
+          }
+        },
+        "unrelated": {
+          "text": "开心的话，我觉得香港 is a really suitable place to.",
+          "score": {
+            "S": 4,
+            "D": 0,
+            "I": 1,
+            "N": 14,
+            "term_ref_mentions": 1,
+            "term_hyp_mentions": 0,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 0,
+            "mer": 0.35714285714285715,
+            "term_recall": 0.0,
+            "term_precision": null
+          }
+        }
+      },
+      "audio": {
+        "relative_to_source_manifest": "audio/00957.wav",
+        "sha256": "efe8aec546529439a898f7a9f4b53471435b45f8274bdedc958289a67dbddda3",
+        "frames": 58560,
+        "sample_rate": 16000,
+        "channels": 1,
+        "subtype": "PCM_16",
+        "duration_seconds": 3.66
+      },
+      "diagnosis": "writing_system",
+      "text_and_scoring_verified": true,
+      "audio_bytes_verified": true,
+      "listened": false,
+      "acoustic_adjudication": "unresolved",
+      "heard_text": null
+    },
+    {
+      "id": "01010",
+      "group": "mixed",
+      "reference": "出去玩因为本科很多a play time嘛in",
+      "reference_license": "CC-BY-SA-4.0",
+      "predictions": {
+        "none": {
+          "text": "出去玩，因为本科很多啊，free time嘛，因。",
+          "score": {
+            "S": 3,
+            "D": 0,
+            "I": 0,
+            "N": 14,
+            "term_ref_mentions": 2,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 1,
+            "term_false_mentions": 0,
+            "mer": 0.21428571428571427,
+            "term_recall": 0.5,
+            "term_precision": 1.0
+          }
+        },
+        "personal": {
+          "text": "出去玩，因为本科很多啊， free time嘛，因。",
+          "score": {
+            "S": 3,
+            "D": 0,
+            "I": 0,
+            "N": 14,
+            "term_ref_mentions": 2,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 1,
+            "term_false_mentions": 0,
+            "mer": 0.21428571428571427,
+            "term_recall": 0.5,
+            "term_precision": 1.0
+          }
+        },
+        "unrelated": {
+          "text": "出去玩，因为本科很多啊，free time嘛，in。",
+          "score": {
+            "S": 2,
+            "D": 0,
+            "I": 0,
+            "N": 14,
+            "term_ref_mentions": 2,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 1,
+            "term_false_mentions": 0,
+            "mer": 0.14285714285714285,
+            "term_recall": 0.5,
+            "term_precision": 1.0
+          }
+        }
+      },
+      "audio": {
+        "relative_to_source_manifest": "audio/01010.wav",
+        "sha256": "90280c5804129358ab2177e758b74e146f571280091dd88ff5869e1ce7fa8bf3",
+        "frames": 59520,
+        "sample_rate": 16000,
+        "channels": 1,
+        "subtype": "PCM_16",
+        "duration_seconds": 3.72
+      },
+      "diagnosis": "lexical_unresolved",
+      "text_and_scoring_verified": true,
+      "audio_bytes_verified": true,
+      "listened": false,
+      "acoustic_adjudication": "unresolved",
+      "heard_text": null
+    },
+    {
+      "id": "00928",
+      "group": "english",
+      "reference": "as for life in university um is totally different from Beijing language and cultural university",
+      "reference_license": "CC-BY-SA-4.0",
+      "predictions": {
+        "none": {
+          "text": "As for London University, um, is totally different from Beijing Language and Cultural University.",
+          "score": {
+            "S": 1,
+            "D": 1,
+            "I": 0,
+            "N": 15,
+            "term_ref_mentions": 3,
+            "term_hyp_mentions": 2,
+            "term_correct_mentions": 2,
+            "term_false_mentions": 0,
+            "mer": 0.13333333333333333,
+            "term_recall": 0.6666666666666666,
+            "term_precision": 1.0
+          }
+        },
+        "personal": {
+          "text": "As for London University, um, is totally different from Beijing Language and Cultural University.",
+          "score": {
+            "S": 1,
+            "D": 1,
+            "I": 0,
+            "N": 15,
+            "term_ref_mentions": 3,
+            "term_hyp_mentions": 2,
+            "term_correct_mentions": 2,
+            "term_false_mentions": 0,
+            "mer": 0.13333333333333333,
+            "term_recall": 0.6666666666666666,
+            "term_precision": 1.0
+          }
+        },
+        "unrelated": {
+          "text": "As for London University, um, is totally different from Beijing Language and Cultural University.",
+          "score": {
+            "S": 1,
+            "D": 1,
+            "I": 0,
+            "N": 15,
+            "term_ref_mentions": 3,
+            "term_hyp_mentions": 2,
+            "term_correct_mentions": 2,
+            "term_false_mentions": 0,
+            "mer": 0.13333333333333333,
+            "term_recall": 0.6666666666666666,
+            "term_precision": 1.0
+          }
+        }
+      },
+      "audio": {
+        "relative_to_source_manifest": "audio/00928.wav",
+        "sha256": "895a253a42dd2b1a4d05ba9706dac38212a97c7e0692a5141cd63c9d542aa20b",
+        "frames": 111040,
+        "sample_rate": 16000,
+        "channels": 1,
+        "subtype": "PCM_16",
+        "duration_seconds": 6.94
+      },
+      "diagnosis": "lexical_unresolved",
+      "text_and_scoring_verified": true,
+      "audio_bytes_verified": true,
+      "listened": false,
+      "acoustic_adjudication": "unresolved",
+      "heard_text": null
+    },
+    {
+      "id": "00904",
+      "group": "english",
+      "reference": "i studied in beijing language and cultural universities",
+      "reference_license": "CC-BY-SA-4.0",
+      "predictions": {
+        "none": {
+          "text": "I studied in Beijing Language and Culture Universities.",
+          "score": {
+            "S": 1,
+            "D": 0,
+            "I": 0,
+            "N": 8,
+            "term_ref_mentions": 0,
+            "term_hyp_mentions": 0,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 0,
+            "mer": 0.125,
+            "term_recall": null,
+            "term_precision": null
+          }
+        },
+        "personal": {
+          "text": "I studied in Beijing Language and Culture University.",
+          "score": {
+            "S": 2,
+            "D": 0,
+            "I": 0,
+            "N": 8,
+            "term_ref_mentions": 0,
+            "term_hyp_mentions": 1,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 1,
+            "mer": 0.25,
+            "term_recall": null,
+            "term_precision": 0.0
+          }
+        },
+        "unrelated": {
+          "text": "I studied in Beijing Language and Culture Universities.",
+          "score": {
+            "S": 1,
+            "D": 0,
+            "I": 0,
+            "N": 8,
+            "term_ref_mentions": 0,
+            "term_hyp_mentions": 0,
+            "term_correct_mentions": 0,
+            "term_false_mentions": 0,
+            "mer": 0.125,
+            "term_recall": null,
+            "term_precision": null
+          }
+        }
+      },
+      "audio": {
+        "relative_to_source_manifest": "audio/00904.wav",
+        "sha256": "df52c837e7a765ce0d954d1647042d736c7f539be0cf3ccd16e3a9662c736360",
+        "frames": 62400,
+        "sample_rate": 16000,
+        "channels": 1,
+        "subtype": "PCM_16",
+        "duration_seconds": 3.9
+      },
+      "diagnosis": "number_unresolved",
+      "text_and_scoring_verified": true,
+      "audio_bytes_verified": true,
+      "listened": false,
+      "acoustic_adjudication": "unresolved",
+      "heard_text": null
+    }
+  ]
+}

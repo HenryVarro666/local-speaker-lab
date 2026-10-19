@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "primary": [
+    "reference term miss-to-hit corrections",
+    "reference term hit-to-miss newly introduced misses",
+    "gained/lost false-term mentions anchored to fixed edit alignment"
+  ],
+  "secondary": [
+    "micro MER, paired clip edit changes",
+    "negative-reference-clip false mentions and rates",
+    "timed inference totals, p50/p95, RTF"
+  ],
+  "slices": [
+    "all",
+    "group:mixed",
+    "group:mandarin",
+    "group:english",
+    "coverage:covered",
+    "coverage:uncovered"
+  ],
+  "term_matching": "unchanged nfkc_han_latin_digits_v1; longest nonoverlapping complete term; fixed minimum-edit alignment; no aliases, compound merging, translation or number merging",
+  "uncertainty": {
+    "method": "paired clip percentile bootstrap stratified by language; retain each language count",
+    "replicates": 1000,
+    "seed": 20261018,
+    "confidence": 0.95,
+    "unit": "clip, not speaker/session",
+    "multiple_comparison_adjustment": false
+  },
+  "analysis_script": "scripts/analyze_glossary_comparison.py",
+  "analysis_start_gate": "all 2175 predictions, 725 unique complete pairs, run.status complete, frozen inputs/audio/source hashes and saved scores verified; no interim treatment-effect analysis",
+  "cohorts": {
+    "development": "old200 retained separately; previous24 is nested, not extra evidence",
+    "replication": "all725 remaining eligible validation clips; no lexical selection",
+    "pooled925": "supplemental descriptive aggregate including development clips; not independent validation"
+  },
+  "interpretation": [
+    "Term corrections, new misses and false mentions lead the report; MER reduction alone is insufficient evidence of term benefit.",
+    "No positive/negative result triggers extra samples or changes to vocabulary, prompt, normalization, reference or configuration.",
+    "Zero bootstrap variation for unchanged term states is not evidence of equivalence.",
+    "Within-cohort paired arm comparisons are primary; cross-cohort absolute MER differences are not glossary effects.",
+    "No generalization to personal jargon, speakers independent of development, official test benchmark, Ubuntu or GPU speed."
+  ],
+  "failure_policy": "Stop on runtime errors, keep partial output and stdout/stderr; do not score incomplete predictions or silently restart/overwrite. Any retry gets a new run ID, records cause and retains frozen protocol; no selective retries."
+}

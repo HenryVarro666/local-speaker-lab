@@ -11,7 +11,7 @@ Propio 的本地语音实验代码，提供可复查的实验输入、模型运�
 
 先读 [快速开始](docs/GETTING_STARTED.md)，选择轻量开发检查、Windows CPU 词表实验或 Ubuntu 双人工作流。核心包要求 **Python 3.11 或更高版本**；Ubuntu 双人部署使用 **Python 3.12** 的独立模型环境及锁定依赖。
 
-200 条录音 × 3 组的 CPU 词表实验采用[冻结协议](experiments/glossary/protocols/ascend-val200-train-vocab30-v2/)，提供词表、选中 ID 与分析计划。只有完整 600 次推理和核验后才报告结论；最新完整记录见[实验说明](experiments/glossary/README.md)。
+200 条录音 × 3 组的 CPU 词表实验已完成全部 600 次真实推理与配对核验。[冻结协议](experiments/glossary/protocols/ascend-val200-train-vocab30-v2/)提供词表、选中 ID 与分析计划；[正式结果](experiments/glossary/ASCEND_200_RESULTS.md)显示本轮未修复基线术语漏识，整体错误率的小幅下降尚不足以证明词表有效。复现入口见[实验说明](experiments/glossary/README.md)。
 
 ## 从这里继续
 

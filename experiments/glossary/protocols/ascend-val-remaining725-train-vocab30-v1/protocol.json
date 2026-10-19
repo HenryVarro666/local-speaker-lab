@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "experiment": "ASCEND remaining validation 725 / unchanged train vocabulary v2 / three paired arms",
+  "frozen_utc": "2026-10-19T05:56:48.742068+00:00",
+  "authorization": "User requested six-event review, frozen new protocol, all remaining eligible ASCEND validation, unchanged vocabulary/main scoring, full comparison and GitHub update.",
+  "six_event_review": {
+    "artifact": "experiments/glossary/audits/ascend-remaining-v1/six_event_audit.json",
+    "sha256": "59dedfb3ff0528c3c542f9952a7992cb6d8fb74cd1396e107ff4f344f4a59e7f",
+    "text_and_scoring_verified": true,
+    "listened": false,
+    "acoustic_adjudication": "unresolved; no rule/reference/input changes"
+  },
+  "dataset": {
+    "repo_id": "CAiRE/ASCEND",
+    "revision": "737e9800ae31be9932ba8464c80366559bd28424",
+    "evaluation_split": "validation",
+    "glossary_split": "train",
+    "license": "CC-BY-SA-4.0",
+    "test_used": false
+  },
+  "selection": {
+    "source_count": 1130,
+    "min_duration_seconds": 1,
+    "max_duration_seconds": 12,
+    "eligible_count": 925,
+    "prior_excluded_count": 200,
+    "count": 725,
+    "groups": {
+      "mixed": 107,
+      "mandarin": 453,
+      "english": 165
+    },
+    "total_audio_seconds": 2409.865375,
+    "fields_used": [
+      "id",
+      "group",
+      "WAV header duration"
+    ],
+    "all_remaining": true,
+    "lexical_error_or_coverage_filtering": false,
+    "ordering": "mixed,mandarin,english then sha256(20261018:id),id",
+    "no_identical_audio_with_old200": true,
+    "speaker_or_session_independence": "unknown: source manifest has no speaker/session IDs"
+  },
+  "conditions": {
+    "none": "empty context",
+    "personal": "same fixed30 train-derived v2 glossary; legacy CLI name",
+    "unrelated": "same fixed30 unrelated glossary"
+  },
+  "model": {
+    "repo_id": "Qwen/Qwen3-ASR-1.7B",
+    "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+    "device": "cpu",
+    "dtype": "float32",
+    "language": "Chinese",
+    "max_new_tokens": 256,
+    "torch_threads": 8,
+    "seed": 20261018,
+    "do_sample": false,
+    "num_beams": 1,
+    "max_inference_batch_size": 1
+  },
+  "execution": {
+    "run_id": "glossary-ascend-remaining725-train-vocab30-cpu-001",
+    "expected_timed_inferences": 2175,
+    "unscored_warmup_calls": 1,
+    "offline": true,
+    "ordering": "unchanged runner; random.Random(seed).shuffle rows, shuffle arms per row",
+    "audio_treatment": "same unchanged waveform in each arm; no separation, alignment, LLM or postprocessing"
+  },
+  "normalization": "nfkc_han_latin_digits_v1",
+  "input_sha256": {
+    "source_manifest": "301dc5fadd04e4503cd536f40a82c8882d81321ed1833663688edbaa78c39128",
+    "runtime_manifest": "924b28f229ba7944287908cde531dfe7664f2059bd794dec261900bbf1db627a",
+    "prior_selected_ids": "7d47640264890a1d5f858c85aae971d22a561cfe09d4b39117ea59eae44c98e9",
+    "prior_protocol": "ef61b5ef6bc81dce0fbc1d65dc13d20622b529d1efa28910c0a0f4b493a02184"
+  },
+  "runtime_manifest": "experiments/glossary/data/ascend-validation-remaining725-train-v2/manifest.jsonl",
+  "runtime_manifest_portable": false,
+  "source_sha256": {
+    "src/speaker_lab/glossary_metrics.py": "9791da526da42748dd28e632a7d9017aa7930a1dd633c6062e4686da5b803a5a",
+    "src/speaker_lab/glossary_experiment.py": "ca2b948090ec9285f94bf6fecde6234ea0fb4371b02f09e540c0dd056e8dbf0c",
+    "src/speaker_lab/backends/common.py": "1d22dacc6ac9a92166db332b3049b632a1d47628565f4d17d2334c67e2a96472",
+    "scripts/analyze_glossary_comparison.py": "f3a44ed36727cc11ef3b939582bf2e44b572a0a599ca22497aff95774058d34e",
+    "scripts/freeze_ascend_remaining.py": "81ba9dbbd2a6d9cc99182d53dc3a9087b00f9ab62aa3389bf11840e60be1cdc6",
+    "scripts/select_glossary_pilot.py": "c48fc22b7f1356e2f8b7be6f0fad0106f8048d8ab24b72b20616bb58b73a0e76",
+    "scripts/build_ascend_train_glossary.py": "2cf5e65ff2b669bf8fee98eb673ec28bf716faa2d1134b24d84fce0694d9493a",
+    "scripts/export_ascend_train_text.py": "143ff4d8917272efe4949f8f9276a1458575631a20828ac0a3302b104385a348"
+  },
+  "preservation_guard": "experiments/glossary/audits/ascend-remaining-v1/preservation_before.json",
+  "portable_files_sha256": {
+    "correct.json": "a8d5d34aca20cee94a3e265dbdec38a3fb725d2eb4f51eae93f23e248b9b8590",
+    "unrelated.json": "42b77131c7ed6c5e0cf7793438068eabb4183dc5d40eafbc800653b8c0d6daa5",
+    "selected_ids.json": "e6a7009758c7cb5a14acd7ede38a54ff021684e1e248b4e25cb4fac5d30799f1",
+    "config.toml": "2d2186ea80d3ac9ee5f922a77ae79fc1f2ceb129d7080f957c364440b2ce44d6",
+    "environment.json": "b9cf3a487286f753b357839124bac3b9c6a7304a8c93e0f9e620ecdcbf05c182",
+    "selection_audit.json": "c486bb3631e3cfbc0b1c754fe48caa96182dbf5e7d0034fbb5f1fbb38d9002f9",
+    "analysis_plan.json": "0cd8d4dccb5df7b996f9d33cab25095d3c691541feb7f7ecac6281062ee13ef6"
+  },
+  "prohibitions": [
+    "no vocabulary or scoring changes",
+    "no new prompt, language, model or decoding changes",
+    "no remaining-reference use in selection",
+    "no official test access",
+    "no partial-result claims or stopping based on effects",
+    "do not treat old24, old200, new725 as three independent cohorts"
+  ]
+}

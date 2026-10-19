@@ -14,6 +14,9 @@ INCLUDE = ["README.md", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE", "THIRD_PAR
 # exported datasets, or subsequently edited personal glossary files.
 INCLUDE += ["experiments/glossary/README.md", "experiments/glossary/DESIGN_NOTES.md",
             "experiments/glossary/ASCEND_PILOT_RESULTS.md", "experiments/glossary/ASCEND_TRAIN_GLOSSARY_RESULTS.md",
+            "experiments/glossary/ASCEND_200_RESULTS.md",
+            "experiments/glossary/ASCEND_SIX_EVENT_REVIEW.md",
+            "experiments/glossary/ASCEND_REMAINING_EXECUTION.md",
             "experiments/glossary/personal.example.json",
             "experiments/glossary/unrelated.example.json", "experiments/glossary/manifest.example.jsonl"]
 # Frozen, shareable protocol inputs referenced by the repository documentation.
@@ -22,6 +25,12 @@ INCLUDE += ["experiments/glossary/README.md", "experiments/glossary/DESIGN_NOTES
 INCLUDE += ["experiments/glossary/protocols/ascend-val200-train-vocab30-v2/" + name
             for name in ("README.md", "protocol.json", "analysis_plan.json",
                          "selected_ids.json", "correct.json", "unrelated.json")]
+INCLUDE += ["experiments/glossary/protocols/ascend-val-remaining725-train-vocab30-v1/" + name
+            for name in ("README.md", "protocol.json", "analysis_plan.json", "selected_ids.json",
+                         "correct.json", "unrelated.json", "config.toml", "environment.json",
+                         "selection_audit.json", "FREEZE.json")]
+INCLUDE += ["experiments/glossary/audits/ascend-remaining-v1/" + name
+            for name in ("six_event_audit.json", "preservation_before.json", "execution_log.jsonl")]
 SOURCE_SUFFIXES = {".py", ".sh", ".toml", ".txt", ".md", ".json", ".jsonl", ".yml", ".yaml", ".in"}
 EXCLUDED_PARTS = {"__pycache__", ".cache", ".pytest_cache", ".venvs", "runs", "deployment_logs"}
 PRIVATE_NAMES = {".netrc", "credentials.json", "secrets.json", "token", "token.json"}

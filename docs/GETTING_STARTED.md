@@ -91,7 +91,7 @@ python scripts/analyze_glossary_comparison.py --help
 
 | 路线 | 当前状态 | 入口 |
 | --- | --- | --- |
-| 单人词表实验 / Windows CPU | 已执行真实 24 条三组推理；200 条扩展实验另行记录 | [实验报告与协议](../experiments/glossary/README.md) |
+| 单人词表实验 / Windows CPU | 已完成 24 条及固定 200 条三组真实推理，后者共 600 次 | [200 条结果](../experiments/glossary/ASCEND_200_RESULTS.md) |
 | 单人词表实验 / Linux NVIDIA | 已有 Transformers 配置，尚未提供本实验 GPU 实测结果 | [glossary.toml](../configs/glossary.toml) |
 | 双人分离、转写、纪要 / Ubuntu NVIDIA | 已有实现和部署检查；目标 GPU 完整真实验收待执行 | [双人指南](TWO_SPEAKER_GUIDE.md) |
 | 单人词表实验 / Apple Silicon | 后端待开发，沿用相同数据和计分接口 | [路线图](ROADMAP.md) |

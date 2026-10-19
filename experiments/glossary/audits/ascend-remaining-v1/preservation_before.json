@@ -1,0 +1,23 @@
+{
+  "recorded_utc": "2026-10-19T05:54:52.849400+00:00",
+  "purpose": "unchanged-input guard before remaining validation inference",
+  "sha256": {
+    "experiments/glossary/protocols/ascend-val200-train-vocab30-v2/analysis_plan.json": "8dc3e18d8bd2d517ea1a9bbeb3a70a822b323266493c294fc6ac4bcd2b17fc6f",
+    "experiments/glossary/protocols/ascend-val200-train-vocab30-v2/correct.json": "a8d5d34aca20cee94a3e265dbdec38a3fb725d2eb4f51eae93f23e248b9b8590",
+    "experiments/glossary/protocols/ascend-val200-train-vocab30-v2/protocol.json": "ef61b5ef6bc81dce0fbc1d65dc13d20622b529d1efa28910c0a0f4b493a02184",
+    "experiments/glossary/protocols/ascend-val200-train-vocab30-v2/README.md": "4f030c98a3d57797dd693e91e42092d5dcc7b14b7dfdecf1c1cb3deba04d1ae8",
+    "experiments/glossary/protocols/ascend-val200-train-vocab30-v2/selected_ids.json": "7d47640264890a1d5f858c85aae971d22a561cfe09d4b39117ea59eae44c98e9",
+    "experiments/glossary/protocols/ascend-val200-train-vocab30-v2/unrelated.json": "42b77131c7ed6c5e0cf7793438068eabb4183dc5d40eafbc800653b8c0d6daa5",
+    "runs/glossary-ascend-val200-train-vocab30-cpu-001/run.json": "c19f2ecceb32094ca2920bafc43baea3a2c03e41260e2de9180099c5da76e361",
+    "runs/glossary-ascend-val200-train-vocab30-cpu-001/predictions.jsonl": "319ae81ec1bfa029b3d6dba3002670945188a691ad1345cad1519aa4172c112d",
+    "runs/glossary-ascend-val200-train-vocab30-cpu-001/scores.json": "8c20a6ce9fac04255f59e3aceacb436800591245788a75248b6e9f0b85415b96",
+    "runs/glossary-ascend-val200-train-vocab30-cpu-001/comparison.json": "f9eca8f5db27c32bc623e9688ed5c8df6a5df3800c488f5c259713ff427bdfd7",
+    "runs/glossary-ascend-val200-train-vocab30-cpu-001/analysis_plan.json": "8dc3e18d8bd2d517ea1a9bbeb3a70a822b323266493c294fc6ac4bcd2b17fc6f",
+    "src/speaker_lab/glossary_metrics.py": "9791da526da42748dd28e632a7d9017aa7930a1dd633c6062e4686da5b803a5a",
+    "src/speaker_lab/glossary_experiment.py": "ca2b948090ec9285f94bf6fecde6234ea0fb4371b02f09e540c0dd056e8dbf0c",
+    "scripts/analyze_glossary_comparison.py": "f3a44ed36727cc11ef3b939582bf2e44b572a0a599ca22497aff95774058d34e",
+    "configs/glossary_cpu_pilot.toml": "2d2186ea80d3ac9ee5f922a77ae79fc1f2ceb129d7080f957c364440b2ce44d6",
+    "experiments/glossary/data/ascend-validation-737e9800/manifest.jsonl": "301dc5fadd04e4503cd536f40a82c8882d81321ed1833663688edbaa78c39128",
+    "experiments/glossary/data/ascend-validation-pilot200-train-v2/manifest.jsonl": "8b8a98411247fb87071c1bc79e910e05c0f2a1e3826155bab6409c03bc8ba019"
+  }
+}
