@@ -160,10 +160,13 @@ def test_broken_cache_symlinks_are_preserved_and_reported(installations, tmp_pat
         entry = root / ".cache/huggingface"
     target = tmp_path / "missing"
     symlink(entry, target)
+    # Windows may expose the stored target as \\?\C:\... rather than C:\....
+    # Preservation means the link's stored target is unchanged by the upgrade.
+    original_target = entry.readlink()
     result = upgrade.run_upgrade(old, new)
     assert result["status"] == "FAIL"
     assert entry.is_symlink()
-    assert entry.readlink() == target
+    assert entry.readlink() == original_target
 
 
 def test_new_cache_parent_cannot_write_into_old_project(installations):

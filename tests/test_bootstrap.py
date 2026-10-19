@@ -273,7 +273,9 @@ def bootstrap_harness(tmp_path):
     fake_bin = tmp_path / "fakebin"
     fake_bin.mkdir()
     source = BOOTSTRAP.read_text(encoding="utf-8")
-    source = source.replace("set -Eeuo pipefail", 'set -Eeuo pipefail\nPATH="$(dirname -- "${BASH_SOURCE[0]}")/fakebin:$PATH"', 1)
+    # Git Bash accepts C:/ paths for cd, but a drive colon is a PATH separator.
+    # Resolve the directory inside Bash so PATH receives /c/... on Windows.
+    source = source.replace("set -Eeuo pipefail", 'set -Eeuo pipefail\nPATH="$(cd -- "$FAKE_BIN" && pwd):$PATH"', 1)
     source = source.replace('[[ "$(uname -s)" == Linux && "$(uname -m)" == x86_64 ]]', "true")
     source = source.replace("[[ -r /etc/os-release ]]", "true")
     source = source.replace(". /etc/os-release", "ID=ubuntu; VERSION_ID=24.04")
@@ -281,8 +283,24 @@ def bootstrap_harness(tmp_path):
     source = source.replace('if { exec 4<>/dev/tty; } 2>/dev/null; then', 'if false; then')
     script = tmp_path / "bootstrap-under-test.sh"
     script.write_text(source, encoding="utf-8", newline="\n")
+    # The deployment target is Python 3.12 even when pytest itself runs 3.11.
+    # Simulate only the executable's version probe in its own child process;
+    # archive extraction and all other Python work use the actual test host.
+    host_python = shlex.quote(Path(sys.executable).as_posix())
+    python_probe = (
+        "import os, sys; "
+        "sys.version_info = (3, int(os.environ.get('FAKE_PYTHON_MINOR', '12')), 0, 'final', 0); "
+        "exec(sys.argv[1])"
+    )
+    python_stub = (
+        '#!/usr/bin/env bash\n'
+        'if [[ "${1:-}" == -c ]]; then\n'
+        f'  exec {host_python} -c {shlex.quote(python_probe)} "$2"\n'
+        'fi\n'
+        f'exec {host_python} "$@"\n'
+    )
     commands = {
-        "python3.12": "#!/usr/bin/env bash\nexec " + shlex.quote(Path(sys.executable).as_posix()) + ' "$@"\n',
+        "python3.12": python_stub,
         "sudo": '#!/usr/bin/env bash\nprintf \'%s\\n\' "$*" >> "$FAKE_COMMANDS"\nprintf \'%s\\n\' "${HF_TOKEN:-}"\n',
         "dpkg-query": '#!/usr/bin/env bash\nif [[ "${FAKE_PACKAGES_MISSING:-0}" == 1 ]]; then printf not-installed; else printf installed; fi\n',
     }
@@ -333,7 +351,8 @@ raise SystemExit(int(os.environ.get('FAKE_UPGRADE_EXIT', '0')))
     audio = tmp_path / "recording.wav"
     audio.write_bytes(b"test recording; decoder is a runner concern")
     destination = tmp_path / "project"
-    environment = dict(os.environ, HOME=tmp_path.as_posix(), FAKE_COMMANDS=str(tmp_path / "commands.txt"))
+    environment = dict(os.environ, HOME=tmp_path.as_posix(), FAKE_BIN=fake_bin.as_posix(),
+                       FAKE_COMMANDS=str(tmp_path / "commands.txt"))
 
     arguments = [bash_executable(), str(script), "--zip", str(archive), "--destination", str(destination), "--audio", str(audio)]
 
@@ -505,6 +524,17 @@ def test_first_install_and_repeat_run_execute_full_bootstrap_without_overwriting
     assert secret not in first.stdout + first.stderr + repeated.stdout + repeated.stderr
     for report in reports:
         assert secret not in (report.parent / "bootstrap.log").read_text(encoding="utf-8")
+
+
+def test_bootstrap_still_rejects_simulated_python311_before_extraction(tmp_path):
+    run, destination, _ = bootstrap_harness(tmp_path)
+    result = run(FAKE_PYTHON_MINOR="11")
+    assert result.returncode != 0
+    assert "Python 3.12 is required" in result.stdout + result.stderr
+    assert not destination.exists()
+    report, = (tmp_path / "deployment_logs").glob("*/bootstrap-report.json")
+    assert json.loads(report.read_text(encoding="utf-8"))["status"] == "FAILED"
+    assert not (report.parent / "child-ran.txt").exists()
 
 
 def test_driver_reboot_exit_is_preserved_and_rerun_reuses_extracted_sources(tmp_path):

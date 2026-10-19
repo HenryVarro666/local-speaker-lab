@@ -29,6 +29,7 @@
 | [pyannote/wespeaker-voxceleb-resnet34-LM](https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM) | 分离来源与人物匹配；上游为 [WeSpeaker](https://github.com/wenet-e2e/wespeaker) 的模型封装 | CC-BY-4.0 |
 | [alibabasglab/MossFormer2_SS_16K](https://huggingface.co/alibabasglab/MossFormer2_SS_16K) | 默认 ClearVoice 分离权重 | Apache-2.0 |
 | [Qwen/Qwen3-ASR-1.7B](https://huggingface.co/Qwen/Qwen3-ASR-1.7B) | 默认转写与单人词表实验 | Apache-2.0 |
+| [Qwen/Qwen3-ASR-0.6B](https://huggingface.co/Qwen/Qwen3-ASR-0.6B) | 文档提供的可选速度对照 | Apache-2.0 |
 | [Qwen/Qwen3-ForcedAligner-0.6B](https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B) | 可选字词时间对齐 | Apache-2.0 |
 | [speechbrain/sepformer-wsj02mix](https://huggingface.co/speechbrain/sepformer-wsj02mix) | 可选 8 kHz 分离路线 | Apache-2.0 |
 | [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) | Ollama 默认 `qwen3:8b` 对应模型系列；实际制品 digest 由验收记录 | Apache-2.0 |

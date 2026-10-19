@@ -12,6 +12,8 @@
 | ASR 边缘容差和匹配元数据解释不完整 | 区间裁剪后可能倒置，字符串布尔值或无效 margin 被误用 | 统一裁剪并验证时间，严格检查可选元数据；流水线契约回归 |
 | 构建工具与第三方 sdist 隔离构建版本漂移 | 同样源码可能使用不同构建环境 | 独立 `requirements/bootstrap.txt`、固定构建后端、pip build constraints；安装与恢复测试 |
 | CI 的跨平台矩阵只运行 unittest 子集 | 大量 pytest 函数只在单个平台执行 | 矩阵执行完整离线 pytest，各自保存报告；Ubuntu 锁环境另跑应用集成 |
+| 部署替身沿用测试主机的 Python 版本 | 在 3.11 上提前触发目标部署的 3.12 守卫，未执行预期阶段 | 测试独立模拟 Ubuntu/Python 3.12，保留产品版本要求；通过真实远程矩阵核验 |
+| Windows 测试依赖隐式 shell 路径和链接路径表示 | 假命令目录未正确进入 PATH，`readlink` 的扩展路径前缀造成误判 | 显式将假命令目录转换为 shell 绝对路径，并比较升级前后保存的链接目标 |
 | 测试从 checkout 导入，未验证分发安装 | 可能遗漏 wheel/sdist 文件或依赖源码路径 | 真正执行 ZIP → sdist → wheel → 纯新 venv、仓库外 CLI/lazy import；`tests/test_distribution.py` |
 | 安装 Gradio 后未构造界面 | API 不兼容可能在用户打开 UI 时才暴露 | 无服务、无模型的 Blocks 构建冒烟 |
 | ZIP 递归收集跟随链接且时间戳不固定 | 可能读到项目外文件，重复构建校验和不同，失败破坏旧包 | 严格源码枚举、拒绝链接、固定元数据、临时文件原子替换；`tests/test_package.py` |

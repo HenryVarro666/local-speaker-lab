@@ -29,6 +29,12 @@ def simulated_machine(tmp_path, monkeypatch):
     machine = SimpleNamespace(root=root, recording=recording, boot="boot-1", driver=True,
                               installed=False, ollama=False, model=False, resident=False,
                               calls=[], fail=None, token="hf_flowSecret123456789")
+    # Patch this loaded module's sys binding, not global sys.version_info: the
+    # simulated target is Ubuntu/Python 3.12 regardless of pytest's interpreter.
+    machine.python = SimpleNamespace(version_info=(3, 12, 0, "final", 0),
+                                     version="3.12.0 (simulated deployment target)",
+                                     executable="/usr/bin/python3.12")
+    monkeypatch.setattr(deploy, "sys", machine.python)
     monkeypatch.setattr(deploy, "ROOT", root)
     monkeypatch.setattr(deploy.platform, "system", lambda: "Linux")
     monkeypatch.setattr(deploy.platform, "machine", lambda: "x86_64")
@@ -136,6 +142,7 @@ def test_fresh_install_then_repeat_reuses_model_cache_and_preserves_old_report(s
     machine = simulated_machine
     code, first = machine.run("first")
     assert code == 0 and first["status"] == "PASS"
+    assert first["evidence"]["python"] == "3.12.0"
     assert machine.installed and machine.ollama and machine.model
     first_calls = list(machine.calls)
     assert sum(line.startswith("ollama pull") for line in first_calls) == 1
@@ -152,6 +159,18 @@ def test_fresh_install_then_repeat_reuses_model_cache_and_preserves_old_report(s
     assert any("scripts/install_ubuntu.sh" in line for line in machine.calls)
     assert [item["name"] for item in repeat["steps"]][-3:] == ["doctor", "clearvoice-cuda", "recording-acceptance"]
     assert repeat["quality_status"] == "PENDING_MANUAL_REVIEW"
+
+
+def test_unsupported_simulated_python311_stops_before_system_work(simulated_machine):
+    machine = simulated_machine
+    machine.python.version_info = (3, 11, 0, "final", 0)
+    machine.python.version = "3.11.0 (unsupported simulated target)"
+    code, report = machine.run("unsupported-python")
+    assert code == 1 and report["status"] == "FAIL"
+    assert [step["name"] for step in report["steps"]] == ["platform"]
+    assert "Run with Python 3.12" in report["error"]
+    assert not machine.calls
+    assert not machine.installed and not machine.ollama and not machine.model
 
 
 def test_driver_install_same_boot_stops_then_new_boot_runs_full_acceptance(simulated_machine):
