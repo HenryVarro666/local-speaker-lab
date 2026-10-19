@@ -108,7 +108,8 @@ def build_archive(destination: Path | None = None) -> Path:
 def main():
     destination = build_archive()
     checksum = destination.with_suffix(".zip.sha256")
-    checksum.write_text(hashlib.sha256(destination.read_bytes()).hexdigest() + "  " + destination.name + "\n", encoding="ascii")
+    checksum.write_text(hashlib.sha256(destination.read_bytes()).hexdigest() + "  " + destination.name + "\n",
+                        encoding="ascii", newline="\n")
     bootstrap = destination.parent / "deploy_ubuntu.sh"
     shutil.copyfile(ROOT / "deploy_ubuntu.sh", bootstrap)
     print(destination)

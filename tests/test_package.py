@@ -73,6 +73,18 @@ def test_archive_is_reproducible_across_local_timestamps_and_permissions(source_
     assert module.build_archive(tmp_path / "two.zip").read_bytes() == first
 
 
+def test_release_entrypoint_writes_lf_checksum_accepted_by_linux_tools(source_tree):
+    module, project = source_tree
+    script = project / "deploy_ubuntu.sh"
+    script.write_bytes(b"#!/usr/bin/env bash\nexit 0\n")
+    module.INCLUDE.append("deploy_ubuntu.sh")
+    module.main()
+    checksum = (project / "dist/local-speaker-lab.zip.sha256").read_bytes()
+    assert checksum.endswith(b"\n") and b"\r" not in checksum
+    assert checksum.split()[1] == b"local-speaker-lab.zip"
+    assert (project / "dist/deploy_ubuntu.sh").read_bytes() == script.read_bytes()
+
+
 def test_source_release_excludes_local_credentials_runtime_and_unreviewed_reports(source_tree, tmp_path):
     module, project = source_tree
     for name in (".env", ".env.production", "credentials.json", "secrets.json", "token.json",

@@ -17,6 +17,7 @@
 | 测试从 checkout 导入，未验证分发安装 | 可能遗漏 wheel/sdist 文件或依赖源码路径 | 真正执行 ZIP → sdist → wheel → 纯新 venv、仓库外 CLI/lazy import；`tests/test_distribution.py` |
 | 安装 Gradio 后未构造界面 | API 不兼容可能在用户打开 UI 时才暴露 | 无服务、无模型的 Blocks 构建冒烟 |
 | ZIP 递归收集跟随链接且时间戳不固定 | 可能读到项目外文件，重复构建校验和不同，失败破坏旧包 | 严格源码枚举、拒绝链接、固定元数据、临时文件原子替换；`tests/test_package.py` |
+| Windows 发布的校验文件使用 CRLF | GNU `sha256sum -c` 将回车当作文件名字符而失败 | 固定 `.sha256` 为 LF，跨平台回归并实际执行 GNU 校验 |
 | 公开入口缺少集中引用与许可证范围 | 原创适配、上游模型和数据来源不清 | [MIT](../LICENSE)、[上游与数据说明](../THIRD_PARTY_NOTICES.md)、[CITATION.cff](../CITATION.cff) |
 
 ## 验证边界
