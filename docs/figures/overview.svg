@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc"><title id="title">LOCAL SPEAKER LAB</title><desc id="desc">Speech experiments you can rerun. Glossary-conditioned ASR and a two-speaker meeting-notes pipeline.</desc><defs><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#F7F9FC"/><stop offset="1" stop-color="#EFF3F7"/></linearGradient></defs><rect width="1600" height="960" fill="url(#paper)"/><g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+<rect x="0" y="0" width="1600" height="9" rx="0" fill="#007F78" stroke="none"/>
+<text x="64" y="66" font-size="20" fill="#172837" font-weight="700" letter-spacing="2" data-maxx="900">LOCAL SPEAKER LAB</text>
+<text x="1536" y="66" font-size="16" fill="#007F78" font-weight="600" letter-spacing="1" text-anchor="end">SPEECH EXPERIMENTS / LOCAL</text>
+<text x="60" y="167" font-size="72" fill="#142638" font-weight="500" data-maxx="1540">Speech experiments you can rerun.</text>
+<text x="64" y="221" font-size="27" fill="#344C5F" font-weight="400" data-maxx="1536">Glossary-conditioned ASR and a two-speaker meeting-notes pipeline.</text>
+<text x="64" y="262" font-size="20" fill="#697988" font-weight="400" data-maxx="1536">Frozen inputs, real inference and paired scoring, on a CPU or an RTX 5080.</text>
+<rect x="64" y="323" width="344" height="272" rx="20" fill="#FFFFFF" stroke="#DCE4EB"/>
+<rect x="88" y="349" width="44" height="5" rx="2" fill="#007F78" stroke="none"/>
+<text x="88" y="393" font-size="17" fill="#007F78" font-weight="700" letter-spacing="1.4" data-maxx="394">01 / SAMPLE</text>
+<text x="88" y="441" font-size="28" fill="#172C3C" font-weight="600" data-maxx="394">Frozen inputs</text>
+<text x="88" y="485" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="394">200 ASCEND clips</text>
+<text x="88" y="517" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="394">Mixed, Mandarin, English</text>
+<text x="88" y="549" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="394">Fixed seed and clip IDs</text>
+<path d="M416 458h16m-6-6 6 6-6 6" fill="none" stroke="#007F78" stroke-width="2"/>
+<rect x="440" y="323" width="344" height="272" rx="20" fill="#FFFFFF" stroke="#DCE4EB"/>
+<rect x="464" y="349" width="44" height="5" rx="2" fill="#007F78" stroke="none"/>
+<text x="464" y="393" font-size="17" fill="#007F78" font-weight="700" letter-spacing="1.4" data-maxx="770">02 / CONDITION</text>
+<text x="464" y="441" font-size="28" fill="#172C3C" font-weight="600" data-maxx="770">Three glossaries</text>
+<text x="464" y="485" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="770">None</text>
+<text x="464" y="517" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="770">Correct (train vocabulary)</text>
+<text x="464" y="549" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="770">Unrelated</text>
+<path d="M792 458h16m-6-6 6 6-6 6" fill="none" stroke="#007F78" stroke-width="2"/>
+<rect x="816" y="323" width="344" height="272" rx="20" fill="#FFFFFF" stroke="#DCE4EB"/>
+<rect x="840" y="349" width="44" height="5" rx="2" fill="#007F78" stroke="none"/>
+<text x="840" y="393" font-size="17" fill="#007F78" font-weight="700" letter-spacing="1.4" data-maxx="1146">03 / TRANSCRIBE</text>
+<text x="840" y="441" font-size="28" fill="#172C3C" font-weight="600" data-maxx="1146">Real inference</text>
+<text x="840" y="485" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="1146">600 CPU runs</text>
+<text x="840" y="517" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="1146">Paired by clip</text>
+<text x="840" y="549" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="1146">Term hits and errors</text>
+<path d="M1168 458h16m-6-6 6 6-6 6" fill="none" stroke="#007F78" stroke-width="2"/>
+<rect x="1192" y="323" width="344" height="272" rx="20" fill="#FFFFFF" stroke="#DCE4EB"/>
+<rect x="1216" y="349" width="44" height="5" rx="2" fill="#007F78" stroke="none"/>
+<text x="1216" y="393" font-size="17" fill="#007F78" font-weight="700" letter-spacing="1.4" data-maxx="1522">04 / REPORT</text>
+<text x="1216" y="441" font-size="28" fill="#172C3C" font-weight="600" data-maxx="1522">Checked result</text>
+<text x="1216" y="485" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="1522">Bootstrap intervals</text>
+<text x="1216" y="517" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="1522">Independent re-check</text>
+<text x="1216" y="549" font-size="18" fill="#5C6D7B" font-weight="400" data-maxx="1522">Source SHA256 recorded</text>
+<rect x="64" y="635" width="470" height="211" rx="18" fill="#DDF3EA" stroke="none"/>
+<text x="88" y="675" font-size="15" fill="#007F78" font-weight="700" letter-spacing="1.2" data-maxx="516">GLOSSARY RESULT</text>
+<text x="88" y="722" font-size="24" fill="#193346" font-weight="600" data-maxx="516">No missed term recovered</text>
+<text x="88" y="765" font-size="18" fill="#536777" font-weight="400" data-maxx="516">The correct glossary did not fix misses;</text>
+<text x="88" y="795" font-size="18" fill="#536777" font-weight="400" data-maxx="516">the small error drop is within noise.</text>
+<rect x="565" y="635" width="470" height="211" rx="18" fill="#E8EDF3" stroke="none"/>
+<text x="589" y="675" font-size="15" fill="#007F78" font-weight="700" letter-spacing="1.2" data-maxx="1017">TWO SPEAKERS</text>
+<text x="589" y="722" font-size="24" fill="#193346" font-weight="600" data-maxx="1017">Separate, match, take notes</text>
+<text x="589" y="765" font-size="18" fill="#536777" font-weight="400" data-maxx="1017">pyannote + ClearerVoice + Qwen3-ASR,</text>
+<text x="589" y="795" font-size="18" fill="#536777" font-weight="400" data-maxx="1017">then meeting notes with Ollama.</text>
+<rect x="1066" y="635" width="470" height="211" rx="18" fill="#E8EDF3" stroke="none"/>
+<text x="1090" y="675" font-size="15" fill="#007F78" font-weight="700" letter-spacing="1.2" data-maxx="1518">DEPLOYMENT</text>
+<text x="1090" y="722" font-size="24" fill="#193346" font-weight="600" data-maxx="1518">One-command Ubuntu install</text>
+<text x="1090" y="765" font-size="18" fill="#536777" font-weight="400" data-maxx="1518">Release ZIP + SHA256, in-place upgrade,</text>
+<text x="1090" y="795" font-size="18" fill="#536777" font-weight="400" data-maxx="1518">redacted logs and an acceptance run.</text>
+<path d="M64 888h1472" stroke="#CED9E3"/>
+<text x="64" y="923" font-size="17" fill="#647788" font-weight="400" data-maxx="1536">PYTHON ≥ 3.11  /  Original code under MIT; models and data keep their own licenses.</text>
+</g></svg>

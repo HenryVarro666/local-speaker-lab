@@ -1,6 +1,17 @@
+<div align="center">
+
 # Local Speaker Lab
 
-[![CI](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml) · [MIT](LICENSE)
+**Reproducible local speech experiments: glossary-conditioned ASR and a two-speaker notes pipeline.**
+
+[![CI](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+[![license](https://img.shields.io/badge/license-MIT-3DA639)](LICENSE)
+[![homepage](https://img.shields.io/badge/homepage-ccao2679.com-555555)](https://www.ccao2679.com/projects/#local-speaker-lab)
+
+<img src="docs/figures/overview.png" alt="Overview poster: 200 ASCEND clips with three glossaries (600 CPU runs) and a separate-match-transcribe-summarize pipeline" width="100%">
+
+</div>
 
 Propio 的本地语音实验代码，提供可复查的实验输入、模型运行和计分工具。核心实现位于 `src/speaker_lab/`，当前有两条工作流：
 
