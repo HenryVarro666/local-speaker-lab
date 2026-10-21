@@ -2,6 +2,13 @@
 
 [![CI](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml) · [MIT](LICENSE)
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/overview-dark.svg">
+    <img src="docs/overview-light.svg" alt="Overview: glossary-conditioned transcription of mixed Chinese-English clips, and a two-speaker separation, transcription and notes pipeline" width="560">
+  </picture>
+</p>
+
 Propio 的本地语音实验代码，提供可复查的实验输入、模型运行和计分工具。核心实现位于 `src/speaker_lab/`，当前有两条工作流：
 
 | 工作流 | 用途 | 入口 |
