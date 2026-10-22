@@ -44,7 +44,7 @@ DuplexLab 各轮冻结数据不同，不能跨行排名。最新总体对比区�
 
 ## 开始与验证
 
-核心包 Python ≥3.11；GPU 工作流采用独立 Python 3.12 环境。先读[快速开始](docs/GETTING_STARTED.md)，再选工作流。Windows 由包依赖安装 `tzdata`，提供日历时区。原生 Linux 后端准备另需 GNU `patch`；缺少该命令时，仅对应工具测试跳过。
+核心包 Python ≥3.11；GPU 工作流采用独立 Python 3.12 环境。先读[快速开始](docs/GETTING_STARTED.md)，再选工作流。Windows 由包依赖安装 `tzdata`，提供日历时区。原生后端准备面向 Linux GPU 环境并需要 POSIX `patch`；对应三项部署工具测试不属于 Windows 可移植检查。
 
 轻量开发环境：
 

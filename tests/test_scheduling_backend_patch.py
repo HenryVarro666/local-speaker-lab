@@ -6,13 +6,15 @@ import importlib.util
 import json
 from pathlib import Path
 import shutil
+import sys
 import pytest
 
 
 @pytest.mark.parametrize("variant", ["cached", "prefill", "calendar"])
+@pytest.mark.skipif(sys.platform == "win32", reason="Native Linux backend deployment uses POSIX patch")
 def test_backend_patch_is_verified_idempotent_and_preserves_existing_source(tmp_path, variant):
     if shutil.which("patch") is None:
-        pytest.skip("The native Linux backend preparation requires GNU patch")
+        pytest.skip("The native Linux backend preparation requires POSIX patch")
     path = Path(__file__).resolve().parents[1] / "scripts/prepare_personaplex_native.py"
     spec = importlib.util.spec_from_file_location("native_prepare", path)
     module = importlib.util.module_from_spec(spec)

@@ -44,7 +44,7 @@ DuplexLab studies use different frozen cohorts and cannot be ranked across rows.
 
 ## Start and verify
 
-Python ≥3.11 for the core package; GPU workflows use separate Python 3.12 model environments. Start with [GETTING_STARTED](docs/GETTING_STARTED.md), then choose a workflow. Windows installs `tzdata` for the named calendar zone. Native Linux backend preparation also needs GNU `patch`; its tool-specific tests skip when that command is absent.
+Python ≥3.11 for the core package; GPU workflows use separate Python 3.12 model environments. Start with [GETTING_STARTED](docs/GETTING_STARTED.md), then choose a workflow. Windows installs `tzdata` for the named calendar zone. Native backend preparation targets the Linux GPU environment and needs POSIX `patch`; its three deployment-tool tests are excluded from Windows portable checks.
 
 Lightweight development setup:
 
