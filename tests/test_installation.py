@@ -56,6 +56,9 @@ def test_direct_runtime_inputs_are_represented_by_each_lock():
             assert name in locked, (stage, name)
             assert pinned_version(locked[name]) in requirement.specifier, (stage, name)
         for requirement in core:
+            # These snapshots target Linux even when checked on a Windows host.
+            if requirement.marker and not requirement.marker.evaluate({"sys_platform": "linux"}):
+                continue
             name = canonicalize_name(requirement.name)
             assert pinned_version(locked[name]) in requirement.specifier, (stage, name)
         for name, constraint in constraints.items():

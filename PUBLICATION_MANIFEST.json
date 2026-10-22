@@ -79,8 +79,8 @@
     },
     {
       "path": "PUBLICATION_AUDIT.json",
-      "sha256": "d7313a657fa80785162fb37cf53f4680077fa4263c26644298f81a2c20a01531",
-      "bytes": 1785
+      "sha256": "75f38e95209f9da0c3299143c3bb579730049b198705593ff7bd1aed54550f43",
+      "bytes": 1955
     },
     {
       "path": "README.md",
@@ -1729,8 +1729,8 @@
     },
     {
       "path": "tests/test_installation.py",
-      "sha256": "6c85576b5addbe3a1f3ad58615042afe3d468498fa30ad8f6c109c17e89d3f3e",
-      "bytes": 4093
+      "sha256": "c88fbf70115a1dfa8be356422bc5c0b4548e1fd600590ec0dffef349cec2bbf7",
+      "bytes": 4296
     },
     {
       "path": "tests/test_ollama_install_recovery.py",
