@@ -1,0 +1,2544 @@
+{
+  "date": "2026-10-20",
+  "status": "not_selected_additional_waveform_guard_failed",
+  "timing_boundary": "gateway native_readback event to first same-epoch native_voice_started PCM RMS > .008; excludes observer, query, browser, hardware and strict cold start",
+  "input_origin": "paced synthetic macOS Samantha; four unique input waves; confirmation repeated",
+  "baseline": {
+    "count": 10,
+    "values_ms": [
+      1512.038,
+      1502.165,
+      1661.567,
+      1509.621,
+      1651.813,
+      1568.822,
+      1474.007,
+      1614.281,
+      1534.24,
+      1734.432
+    ],
+    "min_ms": 1474.007,
+    "median_ms": 1551.531,
+    "max_ms": 1734.432
+  },
+  "original_uncached": {
+    "count": 10,
+    "values_ms": [
+      3316.705,
+      3284.78,
+      3456.979,
+      3232.057,
+      3422.204,
+      3359.624,
+      3279.071,
+      3428.369,
+      3267.199,
+      3421.605
+    ],
+    "min_ms": 3232.057,
+    "median_ms": 3338.1645,
+    "max_ms": 3456.979
+  },
+  "median_reduction_percent": 42.11,
+  "intermediate": {
+    "run": "forced-prefill-38",
+    "status": "passed",
+    "error": null,
+    "elapsed_seconds": 54.01,
+    "latency": [
+      {
+        "epoch": 3,
+        "purpose": "proposal",
+        "latency_ms": 970.022
+      },
+      {
+        "epoch": 7,
+        "purpose": "proposal",
+        "latency_ms": 1007.573
+      },
+      {
+        "epoch": 10,
+        "purpose": "receipt",
+        "latency_ms": 1090.031
+      },
+      {
+        "epoch": 14,
+        "purpose": "proposal",
+        "latency_ms": 934.672
+      },
+      {
+        "epoch": 17,
+        "purpose": "receipt",
+        "latency_ms": 1049.913
+      }
+    ],
+    "waveform_checks": [
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 7,
+        "purpose": "proposal",
+        "asr_text": "Friday October twenty third at four thirty p.m.",
+        "expected": {
+          "start": "2026-10-23T16:30:00-05:00",
+          "version": 3,
+          "operation": "create"
+        },
+        "file": "qa-epoch-7-attempt-1.wav",
+        "sha256": "4035bb799f5ece693427d5f0f05a29d11c0c10b05e66516e9ce9563841b6cf86",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      },
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 10,
+        "purpose": "receipt",
+        "asr_text": "Your booking references BK number one confirmed for Friday October twenty third at four thirty PM.",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-23T16:30:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "file": "qa-epoch-10-attempt-3.wav",
+        "sha256": "b07153fadc17b96642acc0799406f1cb71dd0146b66081cc5631d71f33d529f5",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      },
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 14,
+        "purpose": "proposal",
+        "asr_text": "Thursday October twenty second at two p.m. is.",
+        "expected": {
+          "start": "2026-10-22T14:00:00-05:00",
+          "version": 5,
+          "operation": "reschedule"
+        },
+        "file": "qa-epoch-14-attempt-1.wav",
+        "sha256": "a70983704ce5a4269168e810f716f6b30041244cd59dc91c3188e97473cb950e",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      },
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 17,
+        "purpose": "receipt",
+        "asr_text": "Your booking reference is BK number one confirmed for Thursday, October twenty second at two p.m.",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-22T14:00:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "file": "qa-epoch-17-attempt-3.wav",
+        "sha256": "0f00b6def010c43ddc0ed312f5945d91c054596ab78c546bf2b2f2ceb12c407f",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      }
+    ],
+    "handshakes": 1,
+    "fallbacks": 0,
+    "correction_during_native_voice": true,
+    "cache_acks": [
+      {
+        "client_elapsed_ms": 8176.701,
+        "kind": "native_control",
+        "elapsed_ms": 8084.808,
+        "phase": "applied",
+        "epoch": 3,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+        "cached_text_tokens": 18,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 1.373,
+          "silence_before": 0.0,
+          "text": 640.373,
+          "silence_after": 120.635
+        }
+      },
+      {
+        "client_elapsed_ms": 13165.415,
+        "kind": "native_control",
+        "elapsed_ms": 13076.404,
+        "phase": "applied",
+        "epoch": 7,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+        "cached_text_tokens": 18,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 1.704,
+          "silence_before": 0.0,
+          "text": 641.954,
+          "silence_after": 121.024
+        }
+      },
+      {
+        "client_elapsed_ms": 20757.038,
+        "kind": "native_control",
+        "elapsed_ms": 20603.711,
+        "phase": "applied",
+        "epoch": 10,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+        "cached_text_tokens": 18,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 2.634,
+          "silence_before": 0.0,
+          "text": 737.827,
+          "silence_after": 121.301
+        }
+      },
+      {
+        "client_elapsed_ms": 32558.849,
+        "kind": "native_control",
+        "elapsed_ms": 32468.207,
+        "phase": "applied",
+        "epoch": 14,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+        "cached_text_tokens": 18,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 1.671,
+          "silence_before": 0.0,
+          "text": 641.595,
+          "silence_after": 120.83
+        }
+      },
+      {
+        "client_elapsed_ms": 38679.954,
+        "kind": "native_control",
+        "elapsed_ms": 38588.069,
+        "phase": "applied",
+        "epoch": 17,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+        "cached_text_tokens": 18,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 2.162,
+          "silence_before": 0.0,
+          "text": 729.842,
+          "silence_after": 120.76
+        }
+      }
+    ],
+    "result_sha256": "f17befc41a87579520b3deaf3a3cbd0d9474510764eaba21b47346986a5ff27a",
+    "events_sha256": "a58187f81776da031ca010da07a43e4ffe2617d562b0772032f1aa9fdd8a571e"
+  },
+  "pre_seed_single_pass": {
+    "run": "tool-prefill-word-40",
+    "status": "passed",
+    "error": null,
+    "elapsed_seconds": 55.076,
+    "latency": [
+      {
+        "epoch": 3,
+        "purpose": "proposal",
+        "latency_ms": 898.956
+      },
+      {
+        "epoch": 7,
+        "purpose": "proposal",
+        "latency_ms": 876.646
+      },
+      {
+        "epoch": 10,
+        "purpose": "receipt",
+        "latency_ms": 915.197
+      },
+      {
+        "epoch": 14,
+        "purpose": "proposal",
+        "latency_ms": 799.847
+      },
+      {
+        "epoch": 17,
+        "purpose": "receipt",
+        "latency_ms": 920.956
+      }
+    ],
+    "waveform_checks": [
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 7,
+        "purpose": "proposal",
+        "asr_text": "Friday October twenty third at four thirty p.m.",
+        "expected": {
+          "start": "2026-10-23T16:30:00-05:00",
+          "version": 3,
+          "operation": "create"
+        },
+        "file": "qa-epoch-7-attempt-1.wav",
+        "sha256": "9bf6a965a6f4ddb74edcc577fd9fa66b83ae09bd15f3934de254fb0002f40bd8",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      },
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 10,
+        "purpose": "receipt",
+        "asr_text": "Your booking references BK number one confirmed for Friday October twenty third at four thirty p.m.",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-23T16:30:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "file": "qa-epoch-10-attempt-3.wav",
+        "sha256": "61c528da9a49ac4467ffa8b696541fbef03bcd7cc111114aa1ddd03c59473d37",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      },
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 14,
+        "purpose": "proposal",
+        "asr_text": "Thursday October twenty second at two p.m.",
+        "expected": {
+          "start": "2026-10-22T14:00:00-05:00",
+          "version": 5,
+          "operation": "reschedule"
+        },
+        "file": "qa-epoch-14-attempt-1.wav",
+        "sha256": "9fac2c25123c70193d58986bcc2b89cbef391e22eb1dea8ca49aec4d4e1a9b17",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      },
+      {
+        "kind": "native_waveform_verified",
+        "epoch": 17,
+        "purpose": "receipt",
+        "asr_text": "Your booking reference is BK number one confirmed for Thursday, October twenty second at two p.m.",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-22T14:00:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "file": "qa-epoch-17-attempt-3.wav",
+        "sha256": "1697031981d7534747d5800fb2ac0c6db0b7db51b521ed6fcca460337581c66e",
+        "model": "Qwen3-ASR-0.6B",
+        "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+        "strict_recheck": true
+      }
+    ],
+    "handshakes": 1,
+    "fallbacks": 0,
+    "correction_during_native_voice": true,
+    "cache_acks": [
+      {
+        "client_elapsed_ms": 8514.344,
+        "kind": "native_control",
+        "elapsed_ms": 8262.62,
+        "phase": "applied",
+        "epoch": 3,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+        "cached_text_tokens": 28,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 1.62,
+          "silence_before": 0.0,
+          "text": 515.276,
+          "silence_after": 121.414
+        }
+      },
+      {
+        "client_elapsed_ms": 13355.545,
+        "kind": "native_control",
+        "elapsed_ms": 13164.032,
+        "phase": "applied",
+        "epoch": 7,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+        "cached_text_tokens": 28,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 1.627,
+          "silence_before": 0.0,
+          "text": 514.109,
+          "silence_after": 121.25
+        }
+      },
+      {
+        "client_elapsed_ms": 20945.733,
+        "kind": "native_control",
+        "elapsed_ms": 20659.284,
+        "phase": "applied",
+        "epoch": 10,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+        "cached_text_tokens": 28,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 1.665,
+          "silence_before": 0.0,
+          "text": 591.925,
+          "silence_after": 120.937
+        }
+      },
+      {
+        "client_elapsed_ms": 32941.417,
+        "kind": "native_control",
+        "elapsed_ms": 32751.046,
+        "phase": "applied",
+        "epoch": 14,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+        "cached_text_tokens": 28,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 1.416,
+          "silence_before": 0.0,
+          "text": 513.778,
+          "silence_after": 120.662
+        }
+      },
+      {
+        "client_elapsed_ms": 39300.114,
+        "kind": "native_control",
+        "elapsed_ms": 39107.661,
+        "phase": "applied",
+        "epoch": 17,
+        "mode": "read_cached",
+        "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+        "cached_text_tokens": 28,
+        "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+        "prefix_cache_hit": true,
+        "prefill_timings_ms": {
+          "voice_restore": 2.19,
+          "silence_before": 0.0,
+          "text": 592.679,
+          "silence_after": 120.787
+        }
+      }
+    ],
+    "result_sha256": "009d73b48991eabe8cb249aed5e5d37c11cb1a29dd21fe2215fc4d81b16dcdea",
+    "events_sha256": "b06d85010a4ae77e7e862ced851859330923419a294660e475b2d2909d32bd92"
+  },
+  "discarded": [
+    {
+      "run": "tool-prefill-39",
+      "status": "failed",
+      "error": "TimeoutError: final native speech (independent waveform ASR)",
+      "elapsed_seconds": 101.095,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 894.911
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 892.893
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 938.975
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "latency_ms": 865.919
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "latency_ms": 904.85
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty p.m.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "731c877e1ab9bae2e9efa47be58a9bf4e4b910c4f6ed7b774e479dde7d2b3ef7",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking references BK number one confirmed for Friday, October twenty-third at four thirty PM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "cf9d86a31501c456df0d17caafb1cfe5d69c44c36c6ba26279b4caf6f9f14c5e",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday, October twenty second at two p.m.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "53590e6d09ffe02491728fcca5180c5a1f36a26e17e197ce086874514f8ebddb",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        }
+      ],
+      "handshakes": 1,
+      "fallbacks": 0,
+      "correction_during_native_voice": null,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 8531.979,
+          "kind": "native_control",
+          "elapsed_ms": 8373.322,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.914,
+            "silence_before": 0.0,
+            "text": 517.387,
+            "silence_after": 121.722
+          }
+        },
+        {
+          "client_elapsed_ms": 13401.814,
+          "kind": "native_control",
+          "elapsed_ms": 13242.383,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.119,
+            "silence_before": 0.0,
+            "text": 514.276,
+            "silence_after": 120.576
+          }
+        },
+        {
+          "client_elapsed_ms": 21032.1,
+          "kind": "native_control",
+          "elapsed_ms": 20873.031,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 3.25,
+            "silence_before": 0.0,
+            "text": 607.298,
+            "silence_after": 120.708
+          }
+        },
+        {
+          "client_elapsed_ms": 33462.666,
+          "kind": "native_control",
+          "elapsed_ms": 33302.488,
+          "phase": "applied",
+          "epoch": 14,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 2.329,
+            "silence_before": 0.0,
+            "text": 512.584,
+            "silence_after": 120.125
+          }
+        },
+        {
+          "client_elapsed_ms": 39663.884,
+          "kind": "native_control",
+          "elapsed_ms": 39505.135,
+          "phase": "applied",
+          "epoch": 17,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 0.85,
+            "silence_before": 0.0,
+            "text": 597.606,
+            "silence_after": 119.886
+          }
+        }
+      ],
+      "result_sha256": "eabf4fc122f9f0353f9339499e36fe9f24fd2f1a639bf1944d36562ba943f0aa",
+      "events_sha256": "8f9cbabe41f61237b5cc979882a74c8bcdbc485451b118cc955a881fbcf0df07"
+    },
+    {
+      "run": "tool-prefill-word-repeat-41",
+      "status": "failed",
+      "error": "TimeoutError: native receipt speech (independent waveform ASR)",
+      "elapsed_seconds": 80.564,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 861.142
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 889.0
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 901.5
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday, October twenty third at four thirty PM.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "162782799425953b334e1c98f6fd243999be77a3edc9c1583e50ad19e88dc692",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        }
+      ],
+      "handshakes": 1,
+      "fallbacks": 0,
+      "correction_during_native_voice": null,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 8453.819,
+          "kind": "native_control",
+          "elapsed_ms": 8086.662,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.432,
+            "silence_before": 0.0,
+            "text": 514.187,
+            "silence_after": 120.974
+          }
+        },
+        {
+          "client_elapsed_ms": 13385.5,
+          "kind": "native_control",
+          "elapsed_ms": 12966.686,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.376,
+            "silence_before": 0.0,
+            "text": 514.873,
+            "silence_after": 121.001
+          }
+        },
+        {
+          "client_elapsed_ms": 20726.288,
+          "kind": "native_control",
+          "elapsed_ms": 20352.361,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.069,
+            "silence_before": 0.0,
+            "text": 588.854,
+            "silence_after": 120.384
+          }
+        }
+      ],
+      "result_sha256": "dadd485fbbc88a1988b2eb6ce41bc5a0332ff6fbd5d73a0c19683afa9036a629",
+      "events_sha256": "671a8dfa2555307501139519cfee2e4ba225c9b0f42fb73a877016a23a2f5ea5"
+    }
+  ],
+  "rejected_seeded_summary": {
+    "date": "2026-10-20",
+    "status": "not_selected_novel_waveform_failed",
+    "timing_boundary": "gateway native_readback event to first same-epoch native_voice_started PCM RMS > .008; excludes observer, query, browser, hardware and strict cold start",
+    "input_origin": "paced synthetic macOS Samantha; four unique input waves; confirmation repeated",
+    "baseline": {
+      "count": 10,
+      "values_ms": [
+        1512.038,
+        1502.165,
+        1661.567,
+        1509.621,
+        1651.813,
+        1568.822,
+        1474.007,
+        1614.281,
+        1534.24,
+        1734.432
+      ],
+      "min_ms": 1474.007,
+      "median_ms": 1551.531,
+      "max_ms": 1734.432
+    },
+    "original_uncached": {
+      "count": 10,
+      "values_ms": [
+        3316.705,
+        3284.78,
+        3456.979,
+        3232.057,
+        3422.204,
+        3359.624,
+        3279.071,
+        3428.369,
+        3267.199,
+        3421.605
+      ],
+      "min_ms": 3232.057,
+      "median_ms": 3338.1645,
+      "max_ms": 3456.979
+    },
+    "median_reduction_percent": 42.25,
+    "all_selected_under_one_second": true,
+    "intermediate": {
+      "run": "forced-prefill-38",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 54.01,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 970.022
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 1007.573
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 1090.031
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "latency_ms": 934.672
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "latency_ms": 1049.913
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty p.m.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "4035bb799f5ece693427d5f0f05a29d11c0c10b05e66516e9ce9563841b6cf86",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking references BK number one confirmed for Friday October twenty third at four thirty PM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "b07153fadc17b96642acc0799406f1cb71dd0146b66081cc5631d71f33d529f5",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday October twenty second at two p.m. is.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "a70983704ce5a4269168e810f716f6b30041244cd59dc91c3188e97473cb950e",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your booking reference is BK number one confirmed for Thursday, October twenty second at two p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "0f00b6def010c43ddc0ed312f5945d91c054596ab78c546bf2b2f2ceb12c407f",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        }
+      ],
+      "handshakes": 1,
+      "fallbacks": 0,
+      "correction_during_native_voice": true,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 8176.701,
+          "kind": "native_control",
+          "elapsed_ms": 8084.808,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 18,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.373,
+            "silence_before": 0.0,
+            "text": 640.373,
+            "silence_after": 120.635
+          }
+        },
+        {
+          "client_elapsed_ms": 13165.415,
+          "kind": "native_control",
+          "elapsed_ms": 13076.404,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 18,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.704,
+            "silence_before": 0.0,
+            "text": 641.954,
+            "silence_after": 121.024
+          }
+        },
+        {
+          "client_elapsed_ms": 20757.038,
+          "kind": "native_control",
+          "elapsed_ms": 20603.711,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 18,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 2.634,
+            "silence_before": 0.0,
+            "text": 737.827,
+            "silence_after": 121.301
+          }
+        },
+        {
+          "client_elapsed_ms": 32558.849,
+          "kind": "native_control",
+          "elapsed_ms": 32468.207,
+          "phase": "applied",
+          "epoch": 14,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 18,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.671,
+            "silence_before": 0.0,
+            "text": 641.595,
+            "silence_after": 120.83
+          }
+        },
+        {
+          "client_elapsed_ms": 38679.954,
+          "kind": "native_control",
+          "elapsed_ms": 38588.069,
+          "phase": "applied",
+          "epoch": 17,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 18,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 2.162,
+            "silence_before": 0.0,
+            "text": 729.842,
+            "silence_after": 120.76
+          }
+        }
+      ],
+      "result_sha256": "f17befc41a87579520b3deaf3a3cbd0d9474510764eaba21b47346986a5ff27a",
+      "events_sha256": "a58187f81776da031ca010da07a43e4ffe2617d562b0772032f1aa9fdd8a571e"
+    },
+    "pre_seed_single_pass": {
+      "run": "tool-prefill-word-40",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 55.076,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 898.956
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 876.646
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 915.197
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "latency_ms": 799.847
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "latency_ms": 920.956
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty p.m.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "9bf6a965a6f4ddb74edcc577fd9fa66b83ae09bd15f3934de254fb0002f40bd8",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking references BK number one confirmed for Friday October twenty third at four thirty p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "61c528da9a49ac4467ffa8b696541fbef03bcd7cc111114aa1ddd03c59473d37",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday October twenty second at two p.m.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "9fac2c25123c70193d58986bcc2b89cbef391e22eb1dea8ca49aec4d4e1a9b17",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your booking reference is BK number one confirmed for Thursday, October twenty second at two p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "1697031981d7534747d5800fb2ac0c6db0b7db51b521ed6fcca460337581c66e",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        }
+      ],
+      "handshakes": 1,
+      "fallbacks": 0,
+      "correction_during_native_voice": true,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 8514.344,
+          "kind": "native_control",
+          "elapsed_ms": 8262.62,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.62,
+            "silence_before": 0.0,
+            "text": 515.276,
+            "silence_after": 121.414
+          }
+        },
+        {
+          "client_elapsed_ms": 13355.545,
+          "kind": "native_control",
+          "elapsed_ms": 13164.032,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.627,
+            "silence_before": 0.0,
+            "text": 514.109,
+            "silence_after": 121.25
+          }
+        },
+        {
+          "client_elapsed_ms": 20945.733,
+          "kind": "native_control",
+          "elapsed_ms": 20659.284,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.665,
+            "silence_before": 0.0,
+            "text": 591.925,
+            "silence_after": 120.937
+          }
+        },
+        {
+          "client_elapsed_ms": 32941.417,
+          "kind": "native_control",
+          "elapsed_ms": 32751.046,
+          "phase": "applied",
+          "epoch": 14,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.416,
+            "silence_before": 0.0,
+            "text": 513.778,
+            "silence_after": 120.662
+          }
+        },
+        {
+          "client_elapsed_ms": 39300.114,
+          "kind": "native_control",
+          "elapsed_ms": 39107.661,
+          "phase": "applied",
+          "epoch": 17,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 2.19,
+            "silence_before": 0.0,
+            "text": 592.679,
+            "silence_after": 120.787
+          }
+        }
+      ],
+      "result_sha256": "009d73b48991eabe8cb249aed5e5d37c11cb1a29dd21fe2215fc4d81b16dcdea",
+      "events_sha256": "b06d85010a4ae77e7e862ced851859330923419a294660e475b2d2909d32bd92"
+    },
+    "discarded": [
+      {
+        "run": "tool-prefill-39",
+        "status": "failed",
+        "error": "TimeoutError: final native speech (independent waveform ASR)",
+        "elapsed_seconds": 101.095,
+        "latency": [
+          {
+            "epoch": 3,
+            "purpose": "proposal",
+            "latency_ms": 894.911
+          },
+          {
+            "epoch": 7,
+            "purpose": "proposal",
+            "latency_ms": 892.893
+          },
+          {
+            "epoch": 10,
+            "purpose": "receipt",
+            "latency_ms": 938.975
+          },
+          {
+            "epoch": 14,
+            "purpose": "proposal",
+            "latency_ms": 865.919
+          },
+          {
+            "epoch": 17,
+            "purpose": "receipt",
+            "latency_ms": 904.85
+          }
+        ],
+        "waveform_checks": [
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 7,
+            "purpose": "proposal",
+            "asr_text": "Friday October twenty third at four thirty p.m.",
+            "expected": {
+              "start": "2026-10-23T16:30:00-05:00",
+              "version": 3,
+              "operation": "create"
+            },
+            "file": "qa-epoch-7-attempt-1.wav",
+            "sha256": "731c877e1ab9bae2e9efa47be58a9bf4e4b910c4f6ed7b774e479dde7d2b3ef7",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 10,
+            "purpose": "receipt",
+            "asr_text": "Your booking references BK number one confirmed for Friday, October twenty-third at four thirty PM.",
+            "expected": {
+              "id": "BK-0001",
+              "start": "2026-10-23T16:30:00-05:00",
+              "service": "Consultation",
+              "timezone": "America/Chicago",
+              "simulated": true
+            },
+            "file": "qa-epoch-10-attempt-3.wav",
+            "sha256": "cf9d86a31501c456df0d17caafb1cfe5d69c44c36c6ba26279b4caf6f9f14c5e",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 14,
+            "purpose": "proposal",
+            "asr_text": "Thursday, October twenty second at two p.m.",
+            "expected": {
+              "start": "2026-10-22T14:00:00-05:00",
+              "version": 5,
+              "operation": "reschedule"
+            },
+            "file": "qa-epoch-14-attempt-1.wav",
+            "sha256": "53590e6d09ffe02491728fcca5180c5a1f36a26e17e197ce086874514f8ebddb",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          }
+        ],
+        "handshakes": 1,
+        "fallbacks": 0,
+        "correction_during_native_voice": null,
+        "cache_acks": [
+          {
+            "client_elapsed_ms": 8531.979,
+            "kind": "native_control",
+            "elapsed_ms": 8373.322,
+            "phase": "applied",
+            "epoch": 3,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.914,
+              "silence_before": 0.0,
+              "text": 517.387,
+              "silence_after": 121.722
+            }
+          },
+          {
+            "client_elapsed_ms": 13401.814,
+            "kind": "native_control",
+            "elapsed_ms": 13242.383,
+            "phase": "applied",
+            "epoch": 7,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.119,
+              "silence_before": 0.0,
+              "text": 514.276,
+              "silence_after": 120.576
+            }
+          },
+          {
+            "client_elapsed_ms": 21032.1,
+            "kind": "native_control",
+            "elapsed_ms": 20873.031,
+            "phase": "applied",
+            "epoch": 10,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 3.25,
+              "silence_before": 0.0,
+              "text": 607.298,
+              "silence_after": 120.708
+            }
+          },
+          {
+            "client_elapsed_ms": 33462.666,
+            "kind": "native_control",
+            "elapsed_ms": 33302.488,
+            "phase": "applied",
+            "epoch": 14,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 2.329,
+              "silence_before": 0.0,
+              "text": 512.584,
+              "silence_after": 120.125
+            }
+          },
+          {
+            "client_elapsed_ms": 39663.884,
+            "kind": "native_control",
+            "elapsed_ms": 39505.135,
+            "phase": "applied",
+            "epoch": 17,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 0.85,
+              "silence_before": 0.0,
+              "text": 597.606,
+              "silence_after": 119.886
+            }
+          }
+        ],
+        "result_sha256": "eabf4fc122f9f0353f9339499e36fe9f24fd2f1a639bf1944d36562ba943f0aa",
+        "events_sha256": "8f9cbabe41f61237b5cc979882a74c8bcdbc485451b118cc955a881fbcf0df07"
+      },
+      {
+        "run": "tool-prefill-word-repeat-41",
+        "status": "failed",
+        "error": "TimeoutError: native receipt speech (independent waveform ASR)",
+        "elapsed_seconds": 80.564,
+        "latency": [
+          {
+            "epoch": 3,
+            "purpose": "proposal",
+            "latency_ms": 861.142
+          },
+          {
+            "epoch": 7,
+            "purpose": "proposal",
+            "latency_ms": 889.0
+          },
+          {
+            "epoch": 10,
+            "purpose": "receipt",
+            "latency_ms": 901.5
+          }
+        ],
+        "waveform_checks": [
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 7,
+            "purpose": "proposal",
+            "asr_text": "Friday, October twenty third at four thirty PM.",
+            "expected": {
+              "start": "2026-10-23T16:30:00-05:00",
+              "version": 3,
+              "operation": "create"
+            },
+            "file": "qa-epoch-7-attempt-1.wav",
+            "sha256": "162782799425953b334e1c98f6fd243999be77a3edc9c1583e50ad19e88dc692",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          }
+        ],
+        "handshakes": 1,
+        "fallbacks": 0,
+        "correction_during_native_voice": null,
+        "cache_acks": [
+          {
+            "client_elapsed_ms": 8453.819,
+            "kind": "native_control",
+            "elapsed_ms": 8086.662,
+            "phase": "applied",
+            "epoch": 3,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.432,
+              "silence_before": 0.0,
+              "text": 514.187,
+              "silence_after": 120.974
+            }
+          },
+          {
+            "client_elapsed_ms": 13385.5,
+            "kind": "native_control",
+            "elapsed_ms": 12966.686,
+            "phase": "applied",
+            "epoch": 7,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.376,
+              "silence_before": 0.0,
+              "text": 514.873,
+              "silence_after": 121.001
+            }
+          },
+          {
+            "client_elapsed_ms": 20726.288,
+            "kind": "native_control",
+            "elapsed_ms": 20352.361,
+            "phase": "applied",
+            "epoch": 10,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.069,
+              "silence_before": 0.0,
+              "text": 588.854,
+              "silence_after": 120.384
+            }
+          }
+        ],
+        "result_sha256": "dadd485fbbc88a1988b2eb6ce41bc5a0332ff6fbd5d73a0c19683afa9036a629",
+        "events_sha256": "671a8dfa2555307501139519cfee2e4ba225c9b0f42fb73a877016a23a2f5ea5"
+      }
+    ],
+    "parity": {
+      "status": "streaming_state_parity_passed_waveform_reference_failed",
+      "origin": "direct tool command plus paced zero PCM; no user speech",
+      "states_compared": {
+        "tensors": 100,
+        "scalars": 65,
+        "comparison": "exact; NaNs equal"
+      },
+      "timing": "diagnostic snapshot/synchronization; excluded from latency statistics",
+      "audio_reference_gate": "BK1 Number One is contradictory unmarked literal BK1 plus alias; rejected",
+      "sampling": "discarded samples skipped, RNG consumption changed; future sampled waveform not claimed identical",
+      "source_sha256": {
+        "src/speaker_lab/scheduling/prefill.py": "0011cc9d87088659a09efe96cf3223cef947e7cb8d2148c45e96490979fe73be",
+        "runs/scheduling/native-injection/upstream/server_forced_prefill.py": "73c35b6816ff3226f68ac89a9f8c032cfc3833cf1c345a4b2f74e9f05f4c9828"
+      }
+    },
+    "backend_sha256": "1e4a37771433bd679c59e49abd9731283949042c20dcc30a8881df73d5ef6d3b",
+    "source_sha256": {
+      "src/speaker_lab/scheduling/page.html": "2853126801b976cd513044e4320cbab9d82dc5abd67e31563b20e6759df4a5b2",
+      "src/speaker_lab/scheduling/server.py": "da01608bc3e6cf71c867f768119738d8a1063f6ce6995ce1ffef01cfae0fbc24",
+      "src/speaker_lab/scheduling/domain.py": "7b9329d85c7d8a4705906f9b1d8fcbf20df204f9c9172e984e267ccfe06504fc",
+      "src/speaker_lab/scheduling/native_control.py": "4df927bf335bff4ac8e8c72b04ce21518ee0d72b7f5f1457db64fc16695ced55",
+      "src/speaker_lab/scheduling/__init__.py": "681421335d317455144e0753617681fb7f5635b16300a04b6defe5f78ea1a77b",
+      "src/speaker_lab/scheduling/prefill.py": "0011cc9d87088659a09efe96cf3223cef947e7cb8d2148c45e96490979fe73be",
+      "src/speaker_lab/scheduling/audio.py": "84110f9813b3bdb44b919ebf02efbcc588a25cf9bab189a8826831229ec3c90a",
+      "src/speaker_lab/scheduling/prefix_cache.py": "600a3fe49772eba3216c5dcd839cb643914a723ac58ff5a3527c31dc78d50d3c",
+      "src/speaker_lab/scheduling/personaplex.py": "670808f68d059dd50a7f65e6de0b21ddd0cc1dfca5f6eb75e73d0a243f7c4130",
+      "src/speaker_lab/scheduling/__main__.py": "5d38f76c37781c145d3dafdebabc9ae1f1842a1a5bd713b85f6603eb945d42d6"
+    },
+    "validator_sha256": "b64d2fa547265487fe15ce5bc565441d9cc6a7cdfe185103b5abcb625afdd315",
+    "trained": false,
+    "human_microphone": false,
+    "subjective_listening": false,
+    "novel_probe": {
+      "status": "failed",
+      "origin": "direct simulated-tool facts plus paced zero PCM; no user speech",
+      "waveform_checks": [
+        {
+          "file": "stage-3.wav",
+          "sha256": "422919117adb1a927ceb3e52da8c7d7be0665962b30bba814040bb86b18d644a",
+          "text": "To the October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+          "expected": {
+            "start": "2026-10-20T11:00:00-05:00",
+            "version": 1,
+            "operation": "create"
+          },
+          "strict_fact_passed": false
+        },
+        {
+          "file": "stage-4.wav",
+          "sha256": "304c5f85a372781f2e7d15c8b4200c3d6b054ad7c26ca26f8ae87e04aa1aff67",
+          "text": "Your booking reference is B number one confirmed for Tuesday, October 20th, 11:00 A.M.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-20T11:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": false
+        },
+        {
+          "file": "stage-5.wav",
+          "sha256": "452681ae4b7965e1618c4604c985aeafdebaf55eb94eaaf6d5b91710941bca66",
+          "text": "Wednesday, October 21st at 9:30 A.M. is the valet say yes, confirm to book, save it.",
+          "expected": {
+            "start": "2026-10-21T09:30:00-05:00",
+            "version": 2,
+            "operation": "reschedule"
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-6.wav",
+          "sha256": "23172fa63644604ea62f510a1a0dd9f9d5b9b03cab3ce3df5c739e69acac4f67",
+          "text": "Your booking reference is BK number one, confirmed for Wednesday, October twenty-first at nine thirty AM M.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-21T09:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": true
+        }
+      ],
+      "cancellation": "Superseded epoch 2 has no applied ACK; applied 3,4,5,6,7",
+      "human_listening": false
+    },
+    "limits": "Small development samples, unpaired RNG, changed numeric spelling; tool speech CUDA seed fixed to 42, without per-case seed search. First interrupted proposal excluded from complete waveform denominator. Not hardware first sound, cold start, p95 or general speech reliability.",
+    "deployment_changed": false,
+    "candidate": {
+      "count": 10,
+      "values_ms": [
+        938.77,
+        865.351,
+        876.661,
+        835.353,
+        916.358,
+        851.319,
+        937.54,
+        915.211,
+        805.395,
+        960.721
+      ],
+      "min_ms": 805.395,
+      "median_ms": 895.9359999999999,
+      "max_ms": 960.721
+    },
+    "candidate_runs": [
+      {
+        "run": "seeded-prefill-43",
+        "status": "passed",
+        "error": null,
+        "elapsed_seconds": 53.122,
+        "latency": [
+          {
+            "epoch": 3,
+            "purpose": "proposal",
+            "latency_ms": 938.77
+          },
+          {
+            "epoch": 7,
+            "purpose": "proposal",
+            "latency_ms": 865.351
+          },
+          {
+            "epoch": 10,
+            "purpose": "receipt",
+            "latency_ms": 876.661
+          },
+          {
+            "epoch": 14,
+            "purpose": "proposal",
+            "latency_ms": 835.353
+          },
+          {
+            "epoch": 17,
+            "purpose": "receipt",
+            "latency_ms": 916.358
+          }
+        ],
+        "waveform_checks": [
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 7,
+            "purpose": "proposal",
+            "asr_text": "Friday, October twenty-third at four thirty PM.",
+            "expected": {
+              "start": "2026-10-23T16:30:00-05:00",
+              "version": 3,
+              "operation": "create"
+            },
+            "file": "qa-epoch-7-attempt-1.wav",
+            "sha256": "39b261e342698a072cb0167090882f6f332fb81d3fd51c117e6f28443161e88a",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 10,
+            "purpose": "receipt",
+            "asr_text": "Your booking references B K number one confirmed for Friday October twenty third at four thirty p.m.",
+            "expected": {
+              "id": "BK-0001",
+              "start": "2026-10-23T16:30:00-05:00",
+              "service": "Consultation",
+              "timezone": "America/Chicago",
+              "simulated": true
+            },
+            "file": "qa-epoch-10-attempt-3.wav",
+            "sha256": "f97b235dbd0de6f661a9bc4b58d60ebcf23871a8a20b8fa1293605bb5e537388",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 14,
+            "purpose": "proposal",
+            "asr_text": "Thursday, October twenty second at two p.m.",
+            "expected": {
+              "start": "2026-10-22T14:00:00-05:00",
+              "version": 5,
+              "operation": "reschedule"
+            },
+            "file": "qa-epoch-14-attempt-1.wav",
+            "sha256": "070f12526a287676123533bca39cd407bcb2337f3aadeaab1fef7913dabfdf36",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 17,
+            "purpose": "receipt",
+            "asr_text": "Your booking references BK number one confirmed for Thursday, October twenty second at two p.m.",
+            "expected": {
+              "id": "BK-0001",
+              "start": "2026-10-22T14:00:00-05:00",
+              "service": "Consultation",
+              "timezone": "America/Chicago",
+              "simulated": true
+            },
+            "file": "qa-epoch-17-attempt-2.wav",
+            "sha256": "5bd5d25f512912b9a03439486bbb3c28df540ac214560bce7e0eff78ddbca02d",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          }
+        ],
+        "handshakes": 1,
+        "fallbacks": 0,
+        "correction_during_native_voice": true,
+        "cache_acks": [
+          {
+            "client_elapsed_ms": 8584.232,
+            "kind": "native_control",
+            "elapsed_ms": 8363.06,
+            "phase": "applied",
+            "epoch": 3,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.121,
+              "silence_before": 0.0,
+              "text": 513.141,
+              "silence_after": 120.824
+            }
+          },
+          {
+            "client_elapsed_ms": 13463.907,
+            "kind": "native_control",
+            "elapsed_ms": 13243.225,
+            "phase": "applied",
+            "epoch": 7,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.299,
+              "silence_before": 0.0,
+              "text": 512.999,
+              "silence_after": 120.721
+            }
+          },
+          {
+            "client_elapsed_ms": 20834.291,
+            "kind": "native_control",
+            "elapsed_ms": 20612.69,
+            "phase": "applied",
+            "epoch": 10,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.509,
+              "silence_before": 0.0,
+              "text": 590.704,
+              "silence_after": 120.605
+            }
+          },
+          {
+            "client_elapsed_ms": 32900.743,
+            "kind": "native_control",
+            "elapsed_ms": 32677.673,
+            "phase": "applied",
+            "epoch": 14,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.061,
+              "silence_before": 0.0,
+              "text": 512.811,
+              "silence_after": 120.468
+            }
+          },
+          {
+            "client_elapsed_ms": 39019.504,
+            "kind": "native_control",
+            "elapsed_ms": 38797.963,
+            "phase": "applied",
+            "epoch": 17,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.456,
+              "silence_before": 0.0,
+              "text": 592.096,
+              "silence_after": 120.634
+            }
+          }
+        ],
+        "result_sha256": "3f693989cd7cc39e1e31f259ee9aae931557e8822040a6755532cf12f5d4306a",
+        "events_sha256": "753712af897a4d1f8d5d4a888107f09de8ae77d8ad252646d01b18b9c630426a"
+      },
+      {
+        "run": "seeded-prefill-repeat-44",
+        "status": "passed",
+        "error": null,
+        "elapsed_seconds": 54.078,
+        "latency": [
+          {
+            "epoch": 3,
+            "purpose": "proposal",
+            "latency_ms": 851.319
+          },
+          {
+            "epoch": 7,
+            "purpose": "proposal",
+            "latency_ms": 937.54
+          },
+          {
+            "epoch": 10,
+            "purpose": "receipt",
+            "latency_ms": 915.211
+          },
+          {
+            "epoch": 14,
+            "purpose": "proposal",
+            "latency_ms": 805.395
+          },
+          {
+            "epoch": 17,
+            "purpose": "receipt",
+            "latency_ms": 960.721
+          }
+        ],
+        "waveform_checks": [
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 7,
+            "purpose": "proposal",
+            "asr_text": "Friday, October twenty-third at four thirty PM.",
+            "expected": {
+              "start": "2026-10-23T16:30:00-05:00",
+              "version": 3,
+              "operation": "create"
+            },
+            "file": "qa-epoch-7-attempt-1.wav",
+            "sha256": "39b261e342698a072cb0167090882f6f332fb81d3fd51c117e6f28443161e88a",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 10,
+            "purpose": "receipt",
+            "asr_text": "Your booking references B K number one confirmed for Friday October twenty third at four thirty p.m.",
+            "expected": {
+              "id": "BK-0001",
+              "start": "2026-10-23T16:30:00-05:00",
+              "service": "Consultation",
+              "timezone": "America/Chicago",
+              "simulated": true
+            },
+            "file": "qa-epoch-10-attempt-3.wav",
+            "sha256": "8389165698cff7fe81bc26376a23b42c09d480b3fc8866579d50bc985d6dae9c",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 14,
+            "purpose": "proposal",
+            "asr_text": "Thursday, October twenty second at two p.m.",
+            "expected": {
+              "start": "2026-10-22T14:00:00-05:00",
+              "version": 5,
+              "operation": "reschedule"
+            },
+            "file": "qa-epoch-14-attempt-1.wav",
+            "sha256": "ead6d4ceef16acf8124f76580bfb35fe509680a4dbd8f3c4cb169744124adcd5",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          },
+          {
+            "kind": "native_waveform_verified",
+            "epoch": 17,
+            "purpose": "receipt",
+            "asr_text": "Your booking references BK number one confirmed for Thursday, October twenty-second at two p.m.",
+            "expected": {
+              "id": "BK-0001",
+              "start": "2026-10-22T14:00:00-05:00",
+              "service": "Consultation",
+              "timezone": "America/Chicago",
+              "simulated": true
+            },
+            "file": "qa-epoch-17-attempt-3.wav",
+            "sha256": "0427c726bf5128f7b97f0fee2d2c73010835bd90974766b9fe3cad3748edd1f5",
+            "model": "Qwen3-ASR-0.6B",
+            "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+            "strict_recheck": true
+          }
+        ],
+        "handshakes": 1,
+        "fallbacks": 0,
+        "correction_during_native_voice": true,
+        "cache_acks": [
+          {
+            "client_elapsed_ms": 8176.287,
+            "kind": "native_control",
+            "elapsed_ms": 7998.121,
+            "phase": "applied",
+            "epoch": 3,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.28,
+              "silence_before": 0.0,
+              "text": 512.568,
+              "silence_after": 120.487
+            }
+          },
+          {
+            "client_elapsed_ms": 13028.541,
+            "kind": "native_control",
+            "elapsed_ms": 12864.139,
+            "phase": "applied",
+            "epoch": 7,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.117,
+              "silence_before": 0.0,
+              "text": 513.839,
+              "silence_after": 120.738
+            }
+          },
+          {
+            "client_elapsed_ms": 20447.645,
+            "kind": "native_control",
+            "elapsed_ms": 20284.488,
+            "phase": "applied",
+            "epoch": 10,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.117,
+              "silence_before": 0.0,
+              "text": 589.557,
+              "silence_after": 120.636
+            }
+          },
+          {
+            "client_elapsed_ms": 32562.807,
+            "kind": "native_control",
+            "elapsed_ms": 32398.116,
+            "phase": "applied",
+            "epoch": 14,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 1.09,
+              "silence_before": 0.0,
+              "text": 512.457,
+              "silence_after": 120.932
+            }
+          },
+          {
+            "client_elapsed_ms": 38807.279,
+            "kind": "native_control",
+            "elapsed_ms": 38643.543,
+            "phase": "applied",
+            "epoch": 17,
+            "mode": "read_cached",
+            "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number one has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+            "cached_text_tokens": 28,
+            "tool_speech_seed": 42,
+            "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+            "prefix_cache_hit": true,
+            "prefill_timings_ms": {
+              "voice_restore": 3.372,
+              "silence_before": 0.0,
+              "text": 594.406,
+              "silence_after": 120.583
+            }
+          }
+        ],
+        "result_sha256": "f39708ebe02b9c6d34460e432b266947a6ce7fa7bd011cc48e8e5bafa0e82ca1",
+        "events_sha256": "a840cc7c0382513b5fee5dddfd46a0baf0c690a17029e90ce4eb383fd1952a3e"
+      }
+    ]
+  },
+  "parity": {
+    "status": "passed",
+    "streaming_tensors": 100,
+    "streaming_scalars": 65,
+    "cuda_rng_state": "exact",
+    "following_native_audio_token_steps": "4 of 4 exact",
+    "timing": "diagnostic excluded from latency measurements",
+    "sample_policy": "preserve upstream RNG progression; no fixed seed",
+    "measured_offset_stride": 68,
+    "hardcoded_stride": false,
+    "backend_sha256": "be25acc9120b7df878220b2b4706d1e015775ba93f80e83dd8b275b24078d490"
+  },
+  "backend_sha256": "be25acc9120b7df878220b2b4706d1e015775ba93f80e83dd8b275b24078d490",
+  "source_sha256": {
+    "src/speaker_lab/scheduling/page.html": "2853126801b976cd513044e4320cbab9d82dc5abd67e31563b20e6759df4a5b2",
+    "src/speaker_lab/scheduling/server.py": "da01608bc3e6cf71c867f768119738d8a1063f6ce6995ce1ffef01cfae0fbc24",
+    "src/speaker_lab/scheduling/domain.py": "639bf14148b574635e6aaefecc2a402687ea2c7bb9b85bb3a6b51ea6d6b75940",
+    "src/speaker_lab/scheduling/native_control.py": "4df927bf335bff4ac8e8c72b04ce21518ee0d72b7f5f1457db64fc16695ced55",
+    "src/speaker_lab/scheduling/__init__.py": "681421335d317455144e0753617681fb7f5635b16300a04b6defe5f78ea1a77b",
+    "src/speaker_lab/scheduling/prefill.py": "33d1277f804905a7f562d82a79d3456dd7a313fcaedcc24e2f7615f6365b75c5",
+    "src/speaker_lab/scheduling/audio.py": "84110f9813b3bdb44b919ebf02efbcc588a25cf9bab189a8826831229ec3c90a",
+    "src/speaker_lab/scheduling/prefix_cache.py": "600a3fe49772eba3216c5dcd839cb643914a723ac58ff5a3527c31dc78d50d3c",
+    "src/speaker_lab/scheduling/personaplex.py": "670808f68d059dd50a7f65e6de0b21ddd0cc1dfca5f6eb75e73d0a243f7c4130",
+    "src/speaker_lab/scheduling/__main__.py": "5d38f76c37781c145d3dafdebabc9ae1f1842a1a5bd713b85f6603eb945d42d6"
+  },
+  "validator_sha256": "b64d2fa547265487fe15ce5bc565441d9cc6a7cdfe185103b5abcb625afdd315",
+  "trained": false,
+  "human_microphone": false,
+  "subjective_listening": false,
+  "novel_probe": {
+    "status": "failed",
+    "origin": "direct simulated-tool facts and paced zero PCM; no user speech",
+    "waveform_checks": [
+      {
+        "file": "stage-3.wav",
+        "sha256": "fec45cb73aa330d6950881a7abd156122eda205c26b04ee25b6dbd6c597ddca8",
+        "text": "Tuesday, October 28th at 11:00 A.M. is available. Say yes, confirm to to save.",
+        "expected": {
+          "start": "2026-10-20T11:00:00-05:00",
+          "version": 1,
+          "operation": "create"
+        },
+        "strict_fact_passed": false
+      },
+      {
+        "file": "stage-4.wav",
+        "sha256": "aa1a322366aaf2cd4d87c1bdd13dddde8d26808e17216a5ffbac887f0c2ec02e",
+        "text": "Your booking reference is BK number one confirmed for Tuesday, October 20th at 11:00 AM.",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-20T11:00:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "strict_fact_passed": true
+      },
+      {
+        "file": "stage-5.wav",
+        "sha256": "4d6a6fe74839342011c81151a008bbc573c6978369d0cbb05cfc82c90b8965a3",
+        "text": "Wednesday, October twenty-first at nine thirty a.m. is available. Say yes, confirm to save.",
+        "expected": {
+          "start": "2026-10-21T09:30:00-05:00",
+          "version": 2,
+          "operation": "reschedule"
+        },
+        "strict_fact_passed": true
+      },
+      {
+        "file": "stage-6.wav",
+        "sha256": "c363436e783802c955a9992bd29f69fd4abc8dbf3d7f8a68793e1db7149546ff",
+        "text": "Your booking references BK number one confirmed for Wednesday, October twenty-first at nine thirty a.m.",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-21T09:30:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "strict_fact_passed": true
+      }
+    ],
+    "applied_epochs": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "superseded_epoch_2_applied": false
+  },
+  "limits": "Small development samples. Only latency met the subsecond target; the candidate failed one additional waveform date guard. Default deployment remains unchanged. No human microphone, hardware timing or subjective listening.",
+  "candidate": {
+    "count": 10,
+    "values_ms": [
+      827.856,
+      940.388,
+      975.551,
+      856.196,
+      905.571,
+      853.318,
+      890.663,
+      954.96,
+      873.998,
+      944.526
+    ],
+    "min_ms": 827.856,
+    "median_ms": 898.117,
+    "max_ms": 975.551
+  },
+  "candidate_runs": [
+    {
+      "run": "rng-prefill-47",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 55.501,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 827.856
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 940.388
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 975.551
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "latency_ms": 856.196
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "latency_ms": 905.571
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty p.m.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "d0b40dc6102b4a6f0463e645dd1adca01ff239e0d680785180e97f7e5e8adce3",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking reference is BK number one confirmed for Friday, October twenty-third at 4:30 PM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "8972a5e79432ee620f0b9d7bcaaf34913e8f180dbbb2abff3384b9e7eb0470f6",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday, October twenty second at two p.m.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "825447f6b514c88809f6a792fc26250d253866349a182c6259319b8278710db7",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your booking reference is BK number one confirmed for Thursday, October twenty second at two p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "e0d741748c140c1b78bc4b075f055489600267c610cc3a79dd3255127ab8ffd7",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        }
+      ],
+      "handshakes": 1,
+      "fallbacks": 0,
+      "correction_during_native_voice": true,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 8590.563,
+          "kind": "native_control",
+          "elapsed_ms": 8486.667,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.506,
+            "silence_before": 0.0,
+            "text": 514.495,
+            "silence_after": 120.873
+          }
+        },
+        {
+          "client_elapsed_ms": 13456.668,
+          "kind": "native_control",
+          "elapsed_ms": 13364.692,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 4.186,
+            "silence_before": 0.0,
+            "text": 521.945,
+            "silence_after": 121.46
+          }
+        },
+        {
+          "client_elapsed_ms": 20875.725,
+          "kind": "native_control",
+          "elapsed_ms": 20785.071,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 3.266,
+            "silence_before": 0.0,
+            "text": 603.239,
+            "silence_after": 120.315
+          }
+        },
+        {
+          "client_elapsed_ms": 33824.679,
+          "kind": "native_control",
+          "elapsed_ms": 33732.636,
+          "phase": "applied",
+          "epoch": 14,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 0.918,
+            "silence_before": 0.0,
+            "text": 509.156,
+            "silence_after": 119.651
+          }
+        },
+        {
+          "client_elapsed_ms": 40178.162,
+          "kind": "native_control",
+          "elapsed_ms": 40087.322,
+          "phase": "applied",
+          "epoch": 17,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.584,
+            "silence_before": 0.0,
+            "text": 599.636,
+            "silence_after": 119.834
+          }
+        }
+      ],
+      "result_sha256": "ff0d3d0bc3ea87d669ce75614fd644f98ea1d37bc624e1d24a0aebae75239999",
+      "events_sha256": "c3bdd9e20ae217161f3854a3fe20235f3dfa8bf8471c4aac9ecc57406308c144"
+    },
+    {
+      "run": "rng-prefill-repeat-48",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 53.588,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 853.318
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 890.663
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 954.96
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "latency_ms": 873.998
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "latency_ms": 944.526
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty p.m.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "1b90c3631ae9a758e33bd64419493ee9ed404ad1fe3eefa5c09f331379363458",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking references B K number one confirmed for Friday, October 23rd at 4:30 PM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "e6a70768e2e4d5b3aa1a94a23f6c0fd54f2566a3ea74747a4f86305f1552d026",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday, October twenty second at two p.m.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "74f4214bc8e5be11e6a8aa7e74b81b7b9138be294d587d34f92bc8f923268a21",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your booking reference is BK number one confirmed for Thursday October twenty second at two PM CT.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "c45b44f2d3edd3b71c1ad5031270818b954406d10e960819d2c795f6123d35c9",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_recheck": true
+        }
+      ],
+      "handshakes": 1,
+      "fallbacks": 0,
+      "correction_during_native_voice": true,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 8089.386,
+          "kind": "native_control",
+          "elapsed_ms": 7977.788,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.061,
+            "silence_before": 0.0,
+            "text": 514.227,
+            "silence_after": 120.699
+          }
+        },
+        {
+          "client_elapsed_ms": 12965.924,
+          "kind": "native_control",
+          "elapsed_ms": 12853.212,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.384,
+            "silence_before": 0.0,
+            "text": 508.833,
+            "silence_after": 119.766
+          }
+        },
+        {
+          "client_elapsed_ms": 20276.931,
+          "kind": "native_control",
+          "elapsed_ms": 20165.729,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 0.8,
+            "silence_before": 0.0,
+            "text": 597.061,
+            "silence_after": 119.806
+          }
+        },
+        {
+          "client_elapsed_ms": 32323.882,
+          "kind": "native_control",
+          "elapsed_ms": 32212.881,
+          "phase": "applied",
+          "epoch": 14,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 0.865,
+            "silence_before": 0.0,
+            "text": 511.998,
+            "silence_after": 120.688
+          }
+        },
+        {
+          "client_elapsed_ms": 38411.479,
+          "kind": "native_control",
+          "elapsed_ms": 38299.332,
+          "phase": "applied",
+          "epoch": 17,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 0.843,
+            "silence_before": 0.0,
+            "text": 600.265,
+            "silence_after": 120.195
+          }
+        }
+      ],
+      "result_sha256": "8581ecf045d5ddeecae5834e3c77569dd0ae9fc395ecc6cc96ddebae0aeb3901",
+      "events_sha256": "519f16b00505f167bd5849fb95db62beb6b0c4d5013a1e7ce69ce9847d1e1eb0"
+    }
+  ],
+  "candidate_key_waveform_checks_passed": 11,
+  "candidate_key_waveform_checks_total": 12,
+  "correctness_gate_passed": false,
+  "deployment_changed": false,
+  "current_deployment": "Previous 1.552 s cached backend 8998, gateway 8768, local entry 8769",
+  "rng_policy": "Upstream RNG progression preserved with measured per-connection stride; no fixed seed or reference spelling change",
+  "validator_unchanged": true,
+  "all_candidate_timing_observations_under_one_second": true,
+  "local_verification": {
+    "focused_scheduling_and_distribution_passed": 103,
+    "full_suite_passed": 633,
+    "full_suite_skipped": 2,
+    "subtests_passed": 22,
+    "existing_concurrent_duplexlab_numpy_warnings": 3,
+    "ruff_F": "passed",
+    "reproduction_hash_checks": "cached and prefill passed",
+    "frozen_source_files_verified": 13,
+    "remote_disk_source_files_verified": 10,
+    "markdown_documents_checked": 16,
+    "local_links_checked": 277,
+    "missing_links": 0
+  },
+  "cleanup": {
+    "candidate_backend_8999": "stopped",
+    "candidate_gateway_8767": "stopped",
+    "candidate_tunnel_8766": "stopped",
+    "main_backend_8998": "retained PID2154793",
+    "main_gateway_8768": "retained PID2184143",
+    "local_main_8769": "restored and health-checked",
+    "gpu_0_idle_memory_mib": 22697,
+    "gpu_1_actions": "none"
+  }
+}

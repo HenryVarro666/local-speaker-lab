@@ -1,0 +1,29 @@
+{
+  "upstream_revision": "3428dfd95309a7f3c84fd93259ded0f810d1ff91",
+  "original_server_sha256": "cdb9f68a326328308fa4acd43e7e75d79030d2214c43f828d186a0e03a13da99",
+  "candidate_server_sha256": "be25acc9120b7df878220b2b4706d1e015775ba93f80e83dd8b275b24078d490",
+  "host": "127.0.0.1",
+  "model_finetuned": false,
+  "modes": [
+    "context",
+    "reset",
+    "read",
+    "reset_cached",
+    "read_cached",
+    "cancel"
+  ],
+  "spoken_text": "Default read_cached conditions complete tool wording including exact current date/time and declared reference alias.",
+  "model_context": "Restore connection-local fixed voice/persona streaming state in place; prefill only current tool facts; preserve controller state, no free conversation history.",
+  "selected_mode": "read_cached",
+  "default_speech": "Complete authoritative tool wording conditioned in text stream; all audio generated natively",
+  "alternative_mode": "reset_cached: guided opening/reference and sampled date/time; not selected because novel-waveform guard failures",
+  "cached_prefix": "NATF2 voice, first silence and token-identical 28-token persona/tool header; no appointment or user facts",
+  "cache_miss": "Voice-only cache for other initial personas; full replay when a command does not match the captured persona prefix",
+  "reference_opening": "Your booking reference is B K number <integer saved counter> confirmed for",
+  "prefix_pacing": "Receipt B/K/zero words have pace=5, ordinary words pace=3; PAD sustains word, EPAD closes gap",
+  "reference_mapping": "Explicit spoken BK number N maps reversibly to displayed canonical BK-{N:04d}; literal identifiers still require all digits, without implicit zero padding",
+  "prefill": "Fully supplied generated targets skip discarded sampling/depth, while main transformer, KV, masks and offsets remain unchanged; partial/logit/loss steps retain upstream processor",
+  "rng": "Measure upstream CUDA RNG offset stride per connection; restore construction RNG state; advance skipped cached/header and forced-text draws exactly. Observed stride 68 on pinned runtime. No fixed seed or hardcoded stride.",
+  "verification": "Opt-in PERSONAPLEX_VERIFY_PREFILL=1 checks one real control per process: exposed streaming state, CUDA RNG and next four audio-token steps exactly; diagnostic excluded from timing",
+  "deployment_status": "experimental_not_selected_waveform_guard_failed"
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "status": "development_diagnostic",
+  "mode": "offline",
+  "unique_clips": 20,
+  "clip_inferences": 50,
+  "duration_seconds": 74.4204375,
+  "normalization": "glossary_metrics_v1",
+  "auto": {
+    "overall": {
+      "clips": 20,
+      "S": 20,
+      "D": 4,
+      "I": 10,
+      "N": 243,
+      "mer": 0.13991769547325103
+    },
+    "languages": {
+      "mixed": {
+        "clips": 10,
+        "S": 11,
+        "D": 2,
+        "I": 5,
+        "N": 168,
+        "mer": 0.10714285714285714
+      },
+      "zh": {
+        "clips": 5,
+        "S": 0,
+        "D": 0,
+        "I": 0,
+        "N": 42,
+        "mer": 0.0
+      },
+      "en": {
+        "clips": 5,
+        "S": 9,
+        "D": 2,
+        "I": 5,
+        "N": 33,
+        "mer": 0.48484848484848486
+      }
+    }
+  },
+  "known_english_posthoc": {
+    "clips": 5,
+    "S": 4,
+    "D": 2,
+    "I": 0,
+    "N": 33,
+    "mer": 0.18181818181818182
+  },
+  "paired_english": [
+    {
+      "clip_id": "ascend-train-00008",
+      "auto_edits": 2,
+      "known_english_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-00009",
+      "auto_edits": 2,
+      "known_english_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-00014",
+      "auto_edits": 1,
+      "known_english_edits": 1
+    },
+    {
+      "clip_id": "ascend-train-00018",
+      "auto_edits": 11,
+      "known_english_edits": 1
+    },
+    {
+      "clip_id": "ascend-train-00024",
+      "auto_edits": 0,
+      "known_english_edits": 0
+    }
+  ],
+  "runtimes": {
+    "qwen06-cpu-dev20-001": {
+      "clips": 20,
+      "batch_subprocess_seconds": 25.122862582997186
+    },
+    "qwen06-cpu-dev20-002": {
+      "clips": 20,
+      "batch_subprocess_seconds": 19.43898037498002
+    },
+    "qwen06-cpu-english5-known-001": {
+      "clips": 5,
+      "batch_subprocess_seconds": 8.315807625011075
+    },
+    "qwen06-cpu-english5-known-002": {
+      "clips": 5,
+      "batch_subprocess_seconds": 8.516717499995138
+    }
+  },
+  "same_predictions_on_repeat": {
+    "auto": 20,
+    "known_english": 5
+  },
+  "timing_scope": "before WorkerRunner.run to final batch return; includes process/model load and inference, excludes prior audit and scoring; no per-clip or cold-start claim",
+  "training_performed": false,
+  "human_listening_performed": false,
+  "native_streaming_verified": false,
+  "generalization_claim": false
+}

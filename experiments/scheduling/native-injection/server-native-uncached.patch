@@ -1,0 +1,131 @@
+--- server.py
++++ server_native.py
+@@ -33,6 +33,9 @@
+ import tarfile
+ import time
+ import secrets
++import json
++from collections import deque
++from speaker_lab.scheduling.native_control import NativeControl, response_prefix_tokens
+ import sys
+ from typing import Literal, Optional
+ 
+@@ -170,6 +173,9 @@
+         self.lm_gen.text_prompt_tokens = self.text_tokenizer.encode(wrap_with_system_tags(request.query["text_prompt"])) if len(request.query["text_prompt"]) > 0 else None
+         seed = int(request["seed"]) if "seed" in request.query else None
+ 
++        output_lock = asyncio.Lock()
++        control = NativeControl()
++
+         async def recv_loop():
+             nonlocal close
+             try:
+@@ -195,6 +201,13 @@
+                     if kind == 1:  # audio
+                         payload = message[1:]
+                         opus_reader.append_bytes(payload)
++                    elif kind == 3:  # Local experimental native-tool protocol.
++                        try:
++                            accepted = control.submit(message[1:])
++                            if not accepted:
++                                await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_control", "phase":"stale"}).encode())
++                        except ValueError as error:
++                            await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_control", "phase":"rejected", "error":str(error)}).encode())
+                     else:
+                         clog.log("warning", f"unknown message kind {kind}")
+             finally:
+@@ -202,7 +215,11 @@
+                 clog.log("info", "connection closed")
+ 
+         async def opus_loop():
++            nonlocal opus_writer
+             all_pcm_data = None
++            skip_output = 0
++            response_prefix = deque()
++            controlled_read = False
+ 
+             while True:
+                 if close:
+@@ -216,6 +233,32 @@
+                 else:
+                     all_pcm_data = np.concatenate((all_pcm_data, pcm))
+                 while all_pcm_data.shape[-1] >= self.frame_size:
++                    command = control.take()
++                    if command is not None:
++                        response_prefix.clear()
++                        controlled_read = command["mode"] == "read"
++                        if command["mode"] in ("reset", "read"):
++                            self.mimi.reset_streaming()
++                            self.other_mimi.reset_streaming()
++                            self.lm_gen.reset_streaming()
++                            self.lm_gen.text_prompt_tokens = self.text_tokenizer.encode(wrap_with_system_tags(command["text"]))
++                            async def still_current():
++                                await asyncio.sleep(0)
++                                return not close and control.epoch == command["epoch"]
++                            await self.lm_gen.step_system_prompts_async(self.mimi, is_alive=still_current)
++                            self.mimi.reset_streaming()
++                        elif command["mode"] == "context":
++                            for token in self.text_tokenizer.encode(wrap_with_system_tags(command["text"])):
++                                if control.epoch != command["epoch"]:
++                                    break
++                                self.lm_gen.step(moshi_tokens=self.lm_gen._encode_zero_frame(),
++                                                 input_tokens=self.lm_gen._encode_sine_frame(), text_token=token)
++                                await asyncio.sleep(0)
++                        response_prefix.extend(response_prefix_tokens(self.text_tokenizer, command.get("prefix", "")))
++                        skip_output = self.lm_gen.max_delay
++                        async with output_lock:
++                            opus_writer = sphn.OpusStreamWriter(self.mimi.sample_rate)
++                            await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_control", "phase":"applied", "epoch":command["epoch"], "mode":command["mode"], "text":command.get("text", "")}).encode())
+                     be = time.time()
+                     chunk = all_pcm_data[: self.frame_size]
+                     all_pcm_data = all_pcm_data[self.frame_size:]
+@@ -224,13 +267,17 @@
+                     codes = self.mimi.encode(chunk)
+                     _ = self.other_mimi.encode(chunk)
+                     for c in range(codes.shape[-1]):
+-                        tokens = self.lm_gen.step(codes[:, :, c: c + 1])
++                        token = response_prefix.popleft() if response_prefix else (3 if controlled_read else None)
++                        tokens = self.lm_gen.step(codes[:, :, c: c + 1], text_token=token)
+                         if tokens is None:
+                             continue
+                         assert tokens.shape[1] == self.lm_gen.lm_model.dep_q + 1
+                         main_pcm = self.mimi.decode(tokens[:, 1:9])
+                         _ = self.other_mimi.decode(tokens[:, 1:9])
+                         main_pcm = main_pcm.cpu()
++                        if skip_output:
++                            skip_output -= 1
++                            continue
+                         opus_writer.append_pcm(main_pcm[0, 0].numpy())
+                         text_token = tokens[0, 0, 0].item()
+                         if text_token not in (0, 3):
+@@ -246,9 +293,10 @@
+                 if close:
+                     return
+                 await asyncio.sleep(0.001)
+-                msg = opus_writer.read_bytes()
+-                if len(msg) > 0:
+-                    await ws.send_bytes(b"\x01" + msg)
++                async with output_lock:
++                    msg = opus_writer.read_bytes()
++                    if len(msg) > 0:
++                        await ws.send_bytes(b"\x01" + msg)
+ 
+         clog.log("info", "accepted connection")
+         if len(request.query["text_prompt"]) > 0:
+@@ -287,6 +335,7 @@
+             if await is_alive():
+                 await ws.send_bytes(b"\x00")
+                 clog.log("info", "sent handshake bytes")
++                await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_capabilities", "protocol":1, "modes":["context", "reset", "read", "cancel"]}).encode())
+                 # Clean cancellation manager
+                 tasks = [
+                     asyncio.create_task(recv_loop()),
+@@ -476,7 +525,7 @@
+     if setup_tunnel is not None:
+         tunnel = setup_tunnel('localhost', args.port, tunnel_token, None)
+         logger.info(f"Tunnel started, if executing on a remote GPU, you can use {tunnel}.")
+-    web.run_app(app, port=args.port, ssl_context=ssl_context)
++    web.run_app(app, host=args.host, port=args.port, ssl_context=ssl_context)
+ 
+ 
+ with torch.no_grad():

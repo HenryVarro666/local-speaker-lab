@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-20",
+  "python": "3.12.13",
+  "upstream_revision": "3428dfd95309a7f3c84fd93259ded0f810d1ff91",
+  "model_revision": "fdaf4090a61cb315c138a1faee287ffd6c716309",
+  "packages": {
+    "torch": "2.4.1",
+    "sphn": "0.1.12",
+    "vosk": "0.3.45",
+    "aiohttp": "3.10.11",
+    "numpy": "2.1.3",
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "src/speaker_lab/scheduling/__init__.py": "681421335d317455144e0753617681fb7f5635b16300a04b6defe5f78ea1a77b",
+    "src/speaker_lab/scheduling/__main__.py": "81f1e63a76a97b33c6ef8085482557aa3a32a1544cfaaad4a3cc1d40bce96972",
+    "src/speaker_lab/scheduling/audio.py": "84110f9813b3bdb44b919ebf02efbcc588a25cf9bab189a8826831229ec3c90a",
+    "src/speaker_lab/scheduling/domain.py": "3ea91e35455a65786196ab18dc7274ba98dbc621734efecfacefe81d614c9432",
+    "src/speaker_lab/scheduling/page.html": "0695d71ee16fad51b1c670506d5a59c35b1be81135600f56124d8db8fb7874c6",
+    "src/speaker_lab/scheduling/personaplex.py": "d79256781706f7b93f4b75c5285429889619908b4319efea9fc7ba9328be3fb3",
+    "src/speaker_lab/scheduling/server.py": "f105209d75733134f0564b87b0c85f934aa84b163967613c89bc266cec9c7ee1"
+  },
+  "trained": false,
+  "real_microphone_tested": false,
+  "receipt_voice": "browser_speech_synthesis",
+  "model_gpu": "CUDA_VISIBLE_DEVICES=0",
+  "note": "Other GPU workloads were not modified."
+}

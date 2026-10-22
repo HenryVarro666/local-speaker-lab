@@ -1,0 +1,129 @@
+{
+  "status": "retrospective_text_analysis",
+  "case_count": 12,
+  "movement": {
+    "zh": {
+      "worse": 4,
+      "better": 2,
+      "equal_edits": 19,
+      "gross_more_edits": 5,
+      "gross_fewer_edits": 3,
+      "net_edits": 2
+    },
+    "mixed": {
+      "worse": 8,
+      "better": 9,
+      "equal_edits": 33,
+      "gross_more_edits": 17,
+      "gross_fewer_edits": 14,
+      "net_edits": 3
+    },
+    "en": {
+      "worse": 1,
+      "better": 7,
+      "equal_edits": 17,
+      "gross_more_edits": 3,
+      "gross_fewer_edits": 9,
+      "net_edits": -6
+    }
+  },
+  "text_category_counts": {
+    "Chinese filler rendered as English": 3,
+    "Pronoun variant and extra character": 1,
+    "Homophone orthography: pronoun character": 1,
+    "Chinese filler substitution; repeated syllables omitted in both arms": 1,
+    "Mixed reference rendered as mostly English": 1,
+    "English span replaced with Chinese words": 1,
+    "Disfluency and acronym spelling/tokenization differences": 1,
+    "Similar English lexical item; source contains UNK": 1,
+    "English final word deletion": 1,
+    "Chinese/English lexical switching; source contains UNK": 1
+  },
+  "training_diagnostics": {
+    "random": {
+      "speaker_counts": {
+        "8": 32,
+        "9": 115,
+        "10": 44,
+        "11": 31,
+        "15": 29,
+        "16": 44,
+        "19": 62,
+        "21": 78,
+        "26": 65
+      },
+      "languages": {
+        "zh": {
+          "clips": 125,
+          "base_exact_edit_clips": 76,
+          "base_micro_mer": 0.053061224489795916,
+          "contains_filler_char": 43,
+          "contains_repeated_character_3plus": 0,
+          "contains_UNK": 3
+        },
+        "mixed": {
+          "clips": 250,
+          "base_exact_edit_clips": 56,
+          "base_micro_mer": 0.1327025155781214,
+          "contains_filler_char": 115,
+          "contains_repeated_character_3plus": 5,
+          "contains_UNK": 17
+        },
+        "en": {
+          "clips": 125,
+          "base_exact_edit_clips": 49,
+          "base_micro_mer": 0.16381909547738693,
+          "contains_filler_char": 0,
+          "contains_repeated_character_3plus": 0,
+          "contains_UNK": 6
+        }
+      }
+    },
+    "filtered": {
+      "speaker_counts": {
+        "8": 27,
+        "9": 95,
+        "10": 35,
+        "11": 43,
+        "15": 53,
+        "16": 42,
+        "19": 67,
+        "21": 87,
+        "26": 51
+      },
+      "languages": {
+        "zh": {
+          "clips": 125,
+          "base_exact_edit_clips": 125,
+          "base_micro_mer": 0.0,
+          "contains_filler_char": 28,
+          "contains_repeated_character_3plus": 4,
+          "contains_UNK": 0
+        },
+        "mixed": {
+          "clips": 250,
+          "base_exact_edit_clips": 116,
+          "base_micro_mer": 0.03872538172161983,
+          "contains_filler_char": 96,
+          "contains_repeated_character_3plus": 4,
+          "contains_UNK": 7
+        },
+        "en": {
+          "clips": 125,
+          "base_exact_edit_clips": 72,
+          "base_micro_mer": 0.08032128514056225,
+          "contains_filler_char": 0,
+          "contains_repeated_character_3plus": 0,
+          "contains_UNK": 3
+        }
+      }
+    }
+  },
+  "human_listening": "pending",
+  "source_summary_sha256": {
+    "base": "9501f6283227da04233c3f87eb543e7e7daa3f9d768b6a071e51eeacd071236b",
+    "random": "61f6180c8d61561cc809d955e1809a5bff31caecfbfbdf4b261b8d697742132a",
+    "filtered": "ae162bdc79b4d034fdb16fa21e6c37d422d5c63a05f6e46603442a8bcccc4056"
+  },
+  "causal_limit": "Selection favors base-reference agreement. Correlated coverage changes do not establish the cause of test errors."
+}

@@ -1,0 +1,324 @@
+{
+  "source_study": "coverage-v1",
+  "source_comparison_sha256": "bd7fea550b5a64801a6f7a0c595dc2ab127fee5bd4f482dce8d6c2c54112902a",
+  "seeds": {
+    "42": {
+      "random": {
+        "S": 267,
+        "D": 74,
+        "I": 106,
+        "N": 4926,
+        "deleted_filler_count": 6,
+        "filler_group_S": 130,
+        "filler_group_D": 28,
+        "filler_group_I": 36,
+        "filler_group_N": 1838,
+        "deleted_token_categories": {
+          "other": 66,
+          "filler": 6,
+          "single_ascii_letter": 2
+        }
+      },
+      "filtered": {
+        "S": 254,
+        "D": 84,
+        "I": 96,
+        "N": 4926,
+        "deleted_filler_count": 7,
+        "filler_group_S": 127,
+        "filler_group_D": 36,
+        "filler_group_I": 32,
+        "filler_group_N": 1838,
+        "deleted_token_categories": {
+          "other": 72,
+          "filler": 7,
+          "single_ascii_letter": 5
+        }
+      }
+    },
+    "43": {
+      "random": {
+        "S": 253,
+        "D": 88,
+        "I": 85,
+        "N": 4926,
+        "deleted_filler_count": 6,
+        "filler_group_S": 126,
+        "filler_group_D": 38,
+        "filler_group_I": 30,
+        "filler_group_N": 1838,
+        "deleted_token_categories": {
+          "other": 80,
+          "filler": 6,
+          "single_ascii_letter": 2
+        }
+      },
+      "filtered": {
+        "S": 249,
+        "D": 92,
+        "I": 79,
+        "N": 4926,
+        "deleted_filler_count": 11,
+        "filler_group_S": 123,
+        "filler_group_D": 39,
+        "filler_group_I": 29,
+        "filler_group_N": 1838,
+        "deleted_token_categories": {
+          "other": 74,
+          "filler": 11,
+          "single_ascii_letter": 7
+        }
+      }
+    },
+    "44": {
+      "random": {
+        "S": 266,
+        "D": 93,
+        "I": 83,
+        "N": 4926,
+        "deleted_filler_count": 8,
+        "filler_group_S": 120,
+        "filler_group_D": 39,
+        "filler_group_I": 27,
+        "filler_group_N": 1838,
+        "deleted_token_categories": {
+          "other": 82,
+          "filler": 8,
+          "single_ascii_letter": 3
+        }
+      },
+      "filtered": {
+        "S": 244,
+        "D": 90,
+        "I": 86,
+        "N": 4926,
+        "deleted_filler_count": 11,
+        "filler_group_S": 126,
+        "filler_group_D": 42,
+        "filler_group_I": 29,
+        "filler_group_N": 1838,
+        "deleted_token_categories": {
+          "other": 74,
+          "filler": 11,
+          "single_ascii_letter": 5
+        }
+      }
+    }
+  },
+  "consistent_regressions": [
+    {
+      "clip_id": "ascend-train-05012",
+      "delta_errors": [
+        4,
+        4,
+        4
+      ],
+      "delta_deletions": [
+        3,
+        2,
+        3
+      ],
+      "features": {
+        "filler_count": 1,
+        "repeat_count": 0,
+        "switch_count": 1,
+        "max_en_span": 4,
+        "max_zh_span": 36
+      }
+    },
+    {
+      "clip_id": "ascend-train-08768",
+      "delta_errors": [
+        4,
+        3,
+        2
+      ],
+      "delta_deletions": [
+        0,
+        0,
+        0
+      ],
+      "features": {
+        "filler_count": 0,
+        "repeat_count": 0,
+        "switch_count": 2,
+        "max_en_span": 1,
+        "max_zh_span": 10
+      }
+    },
+    {
+      "clip_id": "ascend-train-03450",
+      "delta_errors": [
+        2,
+        2,
+        1
+      ],
+      "delta_deletions": [
+        2,
+        -2,
+        -2
+      ],
+      "features": {
+        "filler_count": 0,
+        "repeat_count": 2,
+        "switch_count": 2,
+        "max_en_span": 5,
+        "max_zh_span": 11
+      }
+    },
+    {
+      "clip_id": "ascend-train-08581",
+      "delta_errors": [
+        2,
+        1,
+        2
+      ],
+      "delta_deletions": [
+        2,
+        2,
+        2
+      ],
+      "features": {
+        "filler_count": 1,
+        "repeat_count": 2,
+        "switch_count": 5,
+        "max_en_span": 3,
+        "max_zh_span": 6
+      }
+    },
+    {
+      "clip_id": "ascend-train-06306",
+      "delta_errors": [
+        1,
+        1,
+        2
+      ],
+      "delta_deletions": [
+        0,
+        0,
+        0
+      ],
+      "features": {
+        "filler_count": 0,
+        "repeat_count": 0,
+        "switch_count": 4,
+        "max_en_span": 2,
+        "max_zh_span": 16
+      }
+    },
+    {
+      "clip_id": "ascend-train-03300",
+      "delta_errors": [
+        1,
+        1,
+        1
+      ],
+      "delta_deletions": [
+        0,
+        0,
+        0
+      ],
+      "features": {
+        "filler_count": 1,
+        "repeat_count": 0,
+        "switch_count": 0,
+        "max_en_span": 12,
+        "max_zh_span": 0
+      }
+    },
+    {
+      "clip_id": "ascend-train-03419",
+      "delta_errors": [
+        1,
+        1,
+        1
+      ],
+      "delta_deletions": [
+        1,
+        0,
+        0
+      ],
+      "features": {
+        "filler_count": 0,
+        "repeat_count": 0,
+        "switch_count": 3,
+        "max_en_span": 1,
+        "max_zh_span": 13
+      }
+    },
+    {
+      "clip_id": "ascend-train-04088",
+      "delta_errors": [
+        1,
+        1,
+        1
+      ],
+      "delta_deletions": [
+        0,
+        0,
+        0
+      ],
+      "features": {
+        "filler_count": 0,
+        "repeat_count": 0,
+        "switch_count": 1,
+        "max_en_span": 2,
+        "max_zh_span": 8
+      }
+    }
+  ],
+  "USTC_alias_diagnostic_only": {
+    "42": {
+      "random": {
+        "S": 2,
+        "D": 0,
+        "I": 0,
+        "N": 37,
+        "mer": 0.05405405405405406
+      },
+      "filtered": {
+        "S": 2,
+        "D": 0,
+        "I": 0,
+        "N": 37,
+        "mer": 0.05405405405405406
+      }
+    },
+    "43": {
+      "random": {
+        "S": 2,
+        "D": 1,
+        "I": 3,
+        "N": 37,
+        "mer": 0.16216216216216217
+      },
+      "filtered": {
+        "S": 2,
+        "D": 0,
+        "I": 0,
+        "N": 37,
+        "mer": 0.05405405405405406
+      }
+    },
+    "44": {
+      "random": {
+        "S": 3,
+        "D": 0,
+        "I": 3,
+        "N": 37,
+        "mer": 0.16216216216216217
+      },
+      "filtered": {
+        "S": 2,
+        "D": 0,
+        "I": 0,
+        "N": 37,
+        "mer": 0.05405405405405406
+      }
+    }
+  },
+  "all_1800_primary_alignment_counts_match": true,
+  "human_listening": "pending",
+  "primary_references_or_scores_changed": false,
+  "alignment_ties": "diagonal, then deletion, then insertion; ambiguous repeated words are not time-aligned acoustic proof"
+}

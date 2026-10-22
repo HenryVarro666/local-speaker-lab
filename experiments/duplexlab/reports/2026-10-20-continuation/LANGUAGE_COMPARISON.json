@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "baseline": "auto",
+  "normalization": "glossary_metrics_v1",
+  "runs": {
+    "auto": {
+      "clips": 40,
+      "N": 239,
+      "S": 28,
+      "D": 17,
+      "I": 5,
+      "error_rate": 0.20920502092050208
+    },
+    "english": {
+      "clips": 40,
+      "N": 239,
+      "S": 27,
+      "D": 17,
+      "I": 5,
+      "error_rate": 0.20502092050209206
+    }
+  },
+  "comparisons": {
+    "english": {
+      "improved": 1,
+      "worse": 0,
+      "unchanged": 39,
+      "delta": -0.004184100418410025,
+      "delta_interval": [
+        -0.015306122448979591,
+        0.0
+      ],
+      "pairs": [
+        {
+          "clip_id": "ascend-train-01157",
+          "N": 3,
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "clip_id": "ascend-train-01158",
+          "N": 4,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01167",
+          "N": 4,
+          "baseline_edits": 4,
+          "candidate_edits": 4
+        },
+        {
+          "clip_id": "ascend-train-01170",
+          "N": 5,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01171",
+          "N": 6,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01172",
+          "N": 8,
+          "baseline_edits": 2,
+          "candidate_edits": 2
+        },
+        {
+          "clip_id": "ascend-train-01177",
+          "N": 5,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01178",
+          "N": 7,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01184",
+          "N": 21,
+          "baseline_edits": 7,
+          "candidate_edits": 7
+        },
+        {
+          "clip_id": "ascend-train-01190",
+          "N": 6,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01191",
+          "N": 3,
+          "baseline_edits": 2,
+          "candidate_edits": 2
+        },
+        {
+          "clip_id": "ascend-train-01194",
+          "N": 4,
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "clip_id": "ascend-train-01196",
+          "N": 3,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01212",
+          "N": 7,
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "clip_id": "ascend-train-01214",
+          "N": 7,
+          "baseline_edits": 2,
+          "candidate_edits": 2
+        },
+        {
+          "clip_id": "ascend-train-01216",
+          "N": 6,
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "clip_id": "ascend-train-01217",
+          "N": 4,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01218",
+          "N": 3,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01223",
+          "N": 4,
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "clip_id": "ascend-train-01226",
+          "N": 3,
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "clip_id": "ascend-train-01229",
+          "N": 3,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01243",
+          "N": 7,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01246",
+          "N": 12,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01248",
+          "N": 13,
+          "baseline_edits": 2,
+          "candidate_edits": 2
+        },
+        {
+          "clip_id": "ascend-train-01251",
+          "N": 1,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01254",
+          "N": 5,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01255",
+          "N": 6,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01257",
+          "N": 5,
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "clip_id": "ascend-train-01259",
+          "N": 1,
+          "baseline_edits": 1,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01261",
+          "N": 12,
+          "baseline_edits": 3,
+          "candidate_edits": 3
+        },
+        {
+          "clip_id": "ascend-train-01264",
+          "N": 5,
+          "baseline_edits": 2,
+          "candidate_edits": 2
+        },
+        {
+          "clip_id": "ascend-train-01268",
+          "N": 3,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01269",
+          "N": 8,
+          "baseline_edits": 5,
+          "candidate_edits": 5
+        },
+        {
+          "clip_id": "ascend-train-01271",
+          "N": 6,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01272",
+          "N": 2,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01279",
+          "N": 5,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "clip_id": "ascend-train-01280",
+          "N": 5,
+          "baseline_edits": 4,
+          "candidate_edits": 4
+        },
+        {
+          "clip_id": "ascend-train-01295",
+          "N": 14,
+          "baseline_edits": 7,
+          "candidate_edits": 7
+        },
+        {
+          "clip_id": "ascend-train-01304",
+          "N": 8,
+          "baseline_edits": 2,
+          "candidate_edits": 2
+        },
+        {
+          "clip_id": "ascend-train-01306",
+          "N": 5,
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        }
+      ]
+    }
+  },
+  "bootstrap_seed": 20261020,
+  "bootstrap_replicates": 1000,
+  "interval_unit": "clip; not speaker-cluster or population-generalization interval"
+}

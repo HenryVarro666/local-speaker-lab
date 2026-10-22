@@ -1,0 +1,18 @@
+{
+  "upstream_revision": "3428dfd95309a7f3c84fd93259ded0f810d1ff91",
+  "original_server_sha256": "cdb9f68a326328308fa4acd43e7e75d79030d2214c43f828d186a0e03a13da99",
+  "candidate_server_sha256": "ce7652b67e35000b40b9e36160c1d0e49a77d209a69c88e2d7a2f847dd9ad080",
+  "host": "127.0.0.1",
+  "model_finetuned": false,
+  "modes": [
+    "context",
+    "reset",
+    "read",
+    "cancel"
+  ],
+  "spoken_text": "Default reset mode fixes an opening/reference, then samples date/time and native audio. Alternative read mode conditions the complete tool wording.",
+  "model_context": "Reset the LM and Mimi inside the existing WebSocket; preserve controller state; replay cached voice embeddings and current facts.",
+  "selected_mode": "reset",
+  "default_speech": "Guided opening/reference; PersonaPlex samples date/time continuation and generates all audio",
+  "alternative_mode": "read: all tool wording is controlled, with native audio generation"
+}

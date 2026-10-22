@@ -1,0 +1,1705 @@
+{
+  "status": "complete",
+  "candidate": "coverage-matched reference agreement",
+  "filtered_key_means": "Coverage in this experiment",
+  "research_conclusion": "No reliable coverage-selection advantage established; paired interval includes zero.",
+  "comparison": {
+    "dev": {
+      "schema_version": 1,
+      "unique_clips": 40,
+      "unique_reference_tokens": 319,
+      "unique_speakers": 2,
+      "training_seeds": [
+        42,
+        43,
+        44
+      ],
+      "per_seed": {
+        "42": {
+          "arms": {
+            "random": {
+              "S": 30,
+              "D": 12,
+              "I": 4,
+              "N": 319,
+              "errors": 46,
+              "mer": 0.14420062695924765
+            },
+            "filtered": {
+              "S": 27,
+              "D": 13,
+              "I": 4,
+              "N": 319,
+              "errors": 44,
+              "mer": 0.13793103448275862
+            }
+          },
+          "speakers": {
+            "5": {
+              "random": {
+                "S": 15,
+                "D": 9,
+                "I": 2,
+                "N": 198,
+                "errors": 26,
+                "mer": 0.13131313131313133
+              },
+              "filtered": {
+                "S": 14,
+                "D": 10,
+                "I": 3,
+                "N": 198,
+                "errors": 27,
+                "mer": 0.13636363636363635
+              }
+            },
+            "6": {
+              "random": {
+                "S": 15,
+                "D": 3,
+                "I": 2,
+                "N": 121,
+                "errors": 20,
+                "mer": 0.1652892561983471
+              },
+              "filtered": {
+                "S": 13,
+                "D": 3,
+                "I": 1,
+                "N": 121,
+                "errors": 17,
+                "mer": 0.14049586776859505
+              }
+            }
+          },
+          "languages": {
+            "en": {
+              "random": {
+                "S": 9,
+                "D": 3,
+                "I": 1,
+                "N": 44,
+                "errors": 13,
+                "mer": 0.29545454545454547
+              },
+              "filtered": {
+                "S": 9,
+                "D": 3,
+                "I": 0,
+                "N": 44,
+                "errors": 12,
+                "mer": 0.2727272727272727
+              }
+            },
+            "mixed": {
+              "random": {
+                "S": 14,
+                "D": 9,
+                "I": 3,
+                "N": 219,
+                "errors": 26,
+                "mer": 0.1187214611872146
+              },
+              "filtered": {
+                "S": 11,
+                "D": 9,
+                "I": 4,
+                "N": 219,
+                "errors": 24,
+                "mer": 0.1095890410958904
+              }
+            },
+            "zh": {
+              "random": {
+                "S": 7,
+                "D": 0,
+                "I": 0,
+                "N": 56,
+                "errors": 7,
+                "mer": 0.125
+              },
+              "filtered": {
+                "S": 7,
+                "D": 1,
+                "I": 0,
+                "N": 56,
+                "errors": 8,
+                "mer": 0.14285714285714285
+              }
+            }
+          },
+          "delta": -0.006269592476489033,
+          "speaker_macro_delta": -0.00987144168962352
+        },
+        "43": {
+          "arms": {
+            "random": {
+              "S": 28,
+              "D": 12,
+              "I": 6,
+              "N": 319,
+              "errors": 46,
+              "mer": 0.14420062695924765
+            },
+            "filtered": {
+              "S": 29,
+              "D": 10,
+              "I": 7,
+              "N": 319,
+              "errors": 46,
+              "mer": 0.14420062695924765
+            }
+          },
+          "speakers": {
+            "5": {
+              "random": {
+                "S": 15,
+                "D": 8,
+                "I": 3,
+                "N": 198,
+                "errors": 26,
+                "mer": 0.13131313131313133
+              },
+              "filtered": {
+                "S": 16,
+                "D": 8,
+                "I": 4,
+                "N": 198,
+                "errors": 28,
+                "mer": 0.1414141414141414
+              }
+            },
+            "6": {
+              "random": {
+                "S": 13,
+                "D": 4,
+                "I": 3,
+                "N": 121,
+                "errors": 20,
+                "mer": 0.1652892561983471
+              },
+              "filtered": {
+                "S": 13,
+                "D": 2,
+                "I": 3,
+                "N": 121,
+                "errors": 18,
+                "mer": 0.1487603305785124
+              }
+            }
+          },
+          "languages": {
+            "en": {
+              "random": {
+                "S": 9,
+                "D": 3,
+                "I": 2,
+                "N": 44,
+                "errors": 14,
+                "mer": 0.3181818181818182
+              },
+              "filtered": {
+                "S": 9,
+                "D": 3,
+                "I": 2,
+                "N": 44,
+                "errors": 14,
+                "mer": 0.3181818181818182
+              }
+            },
+            "mixed": {
+              "random": {
+                "S": 12,
+                "D": 9,
+                "I": 3,
+                "N": 219,
+                "errors": 24,
+                "mer": 0.1095890410958904
+              },
+              "filtered": {
+                "S": 15,
+                "D": 7,
+                "I": 4,
+                "N": 219,
+                "errors": 26,
+                "mer": 0.1187214611872146
+              }
+            },
+            "zh": {
+              "random": {
+                "S": 7,
+                "D": 0,
+                "I": 1,
+                "N": 56,
+                "errors": 8,
+                "mer": 0.14285714285714285
+              },
+              "filtered": {
+                "S": 5,
+                "D": 0,
+                "I": 1,
+                "N": 56,
+                "errors": 6,
+                "mer": 0.10714285714285714
+              }
+            }
+          },
+          "delta": 0.0,
+          "speaker_macro_delta": -0.003213957759412314
+        },
+        "44": {
+          "arms": {
+            "random": {
+              "S": 33,
+              "D": 10,
+              "I": 4,
+              "N": 319,
+              "errors": 47,
+              "mer": 0.14733542319749215
+            },
+            "filtered": {
+              "S": 30,
+              "D": 13,
+              "I": 2,
+              "N": 319,
+              "errors": 45,
+              "mer": 0.14106583072100312
+            }
+          },
+          "speakers": {
+            "5": {
+              "random": {
+                "S": 19,
+                "D": 8,
+                "I": 2,
+                "N": 198,
+                "errors": 29,
+                "mer": 0.14646464646464646
+              },
+              "filtered": {
+                "S": 16,
+                "D": 8,
+                "I": 2,
+                "N": 198,
+                "errors": 26,
+                "mer": 0.13131313131313133
+              }
+            },
+            "6": {
+              "random": {
+                "S": 14,
+                "D": 2,
+                "I": 2,
+                "N": 121,
+                "errors": 18,
+                "mer": 0.1487603305785124
+              },
+              "filtered": {
+                "S": 14,
+                "D": 5,
+                "I": 0,
+                "N": 121,
+                "errors": 19,
+                "mer": 0.15702479338842976
+              }
+            }
+          },
+          "languages": {
+            "en": {
+              "random": {
+                "S": 10,
+                "D": 2,
+                "I": 2,
+                "N": 44,
+                "errors": 14,
+                "mer": 0.3181818181818182
+              },
+              "filtered": {
+                "S": 9,
+                "D": 3,
+                "I": 0,
+                "N": 44,
+                "errors": 12,
+                "mer": 0.2727272727272727
+              }
+            },
+            "mixed": {
+              "random": {
+                "S": 18,
+                "D": 8,
+                "I": 2,
+                "N": 219,
+                "errors": 28,
+                "mer": 0.1278538812785388
+              },
+              "filtered": {
+                "S": 16,
+                "D": 10,
+                "I": 2,
+                "N": 219,
+                "errors": 28,
+                "mer": 0.1278538812785388
+              }
+            },
+            "zh": {
+              "random": {
+                "S": 5,
+                "D": 0,
+                "I": 0,
+                "N": 56,
+                "errors": 5,
+                "mer": 0.08928571428571429
+              },
+              "filtered": {
+                "S": 5,
+                "D": 0,
+                "I": 0,
+                "N": 56,
+                "errors": 5,
+                "mer": 0.08928571428571429
+              }
+            }
+          },
+          "delta": -0.006269592476489033,
+          "speaker_macro_delta": -0.0034435261707988912
+        }
+      },
+      "mean_delta": -0.004179728317659355,
+      "sd_delta": 0.003619750904010196,
+      "range_delta": [
+        -0.006269592476489033,
+        0.0
+      ],
+      "mean_speaker_macro_delta": -0.005509641873278241,
+      "mean_mer": {
+        "random": 0.1452455590386625,
+        "filtered": 0.14106583072100312
+      },
+      "hierarchical_delta_interval": [
+        -0.02203856749311295,
+        0.008417508417508398
+      ],
+      "bootstrap_seed": 20261020,
+      "bootstrap_replicates": 5000,
+      "interval_unit": "paired crossed resampling of training seeds and whole speakers; clips within speaker retained",
+      "limitations": "Only three training seeds and few public-data speakers; exploratory interval, not population proof."
+    },
+    "test": {
+      "schema_version": 1,
+      "unique_clips": 300,
+      "unique_reference_tokens": 4926,
+      "unique_speakers": 3,
+      "training_seeds": [
+        42,
+        43,
+        44
+      ],
+      "per_seed": {
+        "42": {
+          "arms": {
+            "random": {
+              "S": 267,
+              "D": 74,
+              "I": 106,
+              "N": 4926,
+              "errors": 447,
+              "mer": 0.0907429963459196
+            },
+            "filtered": {
+              "S": 254,
+              "D": 84,
+              "I": 96,
+              "N": 4926,
+              "errors": 434,
+              "mer": 0.0881039382866423
+            }
+          },
+          "speakers": {
+            "10": {
+              "random": {
+                "S": 77,
+                "D": 25,
+                "I": 31,
+                "N": 1591,
+                "errors": 133,
+                "mer": 0.08359522313010685
+              },
+              "filtered": {
+                "S": 65,
+                "D": 34,
+                "I": 20,
+                "N": 1591,
+                "errors": 119,
+                "mer": 0.07479572595851666
+              }
+            },
+            "16": {
+              "random": {
+                "S": 90,
+                "D": 33,
+                "I": 44,
+                "N": 1660,
+                "errors": 167,
+                "mer": 0.10060240963855421
+              },
+              "filtered": {
+                "S": 93,
+                "D": 32,
+                "I": 42,
+                "N": 1660,
+                "errors": 167,
+                "mer": 0.10060240963855421
+              }
+            },
+            "26": {
+              "random": {
+                "S": 100,
+                "D": 16,
+                "I": 31,
+                "N": 1675,
+                "errors": 147,
+                "mer": 0.08776119402985075
+              },
+              "filtered": {
+                "S": 96,
+                "D": 18,
+                "I": 34,
+                "N": 1675,
+                "errors": 148,
+                "mer": 0.08835820895522388
+              }
+            }
+          },
+          "languages": {
+            "en": {
+              "random": {
+                "S": 30,
+                "D": 5,
+                "I": 7,
+                "N": 350,
+                "errors": 42,
+                "mer": 0.12
+              },
+              "filtered": {
+                "S": 34,
+                "D": 4,
+                "I": 8,
+                "N": 350,
+                "errors": 46,
+                "mer": 0.13142857142857142
+              }
+            },
+            "mixed": {
+              "random": {
+                "S": 186,
+                "D": 52,
+                "I": 74,
+                "N": 3000,
+                "errors": 312,
+                "mer": 0.104
+              },
+              "filtered": {
+                "S": 175,
+                "D": 61,
+                "I": 60,
+                "N": 3000,
+                "errors": 296,
+                "mer": 0.09866666666666667
+              }
+            },
+            "zh": {
+              "random": {
+                "S": 51,
+                "D": 17,
+                "I": 25,
+                "N": 1576,
+                "errors": 93,
+                "mer": 0.05901015228426396
+              },
+              "filtered": {
+                "S": 45,
+                "D": 19,
+                "I": 28,
+                "N": 1576,
+                "errors": 92,
+                "mer": 0.0583756345177665
+              }
+            }
+          },
+          "delta": -0.002639058059277305,
+          "speaker_macro_delta": -0.0027341607487390194
+        },
+        "43": {
+          "arms": {
+            "random": {
+              "S": 253,
+              "D": 88,
+              "I": 85,
+              "N": 4926,
+              "errors": 426,
+              "mer": 0.08647990255785627
+            },
+            "filtered": {
+              "S": 249,
+              "D": 92,
+              "I": 79,
+              "N": 4926,
+              "errors": 420,
+              "mer": 0.08526187576126674
+            }
+          },
+          "speakers": {
+            "10": {
+              "random": {
+                "S": 65,
+                "D": 31,
+                "I": 20,
+                "N": 1591,
+                "errors": 116,
+                "mer": 0.07291011942174733
+              },
+              "filtered": {
+                "S": 71,
+                "D": 29,
+                "I": 22,
+                "N": 1591,
+                "errors": 122,
+                "mer": 0.07668133249528598
+              }
+            },
+            "16": {
+              "random": {
+                "S": 86,
+                "D": 31,
+                "I": 34,
+                "N": 1660,
+                "errors": 151,
+                "mer": 0.09096385542168675
+              },
+              "filtered": {
+                "S": 82,
+                "D": 35,
+                "I": 30,
+                "N": 1660,
+                "errors": 147,
+                "mer": 0.08855421686746988
+              }
+            },
+            "26": {
+              "random": {
+                "S": 102,
+                "D": 26,
+                "I": 31,
+                "N": 1675,
+                "errors": 159,
+                "mer": 0.09492537313432836
+              },
+              "filtered": {
+                "S": 96,
+                "D": 28,
+                "I": 27,
+                "N": 1675,
+                "errors": 151,
+                "mer": 0.09014925373134329
+              }
+            }
+          },
+          "languages": {
+            "en": {
+              "random": {
+                "S": 34,
+                "D": 6,
+                "I": 8,
+                "N": 350,
+                "errors": 48,
+                "mer": 0.13714285714285715
+              },
+              "filtered": {
+                "S": 38,
+                "D": 4,
+                "I": 7,
+                "N": 350,
+                "errors": 49,
+                "mer": 0.14
+              }
+            },
+            "mixed": {
+              "random": {
+                "S": 163,
+                "D": 61,
+                "I": 54,
+                "N": 3000,
+                "errors": 278,
+                "mer": 0.09266666666666666
+              },
+              "filtered": {
+                "S": 168,
+                "D": 66,
+                "I": 51,
+                "N": 3000,
+                "errors": 285,
+                "mer": 0.095
+              }
+            },
+            "zh": {
+              "random": {
+                "S": 56,
+                "D": 21,
+                "I": 23,
+                "N": 1576,
+                "errors": 100,
+                "mer": 0.06345177664974619
+              },
+              "filtered": {
+                "S": 43,
+                "D": 22,
+                "I": 21,
+                "N": 1576,
+                "errors": 86,
+                "mer": 0.05456852791878172
+              }
+            }
+          },
+          "delta": -0.0012180267965895275,
+          "speaker_macro_delta": -0.0011381816278877622
+        },
+        "44": {
+          "arms": {
+            "random": {
+              "S": 266,
+              "D": 93,
+              "I": 83,
+              "N": 4926,
+              "errors": 442,
+              "mer": 0.08972797401542834
+            },
+            "filtered": {
+              "S": 244,
+              "D": 90,
+              "I": 86,
+              "N": 4926,
+              "errors": 420,
+              "mer": 0.08526187576126674
+            }
+          },
+          "speakers": {
+            "10": {
+              "random": {
+                "S": 66,
+                "D": 32,
+                "I": 17,
+                "N": 1591,
+                "errors": 115,
+                "mer": 0.07228158390949088
+              },
+              "filtered": {
+                "S": 64,
+                "D": 27,
+                "I": 17,
+                "N": 1591,
+                "errors": 108,
+                "mer": 0.0678818353236958
+              }
+            },
+            "16": {
+              "random": {
+                "S": 97,
+                "D": 37,
+                "I": 40,
+                "N": 1660,
+                "errors": 174,
+                "mer": 0.10481927710843374
+              },
+              "filtered": {
+                "S": 96,
+                "D": 33,
+                "I": 43,
+                "N": 1660,
+                "errors": 172,
+                "mer": 0.10361445783132531
+              }
+            },
+            "26": {
+              "random": {
+                "S": 103,
+                "D": 24,
+                "I": 26,
+                "N": 1675,
+                "errors": 153,
+                "mer": 0.09134328358208955
+              },
+              "filtered": {
+                "S": 84,
+                "D": 30,
+                "I": 26,
+                "N": 1675,
+                "errors": 140,
+                "mer": 0.08358208955223881
+              }
+            }
+          },
+          "languages": {
+            "en": {
+              "random": {
+                "S": 35,
+                "D": 8,
+                "I": 7,
+                "N": 350,
+                "errors": 50,
+                "mer": 0.14285714285714285
+              },
+              "filtered": {
+                "S": 29,
+                "D": 6,
+                "I": 3,
+                "N": 350,
+                "errors": 38,
+                "mer": 0.10857142857142857
+              }
+            },
+            "mixed": {
+              "random": {
+                "S": 181,
+                "D": 64,
+                "I": 58,
+                "N": 3000,
+                "errors": 303,
+                "mer": 0.101
+              },
+              "filtered": {
+                "S": 169,
+                "D": 67,
+                "I": 61,
+                "N": 3000,
+                "errors": 297,
+                "mer": 0.099
+              }
+            },
+            "zh": {
+              "random": {
+                "S": 50,
+                "D": 21,
+                "I": 18,
+                "N": 1576,
+                "errors": 89,
+                "mer": 0.056472081218274114
+              },
+              "filtered": {
+                "S": 46,
+                "D": 17,
+                "I": 22,
+                "N": 1576,
+                "errors": 85,
+                "mer": 0.053934010152284266
+              }
+            }
+          },
+          "delta": -0.004466098254161596,
+          "speaker_macro_delta": -0.004455253964251421
+        }
+      },
+      "mean_delta": -0.002774394370009476,
+      "sd_delta": 0.0016282594959420725,
+      "range_delta": [
+        -0.004466098254161596,
+        -0.0012180267965895275
+      ],
+      "mean_speaker_macro_delta": -0.0027758654469594007,
+      "mean_mer": {
+        "random": 0.0889836243064014,
+        "filtered": 0.08620922993639193
+      },
+      "hierarchical_delta_interval": [
+        -0.005558987029030266,
+        0.0
+      ],
+      "bootstrap_seed": 20261020,
+      "bootstrap_replicates": 5000,
+      "interval_unit": "paired crossed resampling of training seeds and whole speakers; clips within speaker retained",
+      "limitations": "Only three training seeds and few public-data speakers; exploratory interval, not population proof."
+    }
+  },
+  "base": {
+    "dev": {
+      "overall": {
+        "S": 30,
+        "D": 10,
+        "I": 6,
+        "N": 319,
+        "term_ref_mentions": 0,
+        "term_hyp_mentions": 0,
+        "term_correct_mentions": 0,
+        "term_false_mentions": 0,
+        "mer": 0.14420062695924765,
+        "term_recall": null,
+        "term_precision": null,
+        "clips": 40,
+        "no_term_clips": 40,
+        "no_term_false_mentions": 0,
+        "no_term_false_clips": 0,
+        "no_term_false_mentions_per_100_clips": 0.0,
+        "no_term_false_clip_rate": 0.0
+      },
+      "languages": {
+        "mixed": {
+          "S": 18,
+          "D": 7,
+          "I": 6,
+          "N": 219,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.1415525114155251,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 20,
+          "no_term_clips": 20,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        },
+        "zh": {
+          "S": 4,
+          "D": 0,
+          "I": 0,
+          "N": 56,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.07142857142857142,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 10,
+          "no_term_clips": 10,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        },
+        "en": {
+          "S": 8,
+          "D": 3,
+          "I": 0,
+          "N": 44,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.25,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 10,
+          "no_term_clips": 10,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        }
+      }
+    },
+    "test": {
+      "overall": {
+        "S": 263,
+        "D": 108,
+        "I": 100,
+        "N": 4926,
+        "term_ref_mentions": 0,
+        "term_hyp_mentions": 0,
+        "term_correct_mentions": 0,
+        "term_false_mentions": 0,
+        "mer": 0.09561510353227771,
+        "term_recall": null,
+        "term_precision": null,
+        "clips": 300,
+        "no_term_clips": 300,
+        "no_term_false_mentions": 0,
+        "no_term_false_clips": 0,
+        "no_term_false_mentions_per_100_clips": 0.0,
+        "no_term_false_clip_rate": 0.0
+      },
+      "languages": {
+        "en": {
+          "S": 33,
+          "D": 15,
+          "I": 3,
+          "N": 350,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.1457142857142857,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 45,
+          "no_term_clips": 45,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        },
+        "mixed": {
+          "S": 185,
+          "D": 74,
+          "I": 79,
+          "N": 3000,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.11266666666666666,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 150,
+          "no_term_clips": 150,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        },
+        "zh": {
+          "S": 45,
+          "D": 19,
+          "I": 18,
+          "N": 1576,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.05203045685279188,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 105,
+          "no_term_clips": 105,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        }
+      }
+    }
+  },
+  "design": {
+    "audit": {
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_seconds": 0.068920458026696,
+      "mip_gap": 7.811085472105306e-09,
+      "fallback_random": false,
+      "constraints_verified": true,
+      "marginals": {
+        "difficulty|en|easy": 44,
+        "difficulty|en|hard": 40,
+        "difficulty|en|medium": 41,
+        "difficulty|mixed|easy": 53,
+        "difficulty|mixed|hard": 60,
+        "difficulty|mixed|medium": 137,
+        "difficulty|zh|easy": 71,
+        "difficulty|zh|hard": 8,
+        "difficulty|zh|medium": 46,
+        "duration|en|1-3": 66,
+        "duration|en|3-6": 46,
+        "duration|en|6-12": 13,
+        "duration|mixed|1-3": 63,
+        "duration|mixed|3-6": 130,
+        "duration|mixed|6-12": 57,
+        "duration|zh|1-3": 67,
+        "duration|zh|3-6": 48,
+        "duration|zh|6-12": 10,
+        "filler|en|0": 93,
+        "filler|en|1": 32,
+        "filler|mixed|0": 148,
+        "filler|mixed|1": 102,
+        "filler|zh|0": 84,
+        "filler|zh|1": 41,
+        "speaker|en|11": 16,
+        "speaker|en|15": 13,
+        "speaker|en|19": 17,
+        "speaker|en|21": 43,
+        "speaker|en|8": 28,
+        "speaker|en|9": 8,
+        "speaker|mixed|11": 16,
+        "speaker|mixed|15": 30,
+        "speaker|mixed|19": 39,
+        "speaker|mixed|21": 40,
+        "speaker|mixed|8": 11,
+        "speaker|mixed|9": 114,
+        "speaker|zh|11": 11,
+        "speaker|zh|15": 12,
+        "speaker|zh|19": 20,
+        "speaker|zh|21": 29,
+        "speaker|zh|8": 5,
+        "speaker|zh|9": 48
+      },
+      "duration_difference_fraction": 0.009537296053900144,
+      "random_objective": 71.1150007341891,
+      "coverage_objective": 53.129929414196845,
+      "overlap": 317
+    },
+    "duration_seconds": {
+      "random": 1965.409,
+      "filtered": 1984.1536875
+    },
+    "quotas": {
+      "en|1-3": 66,
+      "en|3-6": 46,
+      "en|6-12": 13,
+      "mixed|1-3": 63,
+      "mixed|3-6": 130,
+      "mixed|6-12": 57,
+      "zh|1-3": 67,
+      "zh|3-6": 48,
+      "zh|6-12": 10
+    },
+    "pool_marginals": {
+      "difficulty|en|easy": 50,
+      "difficulty|en|hard": 43,
+      "difficulty|en|medium": 45,
+      "difficulty|mixed|easy": 79,
+      "difficulty|mixed|hard": 88,
+      "difficulty|mixed|medium": 196,
+      "difficulty|zh|easy": 304,
+      "difficulty|zh|hard": 46,
+      "difficulty|zh|medium": 164,
+      "duration|en|1-3": 73,
+      "duration|en|3-6": 51,
+      "duration|en|6-12": 14,
+      "duration|mixed|1-3": 91,
+      "duration|mixed|3-6": 189,
+      "duration|mixed|6-12": 83,
+      "duration|zh|1-3": 274,
+      "duration|zh|3-6": 198,
+      "duration|zh|6-12": 42,
+      "filler|en|0": 103,
+      "filler|en|1": 35,
+      "filler|mixed|0": 209,
+      "filler|mixed|1": 154,
+      "filler|zh|0": 346,
+      "filler|zh|1": 168,
+      "speaker|en|11": 19,
+      "speaker|en|15": 16,
+      "speaker|en|19": 19,
+      "speaker|en|21": 45,
+      "speaker|en|8": 30,
+      "speaker|en|9": 9,
+      "speaker|mixed|11": 22,
+      "speaker|mixed|15": 42,
+      "speaker|mixed|19": 60,
+      "speaker|mixed|21": 63,
+      "speaker|mixed|8": 12,
+      "speaker|mixed|9": 164,
+      "speaker|zh|11": 38,
+      "speaker|zh|15": 51,
+      "speaker|zh|19": 116,
+      "speaker|zh|21": 105,
+      "speaker|zh|8": 29,
+      "speaker|zh|9": 175
+    },
+    "source_predictions_sha256": "e09b1e35905da3ab9d0fa20acefbfbf5cb07546a50a011651eff015650ba90ec",
+    "scipy": "1.16.3",
+    "reference_token_counts": {
+      "random": 7591,
+      "filtered": 7863
+    },
+    "UNK_counts": {
+      "random": 25,
+      "filtered": 22
+    }
+  },
+  "data_policy": {
+    "schema_version": 1,
+    "selection_seed": 20261021,
+    "train_speakers": [
+      8,
+      9,
+      11,
+      15,
+      19,
+      21
+    ],
+    "dev_speakers": [
+      5,
+      6
+    ],
+    "test_speakers": [
+      10,
+      16,
+      26
+    ],
+    "counts": {
+      "train": 1015,
+      "dev": 40,
+      "test": 300
+    },
+    "test_quotas_per_speaker": {
+      "mixed": 50,
+      "zh": 35,
+      "en": 15
+    },
+    "test_audit_decision": "pass only",
+    "eligible_test_counts": {
+      "10|en": 31,
+      "10|mixed": 205,
+      "10|zh": 217,
+      "16|en": 51,
+      "16|mixed": 76,
+      "16|zh": 176,
+      "26|en": 28,
+      "26|mixed": 87,
+      "26|zh": 157
+    },
+    "shard_sha256": {
+      "train-00001-of-00003.parquet": "569f84f771c3637ca8535bd35e10e62feed2c240833534711909a9c04f51e589",
+      "train-00002-of-00003.parquet": "aa76b7ef4a74ff111fd1d2573d0b69e6b6f901df6054618d8e5658a7a394523e"
+    },
+    "manifest_sha256": {
+      "train": "de2520e7b481811ae8ad660fea57e33607e67ed9f991740349a7346c14c00a95",
+      "dev": "9edb61e55042d079951f7755c32e30e46734f1bf738b2b6a899f52491bc9ff7e",
+      "test": "ccd74d6ea8de86033a792ffeeec4ecfe2c24030cc3aaf5dbc7d6eb3cb246108c"
+    },
+    "selection_sha256": "b166c7ce4d2fdd8eadd96672a69a351c39373650688d091ae2ac7fe694b3ff7f",
+    "protocol_sha256": "cacdb8489e07b563e8db1a60b2a569831091cff38a8d540f706c32a2b3621adf",
+    "test_independence": "New clips, current-experiment speaker-disjoint; speakers occurred in previous train pool; all six SFTs restart from base.",
+    "legacy_text_exposure": "Historical glossary extraction read all official train texts; no legacy glossary or trained checkpoint used here.",
+    "prior_clip_id_file_pcm_overlap": 0
+  },
+  "training": {
+    "random-42": {
+      "status": "trained_and_reloaded",
+      "optimizer_steps": 63,
+      "epoch": 1.0,
+      "checkpoint_reloaded": true,
+      "test_complete": true,
+      "subprocess_seconds": 77.28150372486562,
+      "checkpoint_hashes": {
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "trainer_state.json": "5769b4a7ea5a7c674807a849cbc9c0d2d2d41e0665c6549343dd59c5b79d9dec",
+        "tokenizer.json": "765730b866a766806c9e61183cf3844357bec96a3b559eb466046316ed0029a4",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "added_tokens.json": "de40784677cbd1843cabe5fbee078c7e042cd0b62155f0810af5a13842e5722a",
+        "config.json": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "model.safetensors": "17ee7824496dd95824a078fe5ec002e1b776d4ad800a1ad606230ce653a37865",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "special_tokens_map.json": "7b376c510ccf9d88bb9bbee41dfc5052122e16e0dec1124a8d8983c59259a9f3"
+      },
+      "actual_training_arguments": {
+        "seed": 42,
+        "data_seed": null,
+        "bf16": true,
+        "fp16": false,
+        "per_device_train_batch_size": 1,
+        "per_device_eval_batch_size": 8,
+        "gradient_accumulation_steps": 8,
+        "num_train_epochs": 1.0,
+        "learning_rate": 2e-05,
+        "warmup_ratio": 0.02,
+        "dataloader_num_workers": 0,
+        "dataloader_persistent_workers": false,
+        "dataloader_drop_last": false,
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "logging_steps": 1,
+        "max_grad_norm": 1.0,
+        "gradient_checkpointing": false
+      },
+      "export_hash": "e7363306ace380671f941594462770d7f9b8000701b9b0a20a6d57b0eafe6a66"
+    },
+    "filtered-42": {
+      "status": "trained_and_reloaded",
+      "optimizer_steps": 63,
+      "epoch": 1.0,
+      "checkpoint_reloaded": true,
+      "test_complete": true,
+      "subprocess_seconds": 75.10638343822211,
+      "checkpoint_hashes": {
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "trainer_state.json": "1c32311d0dbbf409383f22e97a3c1fb3af4d5f5b5c207aeb6b407c0d7c96d3bf",
+        "tokenizer.json": "765730b866a766806c9e61183cf3844357bec96a3b559eb466046316ed0029a4",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "added_tokens.json": "de40784677cbd1843cabe5fbee078c7e042cd0b62155f0810af5a13842e5722a",
+        "config.json": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "model.safetensors": "34db4dd09305da1af6a9637c6c6ef80d918fae6bdaf3eecaf4e0f9d3f7d6e1cc",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "special_tokens_map.json": "7b376c510ccf9d88bb9bbee41dfc5052122e16e0dec1124a8d8983c59259a9f3"
+      },
+      "actual_training_arguments": {
+        "seed": 42,
+        "data_seed": null,
+        "bf16": true,
+        "fp16": false,
+        "per_device_train_batch_size": 1,
+        "per_device_eval_batch_size": 8,
+        "gradient_accumulation_steps": 8,
+        "num_train_epochs": 1.0,
+        "learning_rate": 2e-05,
+        "warmup_ratio": 0.02,
+        "dataloader_num_workers": 0,
+        "dataloader_persistent_workers": false,
+        "dataloader_drop_last": false,
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "logging_steps": 1,
+        "max_grad_norm": 1.0,
+        "gradient_checkpointing": false
+      },
+      "export_hash": "e7363306ace380671f941594462770d7f9b8000701b9b0a20a6d57b0eafe6a66"
+    },
+    "random-43": {
+      "status": "trained_and_reloaded",
+      "optimizer_steps": 63,
+      "epoch": 1.0,
+      "checkpoint_reloaded": true,
+      "test_complete": true,
+      "subprocess_seconds": 73.8840498952195,
+      "checkpoint_hashes": {
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "trainer_state.json": "92b59511a6a6b2d322e99c69cedcb893b0f8e95da585cf10033703d704699b93",
+        "tokenizer.json": "765730b866a766806c9e61183cf3844357bec96a3b559eb466046316ed0029a4",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "added_tokens.json": "de40784677cbd1843cabe5fbee078c7e042cd0b62155f0810af5a13842e5722a",
+        "config.json": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "model.safetensors": "48e7269ebee9c27c7672be6e1c74cf8c201465cda68cf0f1007716f62b48f9fb",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "special_tokens_map.json": "7b376c510ccf9d88bb9bbee41dfc5052122e16e0dec1124a8d8983c59259a9f3"
+      },
+      "actual_training_arguments": {
+        "seed": 43,
+        "data_seed": null,
+        "bf16": true,
+        "fp16": false,
+        "per_device_train_batch_size": 1,
+        "per_device_eval_batch_size": 8,
+        "gradient_accumulation_steps": 8,
+        "num_train_epochs": 1.0,
+        "learning_rate": 2e-05,
+        "warmup_ratio": 0.02,
+        "dataloader_num_workers": 0,
+        "dataloader_persistent_workers": false,
+        "dataloader_drop_last": false,
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "logging_steps": 1,
+        "max_grad_norm": 1.0,
+        "gradient_checkpointing": false
+      },
+      "export_hash": "e7363306ace380671f941594462770d7f9b8000701b9b0a20a6d57b0eafe6a66"
+    },
+    "filtered-43": {
+      "status": "trained_and_reloaded",
+      "optimizer_steps": 63,
+      "epoch": 1.0,
+      "checkpoint_reloaded": true,
+      "test_complete": true,
+      "subprocess_seconds": 72.98083572182804,
+      "checkpoint_hashes": {
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "trainer_state.json": "e86258647973444371547e7b777ca79cf1cb209a8c76e60e723e4ab8e57607f7",
+        "tokenizer.json": "765730b866a766806c9e61183cf3844357bec96a3b559eb466046316ed0029a4",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "added_tokens.json": "de40784677cbd1843cabe5fbee078c7e042cd0b62155f0810af5a13842e5722a",
+        "config.json": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "model.safetensors": "97f754120fa9e8381b850b6ac40dc7f29c7cf4aafc9031072883a832c8343d6a",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "special_tokens_map.json": "7b376c510ccf9d88bb9bbee41dfc5052122e16e0dec1124a8d8983c59259a9f3"
+      },
+      "actual_training_arguments": {
+        "seed": 43,
+        "data_seed": null,
+        "bf16": true,
+        "fp16": false,
+        "per_device_train_batch_size": 1,
+        "per_device_eval_batch_size": 8,
+        "gradient_accumulation_steps": 8,
+        "num_train_epochs": 1.0,
+        "learning_rate": 2e-05,
+        "warmup_ratio": 0.02,
+        "dataloader_num_workers": 0,
+        "dataloader_persistent_workers": false,
+        "dataloader_drop_last": false,
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "logging_steps": 1,
+        "max_grad_norm": 1.0,
+        "gradient_checkpointing": false
+      },
+      "export_hash": "e7363306ace380671f941594462770d7f9b8000701b9b0a20a6d57b0eafe6a66"
+    },
+    "random-44": {
+      "status": "trained_and_reloaded",
+      "optimizer_steps": 63,
+      "epoch": 1.0,
+      "checkpoint_reloaded": true,
+      "test_complete": true,
+      "subprocess_seconds": 73.68075249902904,
+      "checkpoint_hashes": {
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "trainer_state.json": "a502fc6ba5fca1171dcb4a91c072ccc2ff69f36d2f6551e279fa0dea9e5ff79d",
+        "tokenizer.json": "765730b866a766806c9e61183cf3844357bec96a3b559eb466046316ed0029a4",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "added_tokens.json": "de40784677cbd1843cabe5fbee078c7e042cd0b62155f0810af5a13842e5722a",
+        "config.json": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "model.safetensors": "f7e89bc9baf413ffb589da0dc35ab9f81bc3a9c1f004f4eef511346f24520f07",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "special_tokens_map.json": "7b376c510ccf9d88bb9bbee41dfc5052122e16e0dec1124a8d8983c59259a9f3"
+      },
+      "actual_training_arguments": {
+        "seed": 44,
+        "data_seed": null,
+        "bf16": true,
+        "fp16": false,
+        "per_device_train_batch_size": 1,
+        "per_device_eval_batch_size": 8,
+        "gradient_accumulation_steps": 8,
+        "num_train_epochs": 1.0,
+        "learning_rate": 2e-05,
+        "warmup_ratio": 0.02,
+        "dataloader_num_workers": 0,
+        "dataloader_persistent_workers": false,
+        "dataloader_drop_last": false,
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "logging_steps": 1,
+        "max_grad_norm": 1.0,
+        "gradient_checkpointing": false
+      },
+      "export_hash": "e7363306ace380671f941594462770d7f9b8000701b9b0a20a6d57b0eafe6a66"
+    },
+    "filtered-44": {
+      "status": "trained_and_reloaded",
+      "optimizer_steps": 63,
+      "epoch": 1.0,
+      "checkpoint_reloaded": true,
+      "test_complete": true,
+      "subprocess_seconds": 71.98255479428917,
+      "checkpoint_hashes": {
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "trainer_state.json": "43f5a5a201ca53c7093085c153ef90964fc0b97b53bdea2a4d537fd223fabec7",
+        "tokenizer.json": "765730b866a766806c9e61183cf3844357bec96a3b559eb466046316ed0029a4",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "added_tokens.json": "de40784677cbd1843cabe5fbee078c7e042cd0b62155f0810af5a13842e5722a",
+        "config.json": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "model.safetensors": "63f8943064c7f72b0bf6adaffcd9db27c6b61b39a2fde87cb3a05f7ea6763349",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "special_tokens_map.json": "7b376c510ccf9d88bb9bbee41dfc5052122e16e0dec1124a8d8983c59259a9f3"
+      },
+      "actual_training_arguments": {
+        "seed": 44,
+        "data_seed": null,
+        "bf16": true,
+        "fp16": false,
+        "per_device_train_batch_size": 1,
+        "per_device_eval_batch_size": 8,
+        "gradient_accumulation_steps": 8,
+        "num_train_epochs": 1.0,
+        "learning_rate": 2e-05,
+        "warmup_ratio": 0.02,
+        "dataloader_num_workers": 0,
+        "dataloader_persistent_workers": false,
+        "dataloader_drop_last": false,
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "logging_steps": 1,
+        "max_grad_norm": 1.0,
+        "gradient_checkpointing": false
+      },
+      "export_hash": "e7363306ace380671f941594462770d7f9b8000701b9b0a20a6d57b0eafe6a66"
+    }
+  },
+  "filler_groups": {
+    "42": {
+      "random": {
+        "False": {
+          "S": 137,
+          "D": 46,
+          "I": 70,
+          "N": 3088,
+          "clips": 209,
+          "mer": 0.0819300518134715
+        },
+        "True": {
+          "S": 130,
+          "D": 28,
+          "I": 36,
+          "N": 1838,
+          "clips": 91,
+          "mer": 0.10554951033732318
+        }
+      },
+      "filtered": {
+        "False": {
+          "S": 127,
+          "D": 48,
+          "I": 64,
+          "N": 3088,
+          "clips": 209,
+          "mer": 0.07739637305699482
+        },
+        "True": {
+          "S": 127,
+          "D": 36,
+          "I": 32,
+          "N": 1838,
+          "clips": 91,
+          "mer": 0.10609357997823722
+        }
+      }
+    },
+    "43": {
+      "random": {
+        "False": {
+          "S": 127,
+          "D": 50,
+          "I": 55,
+          "N": 3088,
+          "clips": 209,
+          "mer": 0.07512953367875648
+        },
+        "True": {
+          "S": 126,
+          "D": 38,
+          "I": 30,
+          "N": 1838,
+          "clips": 91,
+          "mer": 0.10554951033732318
+        }
+      },
+      "filtered": {
+        "False": {
+          "S": 126,
+          "D": 53,
+          "I": 50,
+          "N": 3088,
+          "clips": 209,
+          "mer": 0.0741580310880829
+        },
+        "True": {
+          "S": 123,
+          "D": 39,
+          "I": 29,
+          "N": 1838,
+          "clips": 91,
+          "mer": 0.10391730141458107
+        }
+      }
+    },
+    "44": {
+      "random": {
+        "False": {
+          "S": 146,
+          "D": 54,
+          "I": 56,
+          "N": 3088,
+          "clips": 209,
+          "mer": 0.08290155440414508
+        },
+        "True": {
+          "S": 120,
+          "D": 39,
+          "I": 27,
+          "N": 1838,
+          "clips": 91,
+          "mer": 0.10119695321001088
+        }
+      },
+      "filtered": {
+        "False": {
+          "S": 118,
+          "D": 48,
+          "I": 57,
+          "N": 3088,
+          "clips": 209,
+          "mer": 0.07221502590673576
+        },
+        "True": {
+          "S": 126,
+          "D": 42,
+          "I": 29,
+          "N": 1838,
+          "clips": 91,
+          "mer": 0.10718171926006528
+        }
+      }
+    }
+  },
+  "train_dev_features": {
+    "created_at_utc": "2026-10-20T21:21:58.758453+00:00",
+    "test_outcomes_observed": false,
+    "strategy_adjusted": false,
+    "dev_marginals": {
+      "difficulty|en|easy": 2,
+      "difficulty|en|hard": 6,
+      "difficulty|en|medium": 2,
+      "difficulty|mixed|easy": 5,
+      "difficulty|mixed|hard": 7,
+      "difficulty|mixed|medium": 8,
+      "difficulty|zh|easy": 6,
+      "difficulty|zh|hard": 2,
+      "difficulty|zh|medium": 2,
+      "duration|en|1-3": 8,
+      "duration|en|3-6": 2,
+      "duration|mixed|1-3": 12,
+      "duration|mixed|3-6": 6,
+      "duration|mixed|6-12": 2,
+      "duration|zh|1-3": 9,
+      "duration|zh|3-6": 1,
+      "filler|en|0": 4,
+      "filler|en|1": 6,
+      "filler|mixed|0": 8,
+      "filler|mixed|1": 12,
+      "filler|zh|0": 5,
+      "filler|zh|1": 5,
+      "speaker|en|5": 3,
+      "speaker|en|6": 7,
+      "speaker|mixed|5": 15,
+      "speaker|mixed|6": 5,
+      "speaker|zh|5": 8,
+      "speaker|zh|6": 2
+    },
+    "dev_base_scores": {
+      "overall": {
+        "S": 30,
+        "D": 10,
+        "I": 6,
+        "N": 319,
+        "term_ref_mentions": 0,
+        "term_hyp_mentions": 0,
+        "term_correct_mentions": 0,
+        "term_false_mentions": 0,
+        "mer": 0.14420062695924765,
+        "term_recall": null,
+        "term_precision": null,
+        "clips": 40,
+        "no_term_clips": 40,
+        "no_term_false_mentions": 0,
+        "no_term_false_clips": 0,
+        "no_term_false_mentions_per_100_clips": 0.0,
+        "no_term_false_clip_rate": 0.0
+      },
+      "languages": {
+        "mixed": {
+          "S": 18,
+          "D": 7,
+          "I": 6,
+          "N": 219,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.1415525114155251,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 20,
+          "no_term_clips": 20,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        },
+        "zh": {
+          "S": 4,
+          "D": 0,
+          "I": 0,
+          "N": 56,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.07142857142857142,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 10,
+          "no_term_clips": 10,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        },
+        "en": {
+          "S": 8,
+          "D": 3,
+          "I": 0,
+          "N": 44,
+          "term_ref_mentions": 0,
+          "term_hyp_mentions": 0,
+          "term_correct_mentions": 0,
+          "term_false_mentions": 0,
+          "mer": 0.25,
+          "term_recall": null,
+          "term_precision": null,
+          "clips": 10,
+          "no_term_clips": 10,
+          "no_term_false_mentions": 0,
+          "no_term_false_clips": 0,
+          "no_term_false_mentions_per_100_clips": 0.0,
+          "no_term_false_clip_rate": 0.0
+        }
+      }
+    },
+    "selection_fixed_before_dev": true
+  },
+  "local_verification": {
+    "status": "verified",
+    "complete_asr_runs": 14,
+    "model_inferences": 2380,
+    "new_test_clips": 300,
+    "dev_clips_reused": 40,
+    "current_split_speaker_disjoint": true,
+    "new_test_prior_clip_overlap": 0,
+    "coverage_marginals_exact": true,
+    "six_fresh_checkpoints_verified": true,
+    "server_scores_and_bootstrap_match": true,
+    "all_train_dev_test_audio_hashes_verified": true,
+    "export_verified": true,
+    "no_model_reinference": true
+  },
+  "runtime_source_hashes": {
+    "scripts/run_duplexlab_coverage.py": "8485f23e16cdd0c91f60d810dabb21514d78bd48a2fdaa9288d90b195b808b72",
+    "scripts/run_duplexlab_multiseed.py": "d4178e5d2494196d5188a22f361b1ebd54eb55210a4b0a907c09e45fdcdd0bc2",
+    "src/speaker_lab/duplex/coverage.py": "535c96c63f6607ee25aa493e3ceb573879567304ff6ca1e001c591553d47ff31",
+    "src/speaker_lab/duplex/datasets.py": "84fd441de4cbed1bfcfc11c3c13589347af6ee0e51765daf425c94bcb800f91b",
+    "src/speaker_lab/duplex/seeded_sft.py": "2303fe4340c0c111a41a22fd36625d8f62b03537d2be8c1f2082ed42ff077d24",
+    "src/speaker_lab/duplex/training.py": "94e41c4c1982559ee9e4fb56e98768bc45ebf8872897eb2270822d6653547d74",
+    "src/speaker_lab/duplex/multiseed.py": "3f0f632eb3cc7127d40542e52b4c92ff8d1a4598c54496325693a1678a336fa4",
+    "src/speaker_lab/duplex/metrics.py": "5702a481ebec2cac65ae5ebcd2fae5e918c4ac383cdba8acb3ffde8b23c72fc5",
+    "experiments/duplexlab/COVERAGE_PROTOCOL.md": "cacdb8489e07b563e8db1a60b2a569831091cff38a8d540f706c32a2b3621adf",
+    ".cache/upstream/Qwen3-ASR/finetuning/qwen3_asr_sft.py": "6f3e5cc530d9da9ff405144fc94a5c4790018eaf956dbc623634818160418976"
+  },
+  "preparation_source_hashes": {
+    "scripts/prepare_duplexlab_coverage.py": "38dbc089963e201cc58e8440af1432c3b9df0e78732f94a949ef745b8f8811c7",
+    "src/speaker_lab/duplex/coverage.py": "cb01a8f3678e5406f9835dcb45b794985a66d7bcaa48296a9aeedcff0e36841c"
+  },
+  "reporting_source_hashes": {
+    "prepare_duplexlab_coverage.py": "9ce5252359bf6e671434dfab0a5dc36f966f36965309c7fc6c75c0afe1cb86f4",
+    "verify_duplexlab_coverage.py": "e6bbc1fc427b213c505f20502515081d8aaf17be572bef66235de800d5646233",
+    "report_duplexlab_coverage.py": "c4d7e4683ddbe68418f10f4ec9308280021dae1e78add9b6c3ca236299395748"
+  },
+  "limitations": [
+    "Fixed selection seed; three training seeds do not measure dataset-selection variance.",
+    "Test speakers appeared in previous training pool; current six SFTs all restart from base with these speakers excluded.",
+    "Historical glossary extraction read all official train texts; this experiment uses no such glossary.",
+    "Speaker-disjoint current roles; complete conversation-level independence is not verified.",
+    "Difficulty is base/reference disagreement; filler presence is a lexical proxy, not human acoustic judgment.",
+    "Only three test speakers and three training seeds; intervals are exploratory. Public-data pretraining exposure unknown.",
+    "Matched marginals do not match every joint interaction or exact token/FLOP budget. Human reference verification pending."
+  ]
+}

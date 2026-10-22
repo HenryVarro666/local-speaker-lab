@@ -10,7 +10,6 @@ import time
 from pathlib import Path
 
 from .backends import BUILTINS
-from .config import resolve_path
 from .redaction import Redactor
 
 
@@ -40,7 +39,10 @@ class WorkerRunner:
         if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not math.isfinite(timeout) or timeout <= 0:
             raise ValueError("workers.timeout_seconds must be a positive finite number.")
         timeout = float(timeout)
-        python = resolve_path(self.config, self.config["workers"][f"{stage}_python"])
+        # Preserve the virtualenv interpreter path: resolving its symlink would
+        # launch the base Python and discard this worker's installed packages.
+        configured_python = Path(self.config["workers"][f"{stage}_python"]).expanduser()
+        python = Path(os.path.abspath(Path(self.config["_root"]) / configured_python))
         if not python.is_file():
             raise RuntimeError(f"Worker Python not found: {python}. Run scripts/install_ubuntu.sh first.")
         stage_dir = self.run_dir / "work" / stage

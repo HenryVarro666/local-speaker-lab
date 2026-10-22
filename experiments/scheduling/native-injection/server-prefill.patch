@@ -1,0 +1,238 @@
+--- server.py
++++ server_native_prefill.py
+@@ -33,6 +33,11 @@
+ import tarfile
+ import time
+ import secrets
++import json
++from collections import deque
++from speaker_lab.scheduling.native_control import NativeControl, response_prefix_tokens, tool_persona_tokens, TOOL_CONTEXT_PREFIX
++from speaker_lab.scheduling.prefix_cache import StreamingPrefix
++from speaker_lab.scheduling.prefill import prefill_text
+ import sys
+ from typing import Literal, Optional
+ 
+@@ -170,6 +175,18 @@
+         self.lm_gen.text_prompt_tokens = self.text_tokenizer.encode(wrap_with_system_tags(request.query["text_prompt"])) if len(request.query["text_prompt"]) > 0 else None
+         seed = int(request["seed"]) if "seed" in request.query else None
+ 
++        output_lock = asyncio.Lock()
++        control = NativeControl()
++        voice_prefix = None
++        cached_text_tokens = []
++        cached_silence = False
++        rng_stride = None
++        cuda_rng = torch.cuda.default_generators[torch.cuda.current_device()]
++        def advance_prefill_rng(steps=1):
++            if rng_stride is None:
++                raise RuntimeError("Uncalibrated prefill RNG")
++            cuda_rng.set_offset(cuda_rng.get_offset() + steps * rng_stride)
++
+         async def recv_loop():
+             nonlocal close
+             try:
+@@ -195,6 +212,13 @@
+                     if kind == 1:  # audio
+                         payload = message[1:]
+                         opus_reader.append_bytes(payload)
++                    elif kind == 3:  # Local experimental native-tool protocol.
++                        try:
++                            accepted = control.submit(message[1:])
++                            if not accepted:
++                                await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_control", "phase":"stale"}).encode())
++                        except ValueError as error:
++                            await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_control", "phase":"rejected", "error":str(error)}).encode())
+                     else:
+                         clog.log("warning", f"unknown message kind {kind}")
+             finally:
+@@ -202,7 +226,11 @@
+                 clog.log("info", "connection closed")
+ 
+         async def opus_loop():
++            nonlocal opus_writer
+             all_pcm_data = None
++            skip_output = 0
++            response_prefix = deque()
++            controlled_read = False
+ 
+             while True:
+                 if close:
+@@ -216,6 +244,85 @@
+                 else:
+                     all_pcm_data = np.concatenate((all_pcm_data, pcm))
+                 while all_pcm_data.shape[-1] >= self.frame_size:
++                    command = control.take()
++                    if command is not None:
++                        response_prefix.clear()
++                        controlled_read = command["mode"] in ("read", "read_cached")
++                        if command["mode"] in ("reset", "read", "reset_cached", "read_cached"):
++                            self.mimi.reset_streaming()
++                            self.other_mimi.reset_streaming()
++                            self.lm_gen.reset_streaming()
++                            self.lm_gen.text_prompt_tokens = self.text_tokenizer.encode(wrap_with_system_tags(command["text"]))
++                            async def still_current():
++                                await asyncio.sleep(0)
++                                return not close and control.epoch == command["epoch"]
++                            timings = {}
++                            full_text_tokens = self.lm_gen.text_prompt_tokens
++                            cache_hit = (command["mode"].endswith("_cached") and voice_prefix is not None
++                                         and full_text_tokens[:len(cached_text_tokens)] == cached_text_tokens)
++                            started = time.perf_counter()
++                            if cache_hit:
++                                voice_prefix.restore()
++                                if rng_stride is not None:
++                                    advance_prefill_rng(len(cached_text_tokens) - len(persona_tokens))
++                                self.lm_gen.text_prompt_tokens = full_text_tokens[len(cached_text_tokens):]
++                            else:
++                                await self.lm_gen._step_voice_prompt_async(self.mimi, still_current)
++
++                            timings["voice_restore" if cache_hit else "voice_replay"] = round((time.perf_counter() - started) * 1000, 3)
++                            stages = [
++                                ("silence_before", self.lm_gen._step_audio_silence_async),
++                                ("text", lambda current: prefill_text(self.lm_gen, current, advance_prefill_rng) if rng_stride is not None else self.lm_gen._step_text_prompt_async(current)),
++                                ("silence_after", self.lm_gen._step_audio_silence_async),
++                            ]
++                            for label, prefill in stages:
++                                if not await still_current():
++                                    break
++                                if label == "silence_before" and cache_hit and cached_silence:
++                                    timings[label] = 0.0
++                                    continue
++                                started = time.perf_counter()
++                                if label == "text" and os.environ.get("PERSONAPLEX_VERIFY_PREFILL") == "1" and not getattr(self, "_prefill_verified", False):
++                                    before = StreamingPrefix(self.lm_gen, torch.Tensor)
++                                    rng_before = cuda_rng.get_state()
++                                    await self.lm_gen._step_text_prompt_async(still_current)
++                                    expected = StreamingPrefix(self.lm_gen, torch.Tensor)
++                                    rng_expected = cuda_rng.get_state()
++                                    expected_next = [self.lm_gen.step(input_tokens=self.lm_gen._encode_zero_frame(), text_token=3).clone() for _ in range(4)]
++                                    before.restore()
++                                    cuda_rng.set_state(rng_before)
++                                    await prefill(still_current)
++                                    for _, _, actual, saved in expected.tensors:
++                                        torch.testing.assert_close(actual, saved, rtol=0, atol=0, equal_nan=True)
++                                    for owner, name, value in expected.scalars:
++                                        assert getattr(owner, name) == value, name
++                                    assert torch.equal(cuda_rng.get_state(), rng_expected), "RNG differs"
++                                    actual_next = [self.lm_gen.step(input_tokens=self.lm_gen._encode_zero_frame(), text_token=3).clone() for _ in range(4)]
++                                    assert all(torch.equal(a, b) for a, b in zip(actual_next, expected_next)), "Next audio tokens differ"
++                                    expected.restore()
++                                    cuda_rng.set_state(rng_expected)
++                                    self._prefill_verified = True
++                                    print("PREFILL_PARITY_PASS", len(expected.tensors), len(expected.scalars), "RNG exact; next 4 audio steps exact", flush=True)
++                                else:
++                                    await prefill(still_current)
++                                timings[label] = round((time.perf_counter() - started) * 1000, 3)
++                            self.mimi.reset_streaming()
++                        elif command["mode"] == "context":
++                            for token in self.text_tokenizer.encode(wrap_with_system_tags(command["text"])):
++                                if control.epoch != command["epoch"]:
++                                    break
++                                self.lm_gen.step(moshi_tokens=self.lm_gen._encode_zero_frame(),
++                                                 input_tokens=self.lm_gen._encode_sine_frame(), text_token=token)
++                                await asyncio.sleep(0)
++                        if close or control.epoch != command["epoch"]:
++                            continue
++                        response_prefix.extend(response_prefix_tokens(self.text_tokenizer, command.get("prefix", ""), pace=command.get("pace", 3)))
++                        skip_output = self.lm_gen.max_delay
++                        async with output_lock:
++                            if close or control.epoch != command["epoch"]:
++                                continue
++                            opus_writer = sphn.OpusStreamWriter(self.mimi.sample_rate)
++                            await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_control", "phase":"applied", "epoch":command["epoch"], "mode":command["mode"], "text":command.get("text", ""), "cached_text_tokens": len(cached_text_tokens), "prefill_rng_stride": rng_stride, "prefill_rng_preserved": rng_stride is not None, "timing_boundary": "host stage wall time; no explicit CUDA synchronization", "prefix_cache_hit": cache_hit if command["mode"] != "cancel" and command["mode"] != "context" else False, "prefill_timings_ms": timings if command["mode"] not in ("cancel", "context") else {}}).encode())
+                     be = time.time()
+                     chunk = all_pcm_data[: self.frame_size]
+                     all_pcm_data = all_pcm_data[self.frame_size:]
+@@ -224,13 +331,17 @@
+                     codes = self.mimi.encode(chunk)
+                     _ = self.other_mimi.encode(chunk)
+                     for c in range(codes.shape[-1]):
+-                        tokens = self.lm_gen.step(codes[:, :, c: c + 1])
++                        token = response_prefix.popleft() if response_prefix else (3 if controlled_read else None)
++                        tokens = self.lm_gen.step(codes[:, :, c: c + 1], text_token=token)
+                         if tokens is None:
+                             continue
+                         assert tokens.shape[1] == self.lm_gen.lm_model.dep_q + 1
+                         main_pcm = self.mimi.decode(tokens[:, 1:9])
+                         _ = self.other_mimi.decode(tokens[:, 1:9])
+                         main_pcm = main_pcm.cpu()
++                        if skip_output:
++                            skip_output -= 1
++                            continue
+                         opus_writer.append_pcm(main_pcm[0, 0].numpy())
+                         text_token = tokens[0, 0, 0].item()
+                         if text_token not in (0, 3):
+@@ -246,9 +357,10 @@
+                 if close:
+                     return
+                 await asyncio.sleep(0.001)
+-                msg = opus_writer.read_bytes()
+-                if len(msg) > 0:
+-                    await ws.send_bytes(b"\x01" + msg)
++                async with output_lock:
++                    msg = opus_writer.read_bytes()
++                    if len(msg) > 0:
++                        await ws.send_bytes(b"\x01" + msg)
+ 
+         clog.log("info", "accepted connection")
+         if len(request.query["text_prompt"]) > 0:
+@@ -280,13 +392,49 @@
+                     return False
+                 return True
+             # Reuse mimi for encoding voice prompt and then reset it before conversation starts
+-            await self.lm_gen.step_system_prompts_async(self.mimi, is_alive=is_alive)
++            await self.lm_gen._step_voice_prompt_async(self.mimi, is_alive)
++            full_text_tokens = self.lm_gen.text_prompt_tokens or []
++            persona_tokens = tool_persona_tokens(self.text_tokenizer, full_text_tokens)
++            if persona_tokens:
++                cached_text_tokens = persona_tokens
++                cached_silence = True
++                await self.lm_gen._step_audio_silence_async(is_alive)
++                self.lm_gen.text_prompt_tokens = cached_text_tokens
++                await self.lm_gen._step_text_prompt_async(is_alive)
++                persona_prefix = StreamingPrefix(self.lm_gen, torch.Tensor)
++                tool_tokens = self.text_tokenizer.encode("<system> " + TOOL_CONTEXT_PREFIX)
++                if tool_tokens[:len(persona_tokens)] != persona_tokens:
++                    raise RuntimeError("Tool header does not match cached persona")
++                extra_tokens = tool_tokens[len(persona_tokens):]
++                saved_rng = cuda_rng.get_state()
++                strides = []
++                for token in extra_tokens:
++                    if not await is_alive():
++                        raise ConnectionError("Disconnected during prefix calibration")
++                    offset = cuda_rng.get_offset()
++                    self.lm_gen.step(moshi_tokens=self.lm_gen._encode_zero_frame(), input_tokens=self.lm_gen._encode_sine_frame(), text_token=token)
++                    strides.append(cuda_rng.get_offset() - offset)
++                if not strides or len(set(strides)) != 1:
++                    raise RuntimeError("Nonconstant prefill RNG stride; optimization disabled")
++                rng_stride = strides[0]
++                cuda_rng.set_state(saved_rng)
++                voice_prefix = StreamingPrefix(self.lm_gen, torch.Tensor)
++                persona_prefix.restore()
++                del persona_prefix
++                cached_text_tokens = tool_tokens
++                self.lm_gen.text_prompt_tokens = full_text_tokens[len(persona_tokens):]
++            else:
++                voice_prefix = StreamingPrefix(self.lm_gen, torch.Tensor)
++                await self.lm_gen._step_audio_silence_async(is_alive)
++            await self.lm_gen._step_text_prompt_async(is_alive)
++            await self.lm_gen._step_audio_silence_async(is_alive)
+             self.mimi.reset_streaming()
+             clog.log("info", "done with system prompts")
+             # Send the handshake.
+             if await is_alive():
+                 await ws.send_bytes(b"\x00")
+                 clog.log("info", "sent handshake bytes")
++                await ws.send_bytes(b"\x03" + json.dumps({"kind":"native_capabilities", "protocol":1, "modes":["context", "reset", "read", "reset_cached", "read_cached", "cancel"]}).encode())
+                 # Clean cancellation manager
+                 tasks = [
+                     asyncio.create_task(recv_loop()),
+@@ -476,7 +624,7 @@
+     if setup_tunnel is not None:
+         tunnel = setup_tunnel('localhost', args.port, tunnel_token, None)
+         logger.info(f"Tunnel started, if executing on a remote GPU, you can use {tunnel}.")
+-    web.run_app(app, port=args.port, ssl_context=ssl_context)
++    web.run_app(app, host=args.host, port=args.port, ssl_context=ssl_context)
+ 
+ 
+ with torch.no_grad():

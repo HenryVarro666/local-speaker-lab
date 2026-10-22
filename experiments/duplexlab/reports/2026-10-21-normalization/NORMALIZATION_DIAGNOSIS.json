@@ -1,0 +1,29 @@
+{
+  "status": "verified",
+  "timestamp_unix": 1792644519.9157803,
+  "actual_native_model_accepts_loss_kwargs": true,
+  "thinker_forwards_num_items_to_loss": false,
+  "toy_real_trainer": {
+    "True": {
+      "gradient": 16.0,
+      "returned_loss_sum": 8.0,
+      "accelerator_gradient_accumulation_steps": 1
+    },
+    "False": {
+      "gradient": 2.0,
+      "returned_loss_sum": 1.0,
+      "accelerator_gradient_accumulation_steps": 1
+    }
+  },
+  "native_to_normalized_preclip_gradient_ratio": 8.0,
+  "native_forward_ce": 1.7769556045532227,
+  "uniform_forward_ce": 1.7769556045532227,
+  "forward_all_ones_equal": true,
+  "max_forward_loss_difference": 0.0,
+  "scope": "Pinned Trainer CPU scalar toy backward; actual pinned ASR GPU1 forward equality. No trained ASR update, no development/test output. Ratio before clipping/Adam; final partial accumulation has four examples.",
+  "source_sha256": {
+    "upstream": "6f3e5cc530d9da9ff405144fc94a5c4790018eaf956dbc623634818160418976",
+    "trainer": "c3eac8fa28bda6330fd4dee131e7fe7d9bdc0fa35d9de944fce52cb97b379bab",
+    "probe": "ac615a2d4b368aaf60831c7b80ffc4ff68952a4ff830dadfe1a8f00a72fd1ff4"
+  }
+}

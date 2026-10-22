@@ -33,7 +33,7 @@ python -m pytest -q
 
 ## 实验规则
 
-词表规则、样本选择、提示、模型配置和计分方式应在查看本轮预测前冻结，并保存来源与 SHA256。当前协议见[词表实验](experiments/glossary/README.md)和[200 条冻结协议](experiments/glossary/protocols/ascend-val200-train-vocab30-v2/)。
+词表规则、样本选择、提示、模型配置和计分方式应在查看本轮预测前冻结，并保存来源与 SHA256。当前协议见[词表实验](experiments/glossary/README.md)和[200 条冻结协议](experiments/glossary/protocols/ascend-val200-train-vocab30-v2)。
 
 - 词条候选只来自允许的训练文本。禁止按验证/测试参考答案、错误案例或覆盖率手选、补充或重排词条；无关词表采用独立固定来源与预先规定的排除、匹配规则。
 - 按固定 ID、分组、时长和种子抽样。禁止用参考词汇或模型好坏筛选验证样本；扩大样本时保持已经冻结的规则，并核对原样本的包含关系。

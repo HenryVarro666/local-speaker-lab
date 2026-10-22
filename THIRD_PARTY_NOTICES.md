@@ -29,7 +29,7 @@
 | [pyannote/wespeaker-voxceleb-resnet34-LM](https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM) | 分离来源与人物匹配；上游为 [WeSpeaker](https://github.com/wenet-e2e/wespeaker) 的模型封装 | CC-BY-4.0 |
 | [alibabasglab/MossFormer2_SS_16K](https://huggingface.co/alibabasglab/MossFormer2_SS_16K) | 默认 ClearVoice 分离权重 | Apache-2.0 |
 | [Qwen/Qwen3-ASR-1.7B](https://huggingface.co/Qwen/Qwen3-ASR-1.7B) | 默认转写与单人词表实验 | Apache-2.0 |
-| [Qwen/Qwen3-ASR-0.6B](https://huggingface.co/Qwen/Qwen3-ASR-0.6B) | 文档提供的可选速度对照 | Apache-2.0 |
+| [Qwen/Qwen3-ASR-0.6B](https://huggingface.co/Qwen/Qwen3-ASR-0.6B) | 可选速度对照；2026-10-20 DuplexLab Mac CPU 开发实验 | Apache-2.0 |
 | [Qwen/Qwen3-ForcedAligner-0.6B](https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B) | 可选字词时间对齐 | Apache-2.0 |
 | [speechbrain/sepformer-wsj02mix](https://huggingface.co/speechbrain/sepformer-wsj02mix) | 可选 8 kHz 分离路线 | Apache-2.0 |
 | [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) | Ollama 默认 `qwen3:8b` 对应模型系列；实际制品 digest 由验收记录 | Apache-2.0 |
@@ -42,10 +42,19 @@ Ollama 模型标签和量化制品也有自己的元数据；具体部署以实�
 
 本仓库的实验报告含少量注明来源的参考文本示例；冻结协议保留样本 ID、配置和从官方 train 文本按固定规则计算的词表。这些数据引用及衍生数据材料保留 ASCEND 的 CC-BY-SA-4.0，适用范围与原创程序代码的 MIT 分开。处理过程为训练文本导出、标注跨度移除、频次排序和固定抽样，规则与 revision 见[实验说明](experiments/glossary/README.md)及[冻结协议](experiments/glossary/protocols/ascend-val200-train-vocab30-v2/README.md)。没有分发原始音频、完整转写语料或下载缓存。
 
-后续 [725 条剩余 validation 协议](experiments/glossary/protocols/ascend-val-remaining725-train-vocab30-v1/)沿用上述 train 词表并排除旧 200 条；[六事件审查](experiments/glossary/ASCEND_SIX_EVENT_REVIEW.md)及其 `six_event_audit.json` 含少量原参考文本和对应模型输出。原参考及从数据派生的选样／词表材料继续适用 CC-BY-SA-4.0；本地回听工具只引用用户机器上的音频文件，源码包不附音频。
+后续 [725 条剩余 validation 协议](experiments/glossary/protocols/ascend-val-remaining725-train-vocab30-v1)沿用上述 train 词表并排除旧 200 条；[六事件审查](experiments/glossary/ASCEND_SIX_EVENT_REVIEW.md)及其 `six_event_audit.json` 含少量原参考文本和对应模型输出。原参考及从数据派生的选样／词表材料继续适用 CC-BY-SA-4.0；本地回听工具只引用用户机器上的音频文件，源码包不附音频。
+
+DuplexLab 后续[说话人隔离与 SFT pilot](experiments/duplexlab/reports/2026-10-20-continuation/RESULTS.md)继续使用同一 ASCEND train 首分片。源参考未由本项目人工纠正；公开保留来源、哈希、计数与汇总图，原音、完整转写和训练权重不随源码包分发。上游 SFT 脚本固定于 Qwen3-ASR commit 7c6daf77a2421100f5fb066495372c00129d39ff，其 Apache-2.0 声明保留在私有源码快照中。
 
 ## 学术使用与后续扩展
+
+2026-10-20 的 [DuplexLab 开发实验](experiments/duplexlab/reports/2026-10-20-mac-cpu/RESULTS.md)使用 ASCEND 官方 train 分片中的 20 条录音，固定模型与数据 revision；原音及完整参考只留本地。源码包中的 INPUTS.json 提供来源 ID、哈希和抽样元数据，数据派生部分仍适用上述 CC-BY-SA-4.0；不因包内原创程序的 MIT 改变语料许可。
 
 评价或发表模型结果时，请引用所用上游模型卡列出的论文，以及 ASCEND 数据论文。项目方法入口包括 [ClearerVoice-Studio 论文](https://arxiv.org/abs/2506.19398)、[Qwen3-ASR 技术报告](https://arxiv.org/abs/2601.21337)和 [SepFormer 论文](https://arxiv.org/abs/2010.13154)；人物分段与 WeSpeaker 的具体论文由上述官方模型卡列出。
 
 引用本项目的软件元数据见 [CITATION.cff](CITATION.cff)。新增后端、复制或修改上游源码、引入新数据前，应保留其原版权声明，并在此记录来源、使用方式与适用许可；不能只给本项目的 MIT 标签。
+# Optional scheduling Demo
+
+The `speaker_lab.scheduling` module optionally connects to NVIDIA PersonaPlex. PersonaPlex code is MIT-licensed; the separately downloaded weights use the NVIDIA Open Model License and their stated additional terms. No PersonaPlex weights or upstream source are redistributed here. See <https://github.com/NVIDIA/personaplex> and <https://huggingface.co/nvidia/personaplex-7b-v1>.
+
+The separate Vosk business observer uses `vosk` and `vosk-model-small-en-us-0.15`, both under Apache 2.0. The model is downloaded separately from <https://alphacephei.com/vosk/models>; it is not included in source releases. The optional `sphn` codec transport is Apache-2.0-licensed: <https://github.com/kyutai-labs/sphn>. Generated test speech is identified by its actual local synthesis origin and is kept in ignored runs.

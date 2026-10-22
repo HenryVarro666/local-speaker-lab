@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "timezone": "America/Chicago",
+  "python": "3.12.13",
+  "packages": {
+    "torch": "2.4.1",
+    "sphn": "0.1.12",
+    "vosk": "0.3.45",
+    "aiohttp": "3.10.11",
+    "numpy": "2.1.3",
+    "scipy": "1.18.1"
+  },
+  "disk_source_sha256": {
+    "src/speaker_lab/scheduling/domain.py": "639bf14148b574635e6aaefecc2a402687ea2c7bb9b85bb3a6b51ea6d6b75940",
+    "src/speaker_lab/scheduling/audio.py": "84110f9813b3bdb44b919ebf02efbcc588a25cf9bab189a8826831229ec3c90a",
+    "src/speaker_lab/scheduling/native_control.py": "4df927bf335bff4ac8e8c72b04ce21518ee0d72b7f5f1457db64fc16695ced55",
+    "src/speaker_lab/scheduling/page.html": "2853126801b976cd513044e4320cbab9d82dc5abd67e31563b20e6759df4a5b2",
+    "src/speaker_lab/scheduling/prefix_cache.py": "600a3fe49772eba3216c5dcd839cb643914a723ac58ff5a3527c31dc78d50d3c",
+    "src/speaker_lab/scheduling/server.py": "da01608bc3e6cf71c867f768119738d8a1063f6ce6995ce1ffef01cfae0fbc24",
+    "src/speaker_lab/scheduling/__main__.py": "5d38f76c37781c145d3dafdebabc9ae1f1842a1a5bd713b85f6603eb945d42d6",
+    "src/speaker_lab/scheduling/__init__.py": "681421335d317455144e0753617681fb7f5635b16300a04b6defe5f78ea1a77b",
+    "src/speaker_lab/scheduling/personaplex.py": "670808f68d059dd50a7f65e6de0b21ddd0cc1dfca5f6eb75e73d0a243f7c4130",
+    "src/speaker_lab/scheduling/prefill.py": "33d1277f804905a7f562d82a79d3456dd7a313fcaedcc24e2f7615f6365b75c5"
+  },
+  "deployed_backend_sha256": "331578aa28761cf34c966d1edc71fd5349d94762d23536d758313846a6739238",
+  "canonical_deployed_sha256": "331578aa28761cf34c966d1edc71fd5349d94762d23536d758313846a6739238",
+  "candidate_backend_sha256": "be25acc9120b7df878220b2b4706d1e015775ba93f80e83dd8b275b24078d490",
+  "backend_pid": 2154793,
+  "gateway_pid": 2184143,
+  "ports_listening": {
+    "8767": false,
+    "8768": true,
+    "8998": true,
+    "8999": false
+  },
+  "gpu_observation": [
+    "0, NVIDIA H100 NVL, 22697 MiB, 95830 MiB, 0 %",
+    "1, NVIDIA H100 NVL, 14 MiB, 95830 MiB, 0 %"
+  ],
+  "deployment_changed": false,
+  "active_backend_module": "moshi.server_prefix_paced",
+  "native_backend": "127.0.0.1:8998",
+  "gateway": "127.0.0.1:8768",
+  "local_entry": "http://127.0.0.1:8769",
+  "candidate_status": "not_selected_waveform_date_guard_failed",
+  "source_note": "Previous deployed processes retained their frozen baseline modules. Disk adds an unused static header constant and an opt-in prefill helper. Default domain and deployed backend restored/matched; no main process restart.",
+  "trained": false,
+  "human_microphone": false,
+  "subjective_listening": false
+}

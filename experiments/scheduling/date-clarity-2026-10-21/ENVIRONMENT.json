@@ -1,0 +1,63 @@
+{
+  "verified_at_utc": "2026-10-22T05:19:49.729935+00:00",
+  "client_timezone": "America/Chicago",
+  "frozen_demo_today": "2026-10-20",
+  "python": "3.12.13",
+  "packages": {
+    "torch": "2.4.1",
+    "sphn": "0.1.12",
+    "vosk": "0.3.45",
+    "aiohttp": "3.10.11",
+    "numpy": "2.1.3",
+    "scipy": "1.18.1"
+  },
+  "backend_sha256": {
+    "main": "331578aa28761cf34c966d1edc71fd5349d94762d23536d758313846a6739238",
+    "candidate": "947acc18c7287b7e5e7323b810f2463193168fd7daf0d4c993080e75f8eb381d",
+    "capture": "1231ce743f99d43df28b5fb52d2510cbe1d74104fc14f7f330472843a14e1ca6"
+  },
+  "ports_listening": {
+    "8767": false,
+    "8768": true,
+    "8998": true,
+    "8999": false
+  },
+  "processes": {
+    "2154793": ".venv/bin/python -u -m moshi.server_prefix_paced --host 127.0.0.1 --port 8998 --static none ",
+    "2184143": "/mnt/data2/exx/voice-ai-personaplex-demo/.venv/bin/python -u -m speaker_lab.scheduling --model-url http://127.0.0.1:8998 --tool-voice native-controlled --vosk-model models/vosk-model-small-en-us-0.15 --today 2026-10-20 --event-dir runs/events --port 8768 ",
+    "3598158": null,
+    "3602765": null
+  },
+  "gpu_observation": [
+    "0, NVIDIA H100 NVL, 22697 MiB, 95830 MiB, 0 %",
+    "1, NVIDIA H100 NVL, 14 MiB, 95830 MiB, 0 %"
+  ],
+  "disk_source_sha256": {
+    "src/speaker_lab/scheduling/domain.py": "639bf14148b574635e6aaefecc2a402687ea2c7bb9b85bb3a6b51ea6d6b75940",
+    "src/speaker_lab/scheduling/audio.py": "84110f9813b3bdb44b919ebf02efbcc588a25cf9bab189a8826831229ec3c90a",
+    "src/speaker_lab/scheduling/native_control.py": "019e479429e7a7602b615fdb56a025b206ee3f9b530f2d93432b7c8e2b291b51",
+    "src/speaker_lab/scheduling/page.html": "2853126801b976cd513044e4320cbab9d82dc5abd67e31563b20e6759df4a5b2",
+    "src/speaker_lab/scheduling/prefix_cache.py": "600a3fe49772eba3216c5dcd839cb643914a723ac58ff5a3527c31dc78d50d3c",
+    "src/speaker_lab/scheduling/server.py": "da01608bc3e6cf71c867f768119738d8a1063f6ce6995ce1ffef01cfae0fbc24",
+    "src/speaker_lab/scheduling/__main__.py": "5d38f76c37781c145d3dafdebabc9ae1f1842a1a5bd713b85f6603eb945d42d6",
+    "src/speaker_lab/scheduling/__init__.py": "681421335d317455144e0753617681fb7f5635b16300a04b6defe5f78ea1a77b",
+    "src/speaker_lab/scheduling/personaplex.py": "200ab44d0dee9cd151663c7d88d53899433503150acba380d7644883727be8e0",
+    "src/speaker_lab/scheduling/prefill.py": "33d1277f804905a7f562d82a79d3456dd7a313fcaedcc24e2f7615f6365b75c5"
+  },
+  "deployment_changed": false,
+  "main_processes_restarted": false,
+  "candidate_selected": false,
+  "trained": false,
+  "human_listening_scope": "Single failed entry61 clip; no microphone/AEC/hardware/cold-start validation",
+  "notes": "Disk includes backward-compatible experimental controls; main processes retain their previously loaded modules. GPU1 is another project, read-only observation only. Instrumented capture backend and gateway retired; main8998/8768 retained.",
+  "local_entry": "http://127.0.0.1:8769",
+  "local_main_health": {
+    "mode": "live",
+    "model_ready": false,
+    "observer_ready": true,
+    "simulated_tools": true
+  },
+  "local_main_health_note": "No active model WebSocket; model_ready=false is normal when disconnected. HTTP health verifies gateway, not native audio.",
+  "local_experiment_forward_8766_stopped": true,
+  "other_gpu_note": "GPU1 was observed8187MiB/36% during diagnostics and14MiB/0% at final snapshot; no operations against it."
+}

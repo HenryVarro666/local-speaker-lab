@@ -1,6 +1,6 @@
 # 架构与边界
 
-Local Speaker Lab 是 Propio 的本地语音实验代码。两条工作流共用 `src/speaker_lab/` 包；目前的模块、脚本和独立 Python 环境共同构成实现，尚未拆分为多个独立服务或软件包。
+Local Speaker Lab 是 the speech project 的本地语音实验代码。两条工作流共用 `src/speaker_lab/` 包；目前的模块、脚本和独立 Python 环境共同构成实现，尚未拆分为多个独立服务或软件包。
 
 ## 两条运行路径
 
@@ -27,7 +27,7 @@ flowchart LR
 
 `scripts/analyze_glossary_comparison.py` 在三组配对预测完整后生成新的 `comparison.json`，复核输入哈希和计分，比较参考术语的失误→命中、命中→失误，以及按参考位置锚定的新增/消失错误提及。置信区间使用按语言分层的配对片段 bootstrap；它不估计说话人或会话间相关性。
 
-数据与命令详见[词表实验说明](../experiments/glossary/README.md)，当前可审阅输入见[冻结协议目录](../experiments/glossary/protocols/ascend-val200-train-vocab30-v2/)。
+数据与命令详见[词表实验说明](../experiments/glossary/README.md)，当前可审阅输入见[冻结协议目录](../experiments/glossary/protocols/ascend-val200-train-vocab30-v2)。
 
 ### 双人分离、转写与纪要
 

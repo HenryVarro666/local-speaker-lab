@@ -1,0 +1,1736 @@
+{
+  "experiment_started": "2026-10-21",
+  "last_verified_client_date": "2026-10-22",
+  "timezone": "America/Chicago",
+  "frozen_demo_today": "2026-10-20",
+  "status": "rejected_at_actual_gateway_entry_main_unchanged",
+  "candidate_variant": "calendar",
+  "timing_boundary": "gateway native_readback event to first same-epoch native_voice_started PCM RMS > .008; excludes observer, query, browser, hardware and strict cold start",
+  "candidate_timing": {
+    "count": 10,
+    "values_ms": [
+      812.136,
+      864.663,
+      924.83,
+      839.701,
+      919.133,
+      870.705,
+      778.27,
+      942.095,
+      844.192,
+      925.681
+    ],
+    "min_ms": 778.27,
+    "median_ms": 867.684,
+    "max_ms": 942.095
+  },
+  "previous_deployed_timing": {
+    "count": 10,
+    "values_ms": [
+      1512.038,
+      1502.165,
+      1661.567,
+      1509.621,
+      1651.813,
+      1568.822,
+      1474.007,
+      1614.281,
+      1534.24,
+      1734.432
+    ],
+    "min_ms": 1474.007,
+    "median_ms": 1551.531,
+    "max_ms": 1734.432
+  },
+  "median_reduction_percent": 44.08,
+  "full_user_speech_flows": [
+    {
+      "run": "calendar-flow-55",
+      "status": "passed",
+      "elapsed_seconds": 58.693,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 812.136
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 864.663
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 924.83
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "latency_ms": 839.701
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "latency_ms": 919.133
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty p.m. is available. Say yes, confirm to that safe.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-2.wav",
+          "sha256": "3180ffca8d8c417aa4b3a61a7b239205a5081ae06fdce67a4bd084b1c87dc3a5",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking references BK number one confirmed for Friday October twenty third at four thirty PM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "07b83dadcd3dbb1e893176af2f5bb1e604dbfec8b2bad8a459b3b0da8aa43ede",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday, October twenty second at two p.m.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "71a7d6dda4ac4a4041b07f9f2c25c630a56e1a37ff8cdea67a336b6a42b151d7",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your booking references B K number one confirmed for Thursday, October twenty second at two p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "83fd6932dfd297fe97be8b49b3bebe7942dd8c84f891ffc8e9f192a50652d9eb",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        }
+      ],
+      "handshakes": 1,
+      "device_fallbacks": 0,
+      "correction_during_native_voice": true,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 8539.14,
+          "kind": "native_control",
+          "elapsed_ms": 8380.495,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.154,
+            "silence_before": 0.0,
+            "text": 513.079,
+            "silence_after": 120.588
+          }
+        },
+        {
+          "client_elapsed_ms": 13383.554,
+          "kind": "native_control",
+          "elapsed_ms": 13175.408,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 0.839,
+            "silence_before": 0.0,
+            "text": 508.836,
+            "silence_after": 119.962
+          }
+        },
+        {
+          "client_elapsed_ms": 24161.674,
+          "kind": "native_control",
+          "elapsed_ms": 24001.531,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.241,
+            "silence_before": 0.0,
+            "text": 602.526,
+            "silence_after": 120.842
+          }
+        },
+        {
+          "client_elapsed_ms": 36454.208,
+          "kind": "native_control",
+          "elapsed_ms": 36214.323,
+          "phase": "applied",
+          "epoch": 14,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 0.796,
+            "silence_before": 0.0,
+            "text": 508.349,
+            "silence_after": 119.639
+          }
+        },
+        {
+          "client_elapsed_ms": 42868.274,
+          "kind": "native_control",
+          "elapsed_ms": 42709.245,
+          "phase": "applied",
+          "epoch": 17,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.08,
+            "silence_before": 0.0,
+            "text": 602.309,
+            "silence_after": 120.488
+          }
+        }
+      ],
+      "input_audio": [
+        {
+          "name": "book",
+          "sha256": "7efa6eb2389307774275fcb9ac88a8ed734b1c25f24bbb856b83eb4c4d1c373c",
+          "samples": 40783,
+          "sample_rate": 24000
+        },
+        {
+          "name": "correct",
+          "sha256": "f0a8c5f2ad4e8ae1f064f2874945c404dcd607a70084122e56e4a393a58b89a5",
+          "samples": 65401,
+          "sample_rate": 24000
+        },
+        {
+          "name": "confirm",
+          "sha256": "c1a83443cdb92b8435d6f2735cbdb9dc5217c131a52927f704f8bce6dd3f1447",
+          "samples": 25732,
+          "sample_rate": 24000
+        },
+        {
+          "name": "move",
+          "sha256": "c071711153534a1370b5ff7dc754c7680398c5e5c936a008b71b82bfd16fa642",
+          "samples": 48029,
+          "sample_rate": 24000
+        },
+        {
+          "name": "confirm",
+          "sha256": "c1a83443cdb92b8435d6f2735cbdb9dc5217c131a52927f704f8bce6dd3f1447",
+          "samples": 25732,
+          "sample_rate": 24000
+        }
+      ],
+      "event_sha256": "d4cbf58e288f5919b40dd590448341f6887267fc03d667ce646c7185e49a20a6",
+      "result_sha256": "9d041ea169fb4c86ac1c63c58f514605574a4b692d780f9a51e04db1724de976"
+    },
+    {
+      "run": "calendar-flow-repeat-56",
+      "status": "passed",
+      "elapsed_seconds": 58.634,
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "latency_ms": 870.705
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "latency_ms": 778.27
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "latency_ms": 942.095
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "latency_ms": 844.192
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "latency_ms": 925.681
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday, October twenty third at four thirty p.m. is available. Say yes, confirm to save.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-2.wav",
+          "sha256": "42247263d4911e1f6ef824f08723f82abc61fb9922f13c9a485b186167813cad",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking references BK number one confirmed for Friday October twenty third at four thirty PM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "6d1d9e542ede01210122c410ebf54c78053bffa70654e76464c4daeba47ba514",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday, October twenty two at two p.m.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "456361eda193f605d9cb8e4871d3c60f20121e82d91e3204d64661c0985490fb",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your booking references BK number one confirmed for Thursday, October twenty second at two p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "d40d6be168df95ff8de2a43105f431ddc42bda6cd2e91c08028f5043a6945928",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+        }
+      ],
+      "handshakes": 1,
+      "device_fallbacks": 0,
+      "correction_during_native_voice": true,
+      "cache_acks": [
+        {
+          "client_elapsed_ms": 9304.078,
+          "kind": "native_control",
+          "elapsed_ms": 9143.633,
+          "phase": "applied",
+          "epoch": 3,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 3:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.079,
+            "silence_before": 0.0,
+            "text": 512.658,
+            "silence_after": 120.379
+          }
+        },
+        {
+          "client_elapsed_ms": 14128.278,
+          "kind": "native_control",
+          "elapsed_ms": 13967.943,
+          "phase": "applied",
+          "epoch": 7,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Friday October 23 at 4:30 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.054,
+            "silence_before": 0.0,
+            "text": 508.973,
+            "silence_after": 119.679
+          }
+        },
+        {
+          "client_elapsed_ms": 24275.133,
+          "kind": "native_control",
+          "elapsed_ms": 24113.864,
+          "phase": "applied",
+          "epoch": 10,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Friday October 23 at 4:30 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.03,
+            "silence_before": 0.0,
+            "text": 602.254,
+            "silence_after": 120.551
+          }
+        },
+        {
+          "client_elapsed_ms": 36827.301,
+          "kind": "native_control",
+          "elapsed_ms": 36667.562,
+          "phase": "applied",
+          "epoch": 14,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: Thursday October 22 at 2:00 PM Central is available, not saved. Tell the user the available time and ask for confirmation. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.096,
+            "silence_before": 0.0,
+            "text": 514.971,
+            "silence_after": 120.908
+          }
+        },
+        {
+          "client_elapsed_ms": 43094.207,
+          "kind": "native_control",
+          "elapsed_ms": 42935.078,
+          "phase": "applied",
+          "epoch": 17,
+          "mode": "read_cached",
+          "text": "You work for Lakeside Appointment Desk and your name is Alex. Information: The conversation is already in progress. Tool result: appointment with reference B K number 1 has been saved successfully for Thursday October 22 at 2:00 PM Central. Tell the user their confirmed time and reference now. Answer directly without a greeting.",
+          "cached_text_tokens": 28,
+          "prefill_rng_stride": 68,
+          "date_pace": 5,
+          "weekday_pace": 5,
+          "session_seed": null,
+          "prefill_rng_preserved": true,
+          "timing_boundary": "host stage wall time; no explicit CUDA synchronization",
+          "prefix_cache_hit": true,
+          "prefill_timings_ms": {
+            "voice_restore": 1.038,
+            "silence_before": 0.0,
+            "text": 602.194,
+            "silence_after": 120.546
+          }
+        }
+      ],
+      "input_audio": [
+        {
+          "name": "book",
+          "sha256": "7efa6eb2389307774275fcb9ac88a8ed734b1c25f24bbb856b83eb4c4d1c373c",
+          "samples": 40783,
+          "sample_rate": 24000
+        },
+        {
+          "name": "correct",
+          "sha256": "f0a8c5f2ad4e8ae1f064f2874945c404dcd607a70084122e56e4a393a58b89a5",
+          "samples": 65401,
+          "sample_rate": 24000
+        },
+        {
+          "name": "confirm",
+          "sha256": "c1a83443cdb92b8435d6f2735cbdb9dc5217c131a52927f704f8bce6dd3f1447",
+          "samples": 25732,
+          "sample_rate": 24000
+        },
+        {
+          "name": "move",
+          "sha256": "c071711153534a1370b5ff7dc754c7680398c5e5c936a008b71b82bfd16fa642",
+          "samples": 48029,
+          "sample_rate": 24000
+        },
+        {
+          "name": "confirm",
+          "sha256": "c1a83443cdb92b8435d6f2735cbdb9dc5217c131a52927f704f8bce6dd3f1447",
+          "samples": 25732,
+          "sample_rate": 24000
+        }
+      ],
+      "event_sha256": "e5aab43f9ca5c9c8b2d653825e98d45841daea122dbefc753cc9f474815acf46",
+      "result_sha256": "0e170700aaf6befc6f29581b52414496e81745a01ba62b14879c20354a369116"
+    }
+  ],
+  "direct_tool_fact_probes": [
+    {
+      "run": "calendar-novel-57",
+      "status": "passed",
+      "waveform_checks": [
+        {
+          "file": "stage-3.wav",
+          "relative_file": "calendar-novel-57/stage-3.wav",
+          "sha256": "35da57d89c3cb589ef635b1734f639efc43f02fa7825055362ac1a6810100ea5",
+          "text": "Tuesday, October 20th at 11:00 A.M. is available. So yes, confirm to that.",
+          "expected": {
+            "start": "2026-10-20T11:00:00-05:00",
+            "version": 1,
+            "operation": "create"
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-4.wav",
+          "relative_file": "calendar-novel-57/stage-4.wav",
+          "sha256": "f7b322283ce72f4737c0c8e25428142452feb57f212e1e0efd0918272ee677e0",
+          "text": "Your booking reference is BK number one confirmed for Tuesday, October 20th at 11:00 AM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-20T11:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-5.wav",
+          "relative_file": "calendar-novel-57/stage-5.wav",
+          "sha256": "c13b1ee6e473b18331405bae5c82a3c608c0c448aca79253fc76a892fb825532",
+          "text": "Wednesday, October 21 at 9:30 AM, is available. Say yes, confirm to save.",
+          "expected": {
+            "start": "2026-10-21T09:30:00-05:00",
+            "version": 2,
+            "operation": "reschedule"
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-6.wav",
+          "relative_file": "calendar-novel-57/stage-6.wav",
+          "sha256": "42f62c4b51a5f27f4e4f9090bf431d53dd2cf62382409d8ad98d5297813dc16f",
+          "text": "Your booking reference is BK number one confirmed for Wednesday, October 21st at 9:30 AM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-21T09:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": true
+        }
+      ],
+      "applied_epochs": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "superseded_epoch2_applied": false,
+      "session_seeds": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "pacing": [
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "origin": "direct simulated-tool facts plus paced zero PCM, no user speech",
+      "human_listening": false
+    },
+    {
+      "run": "calendar-novel-58",
+      "status": "passed",
+      "waveform_checks": [
+        {
+          "file": "stage-3.wav",
+          "relative_file": "calendar-novel-58/stage-3.wav",
+          "sha256": "83b2bdb28737a6cbf69234fa019c2087bde688d865a3efc11ec1eb0556a953a9",
+          "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+          "expected": {
+            "start": "2026-10-20T11:00:00-05:00",
+            "version": 1,
+            "operation": "create"
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-4.wav",
+          "relative_file": "calendar-novel-58/stage-4.wav",
+          "sha256": "67e4150fc0c08e8a6391ef17fd3beaff53f4fe2e0938a11471ad349083197646",
+          "text": "Your booking references B K number one confirmed for Tuesday, October twentieth at eleven a.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-20T11:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-5.wav",
+          "relative_file": "calendar-novel-58/stage-5.wav",
+          "sha256": "e2697b0b1b9c80a45c70195d3db295a1f922bafc51fc6bf2635367fe662189b8",
+          "text": "Wednesday, October 21 at 9:30 A.M. is available. Say yes, confirm to say this.",
+          "expected": {
+            "start": "2026-10-21T09:30:00-05:00",
+            "version": 2,
+            "operation": "reschedule"
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-6.wav",
+          "relative_file": "calendar-novel-58/stage-6.wav",
+          "sha256": "e7e2fe7ee250dd89844f507aa0552f36931da44780fecd01eb19ebe37f99df51",
+          "text": "Your booking references BK number one confirmed for Wednesday, October 21st at 9:30 AM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-21T09:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": true
+        }
+      ],
+      "applied_epochs": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "superseded_epoch2_applied": false,
+      "session_seeds": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "pacing": [
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "origin": "direct simulated-tool facts plus paced zero PCM, no user speech",
+      "human_listening": false
+    },
+    {
+      "run": "prospective-60",
+      "status": "passed",
+      "waveform_checks": [
+        {
+          "file": "stage-1.wav",
+          "relative_file": "stage-1.wav",
+          "sha256": "a4af2c2e55e8b2d1eb8b08032d8784a21c023fc73fc185083c4f5178503bffd1",
+          "text": "Monday, October twenty sixth at four p.m. is available. Say yes, confirm to save.",
+          "expected": {
+            "start": "2026-10-26T16:00:00-05:00",
+            "version": 1,
+            "operation": "create"
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-2.wav",
+          "relative_file": "stage-2.wav",
+          "sha256": "af2d384f01a8394396c6672f24bfb8674527d523bef9be252fc0eaae80b84de5",
+          "text": "Your booking reference is BK number one confirmed for Monday, October 26 at 4:00 p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-26T16:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-3.wav",
+          "relative_file": "stage-3.wav",
+          "sha256": "cb087f98b64363547466878e16d95ffd75bfa84022a5dd90b813517df62b9232",
+          "text": "Thursday, October 22nd at 9:00 A.M. is available. Say yes, confirm to save.",
+          "expected": {
+            "start": "2026-10-22T09:00:00-05:00",
+            "version": 2,
+            "operation": "reschedule"
+          },
+          "strict_fact_passed": true
+        },
+        {
+          "file": "stage-4.wav",
+          "relative_file": "stage-4.wav",
+          "sha256": "91411635518e47a7e5f3c21ec37492e0f4df0f7cda3a42810fcc08cef1a2cf0b",
+          "text": "Your booking reference is BK number one confirmed for Thursday, October twenty-two at at nine a.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T09:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "strict_fact_passed": true
+        }
+      ],
+      "predeclared": true,
+      "seed": null,
+      "no_retuning_after_observation": true
+    }
+  ],
+  "key_waveform_checks_passed": 20,
+  "key_waveform_checks_total": 20,
+  "unique_slot_values": [
+    "2026-10-20T11:00:00-05:00",
+    "2026-10-21T09:30:00-05:00",
+    "2026-10-22T09:00:00-05:00",
+    "2026-10-22T14:00:00-05:00",
+    "2026-10-23T16:30:00-05:00",
+    "2026-10-26T16:00:00-05:00"
+  ],
+  "number_of_spoken_user_flows": 2,
+  "all_other_checks_are_simulated_tool_fact_probes": true,
+  "spoken_reference": "B K number one maps explicitly to BK-0001; larger counters not audio-validated",
+  "asr_validator": {
+    "model": "Qwen/Qwen3-ASR-0.6B",
+    "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+    "expected_fact_prompt": false,
+    "validator_sha256": "b64d2fa547265487fe15ce5bc565441d9cc6a7cdfe185103b5abcb625afdd315",
+    "validator_unchanged": true
+  },
+  "ab": {
+    "origin": "fresh seeded connections, direct simulated tool proposal, paced zero PCM, no initial user audio",
+    "rows": [
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-0/stage-1.wav",
+        "sha256": "5c3c146b126add1fbd58c44a933f2bf072ada45542a7d37216766f1c691da05d",
+        "text": "To the October 20th at 11:00 AM is available. So yes, confirm to them.",
+        "seed": 42,
+        "date_pace": 3,
+        "strict_fact_passed": false
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-1/stage-1.wav",
+        "sha256": "c7878e3244952c5f58eaf0626e2ca97371e6f1484e5dfe1f1754b50a5430b5be",
+        "text": "To the 20th of October at 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 42,
+        "date_pace": 5,
+        "strict_fact_passed": false
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-2/stage-1.wav",
+        "sha256": "019d621c3d1968ef720d2452520d229cfb1569b3b27ab768c0b329eb7f88cb0c",
+        "text": "Tuesday, October 20 at 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 123,
+        "date_pace": 5,
+        "strict_fact_passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-3/stage-1.wav",
+        "sha256": "d94c7896fb753db014aa4d5cc968505cdc97177f4469d733d63421ecaf63b007",
+        "text": "Tuesday October 20 at 11 A.M. is available. Say yes, confirm to a save.",
+        "seed": 123,
+        "date_pace": 3,
+        "strict_fact_passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-4/stage-1.wav",
+        "sha256": "28d2c6736ce9ca78cb2dc3c818ccb311154f803d8642d51a0e2ea85f25c65a47",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 2026,
+        "date_pace": 3,
+        "strict_fact_passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-5/stage-1.wav",
+        "sha256": "7fd70643abd8685a2485592769de5d5182e48bf2713b52f587d0fac9bc76f74c",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 2026,
+        "date_pace": 5,
+        "strict_fact_passed": true
+      }
+    ],
+    "pairs": [
+      {
+        "seed": 42,
+        "first_half_second_pcm_equal": true
+      },
+      {
+        "seed": 123,
+        "first_half_second_pcm_equal": true
+      },
+      {
+        "seed": 2026,
+        "first_half_second_pcm_equal": true
+      }
+    ],
+    "candidate_rule": "date_pace5, weekday and other words3",
+    "candidate_accepted_for_next_stage": false
+  },
+  "calendar_condition": {
+    "rows": [
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-0/stage-1.wav",
+        "sha256": "fc3fe3e8c2a284623716ebb31b0b14d104c63dbdf1f913e053c20f4baa652175",
+        "text": "Tuesday, October twentieth at eleven a.m. is available. So yes, confirm to sit.",
+        "seed": 42,
+        "strict_fact_passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-1/stage-1.wav",
+        "sha256": "c95ce85ac1f22ca78f2f5a3aeb12f9fa88173b0672ab2a630b926bf20e612873",
+        "text": "Tuesday, October 20th, 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 123,
+        "strict_fact_passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-2/stage-1.wav",
+        "sha256": "8fb8d89e0f7c12303341c321d60b0e04eb73e6bdbecab5391dbb7987acd734ae",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm, schedule, and save.",
+        "seed": 2026,
+        "strict_fact_passed": true
+      }
+    ],
+    "candidate_rule": "weekday5,date5,other words3",
+    "all_declared_cases_passed": true,
+    "paired_early_prefix": [
+      {
+        "seed": 42,
+        "first_160ms_pcm_equal": true
+      },
+      {
+        "seed": 123,
+        "first_160ms_pcm_equal": true
+      },
+      {
+        "seed": 2026,
+        "first_160ms_pcm_equal": true
+      }
+    ],
+    "prefix_diagnostic": [
+      {
+        "seed": 42,
+        "identical_prefix_ms": 160.417,
+        "identical_prefix_rms": 0.0027303338931559474
+      },
+      {
+        "seed": 123,
+        "identical_prefix_ms": 160.083,
+        "identical_prefix_rms": 0.00030566151540322096
+      },
+      {
+        "seed": 2026,
+        "identical_prefix_ms": 160.625,
+        "identical_prefix_rms": 0.013321924884382505
+      }
+    ]
+  },
+  "diagnostic_qwen": {
+    "model": "Qwen/Qwen3-ASR-0.6B",
+    "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+    "device": "cpu",
+    "dtype": "float32",
+    "language": "English",
+    "human_listening": false,
+    "predictions": [
+      {
+        "file": "receipt-control.wav",
+        "sha256": "aa1a322366aaf2cd4d87c1bdd13dddde8d26808e17216a5ffbac887f0c2ec02e",
+        "text": "Your booking reference is BK number one confirmed for Tuesday, October 20th at 11:00 AM."
+      },
+      {
+        "file": "suspect-first-three-seconds.wav",
+        "sha256": "2ddb7751398d9308c411aba89b510027458180c49627d9f409aef28b1425d3ac",
+        "text": "Tuesday October twentieth at eleven a.m. is available."
+      },
+      {
+        "file": "suspect-repeat-1.wav",
+        "sha256": "fec45cb73aa330d6950881a7abd156122eda205c26b04ee25b6dbd6c597ddca8",
+        "text": "Tuesday, October 28th at 11:00 A.M. is available. Say yes, confirm to to save."
+      },
+      {
+        "file": "suspect-repeat-2.wav",
+        "sha256": "fec45cb73aa330d6950881a7abd156122eda205c26b04ee25b6dbd6c597ddca8",
+        "text": "Tuesday, October 28th at 11:00 A.M. is available. Say yes, confirm to to save."
+      }
+    ]
+  },
+  "diagnostic_vosk": {
+    "model": "vosk-model-small-en-us-0.15",
+    "expected_fact_prompt": false,
+    "rows": [
+      {
+        "file": "stage-3.wav",
+        "sha256": "fec45cb73aa330d6950881a7abd156122eda205c26b04ee25b6dbd6c597ddca8",
+        "result": {
+          "result": [
+            {
+              "conf": 0.771998,
+              "end": 0.45,
+              "start": 0.12,
+              "word": "tuesday"
+            },
+            {
+              "conf": 1.0,
+              "end": 0.78,
+              "start": 0.45,
+              "word": "october"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.17,
+              "start": 0.78,
+              "word": "twentieth"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.26,
+              "start": 1.17,
+              "word": "of"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.68,
+              "start": 1.26,
+              "word": "eleven"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.13,
+              "start": 1.68,
+              "word": "am"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.61,
+              "start": 2.31,
+              "word": "is"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.09,
+              "start": 2.67,
+              "word": "available"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.3,
+              "start": 3.09,
+              "word": "say"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.57,
+              "start": 3.3,
+              "word": "yes"
+            },
+            {
+              "conf": 0.743309,
+              "end": 4.02,
+              "start": 3.57,
+              "word": "confirmed"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.194882,
+              "start": 4.02,
+              "word": "to"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.38,
+              "start": 4.26,
+              "word": "to"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.74,
+              "start": 4.38,
+              "word": "safe"
+            }
+          ],
+          "text": "tuesday october twentieth of eleven am is available say yes confirmed to to safe"
+        }
+      },
+      {
+        "file": "stage-4.wav",
+        "sha256": "aa1a322366aaf2cd4d87c1bdd13dddde8d26808e17216a5ffbac887f0c2ec02e",
+        "result": {
+          "result": [
+            {
+              "conf": 0.762468,
+              "end": 0.42,
+              "start": 0.09,
+              "word": "you're"
+            },
+            {
+              "conf": 1.0,
+              "end": 0.81,
+              "start": 0.42,
+              "word": "booking"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.23,
+              "start": 0.81,
+              "word": "reference"
+            },
+            {
+              "conf": 0.835767,
+              "end": 1.44,
+              "start": 1.26,
+              "word": "is"
+            },
+            {
+              "conf": 0.535388,
+              "end": 1.83,
+              "start": 1.44,
+              "word": "b"
+            },
+            {
+              "conf": 0.904447,
+              "end": 2.31,
+              "start": 1.86,
+              "word": "k"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.67,
+              "start": 2.34,
+              "word": "number"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.03,
+              "start": 2.67,
+              "word": "one"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.6,
+              "start": 3.03,
+              "word": "confirmed"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.75,
+              "start": 3.6,
+              "word": "for"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.23,
+              "start": 3.75,
+              "word": "tuesday"
+            },
+            {
+              "conf": 0.849007,
+              "end": 4.62,
+              "start": 4.23,
+              "word": "october"
+            },
+            {
+              "conf": 1.0,
+              "end": 5.07,
+              "start": 4.62,
+              "word": "twentieth"
+            },
+            {
+              "conf": 0.706829,
+              "end": 5.16,
+              "start": 5.07,
+              "word": "at"
+            },
+            {
+              "conf": 1.0,
+              "end": 5.46,
+              "start": 5.16,
+              "word": "eleven"
+            },
+            {
+              "conf": 1.0,
+              "end": 5.82,
+              "start": 5.46,
+              "word": "am"
+            }
+          ],
+          "text": "you're booking reference is b k number one confirmed for tuesday october twentieth at eleven am"
+        }
+      },
+      {
+        "file": "stage-5.wav",
+        "sha256": "4d6a6fe74839342011c81151a008bbc573c6978369d0cbb05cfc82c90b8965a3",
+        "result": {
+          "result": [
+            {
+              "conf": 1.0,
+              "end": 0.42,
+              "start": 0.06,
+              "word": "wednesday"
+            },
+            {
+              "conf": 1.0,
+              "end": 0.75,
+              "start": 0.42,
+              "word": "october"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.02,
+              "start": 0.75,
+              "word": "twenty"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.41,
+              "start": 1.02,
+              "word": "first"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.68,
+              "start": 1.44,
+              "word": "at"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.04,
+              "start": 1.68,
+              "word": "nine"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.34,
+              "start": 2.04,
+              "word": "thirty"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.88,
+              "start": 2.34,
+              "word": "am"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.3,
+              "start": 2.94,
+              "word": "is"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.69,
+              "start": 3.3,
+              "word": "available"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.9,
+              "start": 3.69,
+              "word": "say"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.29,
+              "start": 3.9,
+              "word": "yes"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.65,
+              "start": 4.29,
+              "word": "confirmed"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.71,
+              "start": 4.65,
+              "word": "to"
+            },
+            {
+              "conf": 1.0,
+              "end": 5.13,
+              "start": 4.71,
+              "word": "save"
+            }
+          ],
+          "text": "wednesday october twenty first at nine thirty am is available say yes confirmed to save"
+        }
+      },
+      {
+        "file": "stage-6.wav",
+        "sha256": "c363436e783802c955a9992bd29f69fd4abc8dbf3d7f8a68793e1db7149546ff",
+        "result": {
+          "result": [
+            {
+              "conf": 0.762476,
+              "end": 0.42,
+              "start": 0.06,
+              "word": "you're"
+            },
+            {
+              "conf": 1.0,
+              "end": 0.75,
+              "start": 0.42,
+              "word": "booking"
+            },
+            {
+              "conf": 1.0,
+              "end": 1.32,
+              "start": 0.75,
+              "word": "references"
+            },
+            {
+              "conf": 0.654657,
+              "end": 1.8,
+              "start": 1.32,
+              "word": "bk"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.1,
+              "start": 1.820721,
+              "word": "number"
+            },
+            {
+              "conf": 1.0,
+              "end": 2.49,
+              "start": 2.1,
+              "word": "one"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.33,
+              "start": 2.97,
+              "word": "concern"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.51,
+              "start": 3.33,
+              "word": "for"
+            },
+            {
+              "conf": 1.0,
+              "end": 3.96,
+              "start": 3.51,
+              "word": "wednesday"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.35,
+              "start": 3.96,
+              "word": "october"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.59,
+              "start": 4.35,
+              "word": "twenty"
+            },
+            {
+              "conf": 1.0,
+              "end": 4.95,
+              "start": 4.59,
+              "word": "first"
+            },
+            {
+              "conf": 1.0,
+              "end": 5.25,
+              "start": 4.98,
+              "word": "at"
+            },
+            {
+              "conf": 1.0,
+              "end": 5.49,
+              "start": 5.25,
+              "word": "nine"
+            },
+            {
+              "conf": 1.0,
+              "end": 5.79,
+              "start": 5.49,
+              "word": "thirty"
+            },
+            {
+              "conf": 1.0,
+              "end": 6.18,
+              "start": 5.79,
+              "word": "am"
+            }
+          ],
+          "text": "you're booking references bk number one concern for wednesday october twenty first at nine thirty am"
+        }
+      }
+    ]
+  },
+  "diagnostic_whisper": {
+    "model": "openai/whisper-large-v3-turbo",
+    "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "device": "cpu",
+    "dtype": "float32",
+    "expected_fact_prompt": false,
+    "language": "english",
+    "human_listening": false,
+    "rows": [
+      {
+        "source": "runs/scheduling/native-injection/evidence/rng-prefill-novel-49/stage-3.wav",
+        "sha256": "fec45cb73aa330d6950881a7abd156122eda205c26b04ee25b6dbd6c597ddca8",
+        "text": " Tuesday, October 20th at 11 a.m. is available. Say yes, confirm to safe."
+      },
+      {
+        "source": "runs/scheduling/date-clarity-2026-10-21/evidence/ab-52/case-0/stage-1.wav",
+        "sha256": "5c3c146b126add1fbd58c44a933f2bf072ada45542a7d37216766f1c691da05d",
+        "text": " Tuesday, October 20th at 11 a.m. is available. So yes, confirm to them."
+      }
+    ]
+  },
+  "backend_sha256": "947acc18c7287b7e5e7323b810f2463193168fd7daf0d4c993080e75f8eb381d",
+  "source_sha256": {
+    "src/speaker_lab/scheduling/page.html": "2853126801b976cd513044e4320cbab9d82dc5abd67e31563b20e6759df4a5b2",
+    "src/speaker_lab/scheduling/server.py": "da01608bc3e6cf71c867f768119738d8a1063f6ce6995ce1ffef01cfae0fbc24",
+    "src/speaker_lab/scheduling/domain.py": "639bf14148b574635e6aaefecc2a402687ea2c7bb9b85bb3a6b51ea6d6b75940",
+    "src/speaker_lab/scheduling/native_control.py": "019e479429e7a7602b615fdb56a025b206ee3f9b530f2d93432b7c8e2b291b51",
+    "src/speaker_lab/scheduling/__init__.py": "681421335d317455144e0753617681fb7f5635b16300a04b6defe5f78ea1a77b",
+    "src/speaker_lab/scheduling/prefill.py": "33d1277f804905a7f562d82a79d3456dd7a313fcaedcc24e2f7615f6365b75c5",
+    "src/speaker_lab/scheduling/audio.py": "84110f9813b3bdb44b919ebf02efbcc588a25cf9bab189a8826831229ec3c90a",
+    "src/speaker_lab/scheduling/prefix_cache.py": "600a3fe49772eba3216c5dcd839cb643914a723ac58ff5a3527c31dc78d50d3c",
+    "src/speaker_lab/scheduling/personaplex.py": "200ab44d0dee9cd151663c7d88d53899433503150acba380d7644883727be8e0",
+    "src/speaker_lab/scheduling/__main__.py": "5d38f76c37781c145d3dafdebabc9ae1f1842a1a5bd713b85f6603eb945d42d6",
+    "scripts/personaplex_native_probe.py": "a26076315f4c8140100b0127d2f880f12db60ed4e58bcf787f046b343233da40",
+    "scripts/scheduling_smoke.py": "b64d2fa547265487fe15ce5bc565441d9cc6a7cdfe185103b5abcb625afdd315",
+    "scripts/prepare_personaplex_native.py": "f0f6b1edb1c1d1941e728c34b12e33a7b65dc4ec288302b48f4169ced7b1c0d0",
+    "experiments/scheduling/native-injection/transcribe_probe.py": "8720f9fe5efc06e1498be7b768f51f7f5e4da19ec0fbc2cf266c60c70e9a9329",
+    "runs/scheduling/date-clarity-2026-10-21/server_calendar_prefill.py": "947acc18c7287b7e5e7323b810f2463193168fd7daf0d4c993080e75f8eb381d"
+  },
+  "fixed_seed_in_acceptance": false,
+  "main_entry_changed": false,
+  "human_microphone": false,
+  "human_listening": true,
+  "strict_cold_start": false,
+  "notes": "20 core key factual waveform checks across5 runs and6 unique slots, not20 independent spoken-user tasks. Actual entry61 failed independent ASR and human day readback, so candidate is rejected. Separate62/63 diagnostics did not reproduce fault or establish decoder-history benefit; never substitute them for61. Qwen strict fact guard unchanged. Not a frozen benchmark, MOS, p95 or runtime speech verification guarantee.",
+  "human_listening_scope": "One entry-61 clip only; user heard day28 and hour11, expected day20. No microphone or AEC validation.",
+  "entry_probe": {
+    "status": "failed_waveform_and_human",
+    "origin": "diagnostic text plus paced zero PCM; no microphone",
+    "expected_start": "2026-10-20T11:00:00-05:00",
+    "epoch": 3,
+    "pcm_chunks": 155,
+    "sha256": "cb73947699ef91b8c0fe591c69e34907180fddafe49054210afd3caa167a7fc3",
+    "human_feedback": {
+      "verbatim": "28 11点，别的没听清",
+      "heard_day": 28,
+      "heard_hour": 11,
+      "weekday_month": "unclear",
+      "expected_day": 20,
+      "passed": false,
+      "received_client_date": "2026-10-22"
+    },
+    "independent_asr": [
+      "Qwen3-ASR-0.6B",
+      "openai/whisper-large-v3-turbo",
+      "Vosk small-en-us-0.15"
+    ],
+    "decision": "Reject candidate for main entry; do not classify as only ASR ambiguity."
+  },
+  "decoder_diagnostic_62": {
+    "status": "no_improvement_demonstrated_fault_not_reproduced",
+    "rows": [
+      {
+        "file": "epoch-2-prime-0.wav",
+        "relative_file": "07f01d8ec139/epoch-2-prime-0.wav",
+        "sha256": "4b59c19fbf64c30a766f078c37701385e9cf45fc94d4a76bc28ff845ced53794",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 23,
+        "passed": true
+      },
+      {
+        "file": "epoch-2-prime-6.wav",
+        "relative_file": "07f01d8ec139/epoch-2-prime-6.wav",
+        "sha256": "b1f564786726d9288bf6136ba9f7c5b7e1ecf9c3e4726bd752381dd94470d7a9",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 23,
+        "passed": true
+      },
+      {
+        "file": "epoch-2-prime-0.wav",
+        "relative_file": "0fe5905a88ab/epoch-2-prime-0.wav",
+        "sha256": "93cd357704359c9383016da02e43e12bdf9c5814a8bb28df56c711fb158f56a5",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "seed": 11,
+        "passed": true
+      },
+      {
+        "file": "epoch-2-prime-6.wav",
+        "relative_file": "0fe5905a88ab/epoch-2-prime-6.wav",
+        "sha256": "8ef24d4bd3401f115c1db81a490a88dcb641403bf6393a95d58bdc22f3c7c458",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "seed": 11,
+        "passed": true
+      },
+      {
+        "file": "epoch-2-prime-0.wav",
+        "relative_file": "491db605c525/epoch-2-prime-0.wav",
+        "sha256": "5dbe3bd13147e21aefcc994672a063e57dcdacae65b38588b34654ee7a4d9496",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "seed": 19,
+        "passed": true
+      },
+      {
+        "file": "epoch-2-prime-6.wav",
+        "relative_file": "491db605c525/epoch-2-prime-6.wav",
+        "sha256": "1cfa27e57ddcf4f52e385518763f7cfb08180c162513980ec39833f68cfeda5a",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "seed": 19,
+        "passed": true
+      },
+      {
+        "file": "epoch-2-prime-0.wav",
+        "relative_file": "787af93c3d48/epoch-2-prime-0.wav",
+        "sha256": "196120e9052aa7c76038c066a92719deb81544529fe4dd5938d76b3dc8eedd2f",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "seed": 7,
+        "passed": true
+      },
+      {
+        "file": "epoch-2-prime-6.wav",
+        "relative_file": "787af93c3d48/epoch-2-prime-6.wav",
+        "sha256": "3aae541ab7b7f403c73469cac9f3ac99ef219a0f66f2e1073741bdcbb9534f0b",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "seed": 7,
+        "passed": true
+      }
+    ],
+    "client_opus": [
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-0/stage-1.wav",
+        "sha256": "3b92ecc9d6ed4af24e1bc7ac5b197f31bbf9df8807167971fe668e54be13da9e",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-1/stage-1.wav",
+        "sha256": "f0a021fc075cd10f7525e2a33221ceb0e713daa04c6e8f2a18ef8759fd287408",
+        "text": "Tuesday, October twentieth at eleven a.m. is available. Say yes, confirm to save.",
+        "passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-2/stage-1.wav",
+        "sha256": "e3b3a53f19ddf9cfafda4a578066ca63db08b88b218a37aba9773ebcc06cdaf0",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "passed": true
+      },
+      {
+        "file": "stage-1.wav",
+        "relative_file": "case-3/stage-1.wav",
+        "sha256": "cfa1317793b1961e8a6934566b43f040d6f40f085d387e272cba50ac398ad1ab",
+        "text": "Tuesday, October twentieth at eleven a.m. is available. Say yes, confirm to save.",
+        "passed": true
+      }
+    ],
+    "reset_baseline_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "baseline_exact": true,
+    "generated_token_pairs": 4,
+    "seed_search": false,
+    "performance_measurement": false
+  },
+  "entry_diagnostic_63": {
+    "status": "diagnostic_only_does_not_override_entry61",
+    "cases": 4,
+    "seed": null,
+    "rows": [
+      {
+        "file": "epoch-3-gateway.wav",
+        "relative_file": "5163aee3a6a0/epoch-3-gateway.wav",
+        "sha256": "0dbd48d85fb9dde673e32dab0b688ac040959b7a80db8a5e6fcd620a1b5233e7",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save.",
+        "case": 0,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-0.wav",
+        "relative_file": "5163aee3a6a0/epoch-3-prime-0.wav",
+        "sha256": "132b31dbeb4db40e34363fc2d440d7da031f1dad24a1bd9dab8100aa51eb48cb",
+        "text": "Tuesday, October twentieth at eleven a.m. is available. Say yes, confirm to save.",
+        "case": 0,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-6.wav",
+        "relative_file": "5163aee3a6a0/epoch-3-prime-6.wav",
+        "sha256": "609903648fa4b246452e1baaa60113ccf0288c9d7154ade9fe7164ced4ce5935",
+        "text": "Tuesday, October twentieth at eleven a.m. is available. Say yes, confirm to save.",
+        "case": 0,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-gateway.wav",
+        "relative_file": "b32a5c4cee2b/epoch-3-gateway.wav",
+        "sha256": "edaf0b5b55da0a34185b923a9db8ab910a9ecf87b5ba59b8af8f1a3782e5d5af",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes. Confirm to save.",
+        "case": 3,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-0.wav",
+        "relative_file": "b32a5c4cee2b/epoch-3-prime-0.wav",
+        "sha256": "bf4a9dacaced64446752acfe22cb9d6ff54a436c6466a77d5b6dc2024bd74f16",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "case": 3,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-6.wav",
+        "relative_file": "b32a5c4cee2b/epoch-3-prime-6.wav",
+        "sha256": "9fc069f79d093d0209ad26089500208e2e29fe0b188bb2c9f350e090a0af71d4",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "case": 3,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-gateway.wav",
+        "relative_file": "daadf63bf630/epoch-3-gateway.wav",
+        "sha256": "68680a446c6c719e5c710e64955e85be199296c361b71bbf9a243725bbbdea25",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "case": 1,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-0.wav",
+        "relative_file": "daadf63bf630/epoch-3-prime-0.wav",
+        "sha256": "39735bd5d29bc126a5fb7d07c5ee96cdb233109ad993d876c6dec7a03e4fbe04",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "case": 1,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-6.wav",
+        "relative_file": "daadf63bf630/epoch-3-prime-6.wav",
+        "sha256": "57ec6d9213082abb256d9f54e7f6890d71b4158772f922a308fd88732ae2959f",
+        "text": "Tuesday, October 20th at 11:00 AM is available. Say yes, confirm to save.",
+        "case": 1,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-gateway.wav",
+        "relative_file": "e4a6b2009811/epoch-3-gateway.wav",
+        "sha256": "ded3e04031728ed669809af2ae16d943d738ede66542428cb6ac14cbb77852e3",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say it's confirmed to that save.",
+        "case": 2,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-0.wav",
+        "relative_file": "e4a6b2009811/epoch-3-prime-0.wav",
+        "sha256": "0700496d755dc4e866b8b121a7ea0ca9c34dcd4ab964b2ff3aa99f80032c1e48",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say it's confirmed to that save.",
+        "case": 2,
+        "passed": true
+      },
+      {
+        "file": "epoch-3-prime-6.wav",
+        "relative_file": "e4a6b2009811/epoch-3-prime-6.wav",
+        "sha256": "604d1ef17dbf413b0c1937b364643ccfc8f67c8c6147c5c956ba2f12cff63346",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say it's confirmed to that save.",
+        "case": 2,
+        "passed": true
+      }
+    ],
+    "baseline_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "baseline_exact": true,
+    "main_candidate_rejected": true
+  },
+  "debug_capture_source_sha256": "1231ce743f99d43df28b5fb52d2510cbe1d74104fc14f7f330472843a14e1ca6",
+  "verification": {
+    "verified_at_utc": "2026-10-22T05:22:06.057082+00:00",
+    "focused_tests": {
+      "passed": 114,
+      "seconds": 2.3
+    },
+    "full_suite": {
+      "passed": 650,
+      "skipped": 2,
+      "subtests": 22,
+      "existing_duplexlab_numpy_warnings": 3,
+      "seconds": 17.09,
+      "path_prefix": "/opt/homebrew/opt/coreutils/libexec/gnubin",
+      "initial_non_gnu_run": {
+        "failed": 16,
+        "passed": 634,
+        "cause": "macOS BSD realpath lacks -m; existing bootstrap baseline issue; no code changes made"
+      }
+    },
+    "ruff_F": "passed via cached uvx --offline",
+    "git_diff_check": "passed",
+    "frozen_release_source_files": 15,
+    "all_frozen_source_hashes_unchanged": true,
+    "related_markdown_links": {
+      "files": 9,
+      "local_links": 235,
+      "broken": 0
+    },
+    "real_upstream_patch_reproduced_sha256": "947acc18c7287b7e5e7323b810f2463193168fd7daf0d4c993080e75f8eb381d",
+    "log_sha256": {
+      "final-focused-tests.log": "b830c491b2ef3eef83067e378cd834431017d9bfecf2db748ec1f61ee35e7489",
+      "final-full-tests.log": "544488873a7e931e2b4d197f04b3f2e1aef1e90062216bb7b1e849f6d1e3e77f",
+      "final-full-tests-gnu.log": "130d30b995a1c99a998d9b5e00350d599466306b73ec011910881debda6c5a98"
+    }
+  }
+}

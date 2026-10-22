@@ -44,6 +44,32 @@ def test_repeated_stage_cannot_reuse_stale_success(tmp_path, monkeypatch):
     assert not (runner.run_dir / "work/diarize/response.json").exists()
 
 
+def test_worker_preserves_virtualenv_interpreter_and_its_dependencies(tmp_path):
+    """Resolving a venv's Python symlink must not select the base environment."""
+    import subprocess
+    import venv
+
+    if os.name == "nt":
+        pytest.skip("POSIX virtualenv interpreter symlink regression")
+    environment = tmp_path / "model-environment"
+    venv.EnvBuilder(with_pip=False, symlinks=True).create(environment)
+    python = environment / "bin/python"
+    site = Path(subprocess.check_output(
+        [str(python), "-c", "import sysconfig; print(sysconfig.get_path('purelib'))"], text=True).strip())
+    (site / "worker_environment_marker.py").write_text("VALUE = 73\n", encoding="utf-8")
+    (site / "environment_backend.py").write_text(
+        "import sys\nfrom worker_environment_marker import VALUE\n"
+        "class Backend:\n"
+        "    def run(self, payload, options):\n"
+        "        return {'value': VALUE, 'prefix': sys.prefix}\n", encoding="utf-8")
+    runner = WorkerRunner({
+        "_root": str(ROOT),
+        "workers": {"transcribe_python": str(python), "timeout_seconds": 15},
+        "transcribe": {"backend": "environment_backend:Backend"},
+    }, tmp_path / "venv-run")
+    assert runner.run("transcribe", {}) == {"value": 73, "prefix": str(environment)}
+
+
 @pytest.mark.parametrize("response,description", [
     ("not json", "invalid JSON"),
     ('{"ok": true, "result": {"score": NaN}}', "invalid JSON"),

@@ -1,0 +1,730 @@
+{
+  "date": "2026-10-20",
+  "default": "native-controlled / read_cached: full authoritative tool text; all audio native",
+  "finetuned": false,
+  "human_microphone_tested": false,
+  "subjective_audio_quality_reviewed": false,
+  "runs": [
+    {
+      "run": "latency-controlled-33",
+      "status": "passed",
+      "error": null,
+      "event_sha256": "d0f60ac297d2ec7f9566dd8b461b612756325b900d9277baf8652240a39a1fce",
+      "result_sha256": "e77cbfd067363b9caa1f86736bf6c330258980eba596143929c3b8520a5214a5",
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "mode": "read_cached",
+          "latency_ms": 1512.038
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "mode": "read_cached",
+          "latency_ms": 1502.165
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "mode": "read_cached",
+          "latency_ms": 1661.567
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "mode": "read_cached",
+          "latency_ms": 1509.621
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "mode": "read_cached",
+          "latency_ms": 1651.813
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty PM CFS.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "57146700b9652c14b729a676d9f7f5fd39c6d697a4ce6ebe831c6aee13fa7f0a",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking reference is BK number one. Confirm for Friday, October twenty-third at four thirty PM.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "7c2f1157a47fdced69db15916a35592b21d1050956611e5d5c3687e99b771e58",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday October twenty second at two p.m. Jesse Undercon.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "0e62ef2376dfdcf2d842a0160af0e8ffbcdb83fd2a28944cb7c6d57ea9eb9861",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your looking reference is BK number one confirmed for Thursday, October twenty second at two p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "6b4afeb725d2f2f34e99353127e3fc54503839eb0ad3fc162ec4df03e642d3c6",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        }
+      ],
+      "full_elapsed_seconds": 55.214,
+      "pcm_chunks": 561,
+      "handshakes": 1,
+      "device_fallbacks": 0,
+      "correction_during_voice": true,
+      "cache_acks": [
+        {
+          "epoch": 3,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 1.105,
+            "silence_before": 0.0,
+            "text": 1170.503,
+            "silence_after": 142.758
+          }
+        },
+        {
+          "epoch": 7,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.798,
+            "silence_before": 0.0,
+            "text": 1178.533,
+            "silence_after": 142.34
+          }
+        },
+        {
+          "epoch": 10,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.806,
+            "silence_before": 0.0,
+            "text": 1329.709,
+            "silence_after": 142.18
+          }
+        },
+        {
+          "epoch": 14,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.997,
+            "silence_before": 0.0,
+            "text": 1170.912,
+            "silence_after": 143.058
+          }
+        },
+        {
+          "epoch": 17,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.866,
+            "silence_before": 0.0,
+            "text": 1328.251,
+            "silence_after": 142.077
+          }
+        }
+      ]
+    },
+    {
+      "run": "latency-controlled-repeat-34",
+      "status": "passed",
+      "error": null,
+      "event_sha256": "0ef1daecf222a9b454d3b1e8936eb59b7ef8178b32691c9ebe5f8a7430f56e3d",
+      "result_sha256": "43f564a31cc1f7b60dded8491b28d35f670ecaeeff214d7eae83469f830252b9",
+      "latency": [
+        {
+          "epoch": 3,
+          "purpose": "proposal",
+          "mode": "read_cached",
+          "latency_ms": 1568.822
+        },
+        {
+          "epoch": 7,
+          "purpose": "proposal",
+          "mode": "read_cached",
+          "latency_ms": 1474.007
+        },
+        {
+          "epoch": 10,
+          "purpose": "receipt",
+          "mode": "read_cached",
+          "latency_ms": 1614.281
+        },
+        {
+          "epoch": 14,
+          "purpose": "proposal",
+          "mode": "read_cached",
+          "latency_ms": 1534.24
+        },
+        {
+          "epoch": 17,
+          "purpose": "receipt",
+          "mode": "read_cached",
+          "latency_ms": 1734.432
+        }
+      ],
+      "waveform_checks": [
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 7,
+          "purpose": "proposal",
+          "asr_text": "Friday October twenty third at four thirty p.m.",
+          "expected": {
+            "start": "2026-10-23T16:30:00-05:00",
+            "version": 3,
+            "operation": "create"
+          },
+          "file": "qa-epoch-7-attempt-1.wav",
+          "sha256": "b53f60ef9733a295b4039c02514860de1bcd273c23aca9f7989cf986e2bc230a",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 10,
+          "purpose": "receipt",
+          "asr_text": "Your booking with us BK number one confirmed for Friday, October twenty third at four thirty p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-23T16:30:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-10-attempt-3.wav",
+          "sha256": "7724fa338bd7b812b5f0214c804c6c115634067d4b2e2b549699bc3af102f510",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 14,
+          "purpose": "proposal",
+          "asr_text": "Thursday, October twenty second at two p.m. Central.",
+          "expected": {
+            "start": "2026-10-22T14:00:00-05:00",
+            "version": 5,
+            "operation": "reschedule"
+          },
+          "file": "qa-epoch-14-attempt-1.wav",
+          "sha256": "7558ec61191edcabfad67e5d3395ac0ddfa6ee4e9f51448b44662fcc36423bea",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        },
+        {
+          "kind": "native_waveform_verified",
+          "epoch": 17,
+          "purpose": "receipt",
+          "asr_text": "Your booking reference is BK number one confirmed for Thursday October twenty second at two p.m.",
+          "expected": {
+            "id": "BK-0001",
+            "start": "2026-10-22T14:00:00-05:00",
+            "service": "Consultation",
+            "timezone": "America/Chicago",
+            "simulated": true
+          },
+          "file": "qa-epoch-17-attempt-3.wav",
+          "sha256": "c8c2b57dd845e00d4ba659cd56c88bda93d8be76d43c411fbcb6253c742df963",
+          "model": "Qwen3-ASR-0.6B",
+          "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+          "strict_calendar_and_reference_recheck": true
+        }
+      ],
+      "full_elapsed_seconds": 55.034,
+      "pcm_chunks": 557,
+      "handshakes": 1,
+      "device_fallbacks": 0,
+      "correction_during_voice": true,
+      "cache_acks": [
+        {
+          "epoch": 3,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 1.014,
+            "silence_before": 0.0,
+            "text": 1168.338,
+            "silence_after": 142.917
+          }
+        },
+        {
+          "epoch": 7,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.766,
+            "silence_before": 0.0,
+            "text": 1162.927,
+            "silence_after": 142.233
+          }
+        },
+        {
+          "epoch": 10,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.873,
+            "silence_before": 0.0,
+            "text": 1328.522,
+            "silence_after": 142.461
+          }
+        },
+        {
+          "epoch": 14,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.746,
+            "silence_before": 0.0,
+            "text": 1162.041,
+            "silence_after": 142.153
+          }
+        },
+        {
+          "epoch": 17,
+          "prefix_cache_hit": true,
+          "cached_text_tokens": 18,
+          "prefill_timings_ms": {
+            "voice_restore": 0.741,
+            "silence_before": 0.0,
+            "text": 1328.877,
+            "silence_after": 142.545
+          }
+        }
+      ]
+    }
+  ],
+  "waveform_checks": [
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 7,
+      "purpose": "proposal",
+      "asr_text": "Friday October twenty third at four thirty PM CFS.",
+      "expected": {
+        "start": "2026-10-23T16:30:00-05:00",
+        "version": 3,
+        "operation": "create"
+      },
+      "file": "qa-epoch-7-attempt-1.wav",
+      "sha256": "57146700b9652c14b729a676d9f7f5fd39c6d697a4ce6ebe831c6aee13fa7f0a",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 10,
+      "purpose": "receipt",
+      "asr_text": "Your booking reference is BK number one. Confirm for Friday, October twenty-third at four thirty PM.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-23T16:30:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-10-attempt-3.wav",
+      "sha256": "7c2f1157a47fdced69db15916a35592b21d1050956611e5d5c3687e99b771e58",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 14,
+      "purpose": "proposal",
+      "asr_text": "Thursday October twenty second at two p.m. Jesse Undercon.",
+      "expected": {
+        "start": "2026-10-22T14:00:00-05:00",
+        "version": 5,
+        "operation": "reschedule"
+      },
+      "file": "qa-epoch-14-attempt-1.wav",
+      "sha256": "0e62ef2376dfdcf2d842a0160af0e8ffbcdb83fd2a28944cb7c6d57ea9eb9861",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 17,
+      "purpose": "receipt",
+      "asr_text": "Your looking reference is BK number one confirmed for Thursday, October twenty second at two p.m.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-22T14:00:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-17-attempt-3.wav",
+      "sha256": "6b4afeb725d2f2f34e99353127e3fc54503839eb0ad3fc162ec4df03e642d3c6",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 7,
+      "purpose": "proposal",
+      "asr_text": "Friday October twenty third at four thirty p.m.",
+      "expected": {
+        "start": "2026-10-23T16:30:00-05:00",
+        "version": 3,
+        "operation": "create"
+      },
+      "file": "qa-epoch-7-attempt-1.wav",
+      "sha256": "b53f60ef9733a295b4039c02514860de1bcd273c23aca9f7989cf986e2bc230a",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 10,
+      "purpose": "receipt",
+      "asr_text": "Your booking with us BK number one confirmed for Friday, October twenty third at four thirty p.m.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-23T16:30:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-10-attempt-3.wav",
+      "sha256": "7724fa338bd7b812b5f0214c804c6c115634067d4b2e2b549699bc3af102f510",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 14,
+      "purpose": "proposal",
+      "asr_text": "Thursday, October twenty second at two p.m. Central.",
+      "expected": {
+        "start": "2026-10-22T14:00:00-05:00",
+        "version": 5,
+        "operation": "reschedule"
+      },
+      "file": "qa-epoch-14-attempt-1.wav",
+      "sha256": "7558ec61191edcabfad67e5d3395ac0ddfa6ee4e9f51448b44662fcc36423bea",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "kind": "native_waveform_verified",
+      "epoch": 17,
+      "purpose": "receipt",
+      "asr_text": "Your booking reference is BK number one confirmed for Thursday October twenty second at two p.m.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-22T14:00:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-17-attempt-3.wav",
+      "sha256": "c8c2b57dd845e00d4ba659cd56c88bda93d8be76d43c411fbcb6253c742df963",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+      "strict_calendar_and_reference_recheck": true
+    },
+    {
+      "expected": {
+        "start": "2026-10-20T11:00:00-05:00",
+        "version": 1,
+        "operation": "create"
+      },
+      "passed": true,
+      "file": "stage-3.wav",
+      "sha256": "40ffbad2ac97933b47da357e6fe206a3387e69a3ce49671797f7a8cdb2199642",
+      "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to book."
+    },
+    {
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-20T11:00:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "passed": true,
+      "file": "stage-4.wav",
+      "sha256": "60aadfe4869c1d412aecfb392d1923e71278998549c65b0f9cd85d3fa0da0444",
+      "text": "Your booking references BK number one confirmed for Tuesday, October 20th at 11:00 AM."
+    },
+    {
+      "expected": {
+        "start": "2026-10-21T09:30:00-05:00",
+        "version": 2,
+        "operation": "reschedule"
+      },
+      "passed": true,
+      "file": "stage-5.wav",
+      "sha256": "0e9735aa3f1a6ecf08ab24f89cd9be95c73e201e24359980f4cb2ed6f7e381c8",
+      "text": "Wednesday, October 21st at 9:30 AM is available. Say yes, confirm to that. Save it."
+    },
+    {
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-21T09:30:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "passed": true,
+      "file": "stage-6.wav",
+      "sha256": "41c931d4a0fa631fad31ce98b1431041fbf0816328543461260685e4db3bdf51",
+      "text": "Your booking reference is BK number one confirmed for Wednesday, October 21st at 9:30 AM."
+    }
+  ],
+  "checks_passed": 12,
+  "checks_total": 12,
+  "unique_datetime_values": [
+    "2026-10-20T11:00:00-05:00",
+    "2026-10-21T09:30:00-05:00",
+    "2026-10-22T14:00:00-05:00",
+    "2026-10-23T16:30:00-05:00"
+  ],
+  "timing": {
+    "count": 10,
+    "values_ms": [
+      1512.038,
+      1502.165,
+      1661.567,
+      1509.621,
+      1651.813,
+      1568.822,
+      1474.007,
+      1614.281,
+      1534.24,
+      1734.432
+    ],
+    "min_ms": 1474.007,
+    "median_ms": 1551.531,
+    "max_ms": 1734.432,
+    "boundary": "gateway native_readback event to first same-epoch native_voice_started PCM RMS > .008; excludes observer, query, browser, hardware and strict cold start",
+    "previous_median_ms": 3338.1645,
+    "median_reduction_percent": 53.52
+  },
+  "reference_delivery": "Explicit BK number N, shared in tool context and opening, maps to canonical BK-{N:04d}; literal ids require exact digits",
+  "cache": "Connection-local voice + first silence + exact 18-token persona prefix; in-place KV/offset restore; current tool text only; no free conversation history",
+  "cancellation_probe": {
+    "status": "passed",
+    "waveform_checks": [
+      {
+        "expected": {
+          "start": "2026-10-20T11:00:00-05:00",
+          "version": 1,
+          "operation": "create"
+        },
+        "passed": true,
+        "file": "stage-3.wav",
+        "sha256": "40ffbad2ac97933b47da357e6fe206a3387e69a3ce49671797f7a8cdb2199642",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to book."
+      },
+      {
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-20T11:00:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "passed": true,
+        "file": "stage-4.wav",
+        "sha256": "60aadfe4869c1d412aecfb392d1923e71278998549c65b0f9cd85d3fa0da0444",
+        "text": "Your booking references BK number one confirmed for Tuesday, October 20th at 11:00 AM."
+      },
+      {
+        "expected": {
+          "start": "2026-10-21T09:30:00-05:00",
+          "version": 2,
+          "operation": "reschedule"
+        },
+        "passed": true,
+        "file": "stage-5.wav",
+        "sha256": "0e9735aa3f1a6ecf08ab24f89cd9be95c73e201e24359980f4cb2ed6f7e381c8",
+        "text": "Wednesday, October 21st at 9:30 AM is available. Say yes, confirm to that. Save it."
+      },
+      {
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-21T09:30:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "passed": true,
+        "file": "stage-6.wav",
+        "sha256": "41c931d4a0fa631fad31ce98b1431041fbf0816328543461260685e4db3bdf51",
+        "text": "Your booking reference is BK number one confirmed for Wednesday, October 21st at 9:30 AM."
+      }
+    ],
+    "applied_epochs": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "superseded_epoch": 2,
+    "superseded_ack": false,
+    "mode": "read_cached",
+    "event_sha256": "623c8804c9b598cec08b8dbe797c2d17d0d7e6f9a46957493db8aaa52d39ced0",
+    "waveform_asr_sha256": "1c98d67531adba6d4a0b31ab0ceb22a59c125365a6bf5b33496e3ca01413e45f",
+    "run": "latency-controlled-novel-35"
+  },
+  "deployment": {
+    "entry": "http://127.0.0.1:8769",
+    "gateway": "127.0.0.1:8768",
+    "backend": "127.0.0.1:8998",
+    "gateway_pid": 2184143,
+    "backend_pid": 2154793,
+    "post_promotion": {
+      "status": "passed",
+      "origin": "diagnostic text plus paced zero PCM; no microphone",
+      "expected_start": "2026-10-20T11:00:00-05:00",
+      "epoch": 3,
+      "pcm_chunks": 153,
+      "waveform_check": {
+        "file": "stage-0.wav",
+        "sha256": "f4b518a8d8463c23cc49c14292e4d1182e2d1f0914f9ea040ad7b49a8bfb93f4",
+        "text": "Tuesday, October 20th at 11:00 A.M. is available. Say yes, confirm to save."
+      }
+    }
+  },
+  "local_verification": {
+    "full_suite": "618 passed, 1 skipped, 22 subtests; 3 pre-existing concurrent DuplexLab NumPy warnings",
+    "scheduling_tests": 83,
+    "package_distribution_tests": 12,
+    "ruff_F": "passed",
+    "source_hashes_matched": 9,
+    "link_check": {
+      "markdown_files": 15,
+      "local_links": 272,
+      "broken": []
+    },
+    "focused_final": "95 passed (83 scheduling + 12 distribution/package)"
+  },
+  "cleanup": {
+    "retired_remote_ports": [
+      8999,
+      8767
+    ],
+    "retired_local_forward": 8766,
+    "retained_remote_ports": [
+      8998,
+      8768
+    ],
+    "retained_local_forward": 8769,
+    "gpu_observation": [
+      "0, NVIDIA H100 NVL, 22697 MiB, 95830 MiB, 0 %",
+      "1, NVIDIA H100 NVL, 14 MiB, 95830 MiB, 0 %"
+    ],
+    "local_ports": {
+      "8766": false,
+      "8769": true
+    }
+  },
+  "previous_uncached_snapshot": "PRE_CACHE_SUMMARY.json and PRE_CACHE_ENVIRONMENT.json in native-injection",
+  "limits": "Small development samples; prompts/reference wording changed; not paired RNG, frozen benchmark, p95, or general speech accuracy guarantee",
+  "prefill_experiment": {
+    "status": "not_selected_additional_waveform_guard_failed",
+    "deployment_changed": false,
+    "candidate_timing": {
+      "count": 10,
+      "values_ms": [
+        827.856,
+        940.388,
+        975.551,
+        856.196,
+        905.571,
+        853.318,
+        890.663,
+        954.96,
+        873.998,
+        944.526
+      ],
+      "min_ms": 827.856,
+      "median_ms": 898.117,
+      "max_ms": 975.551
+    },
+    "key_waveform_checks_passed": 11,
+    "key_waveform_checks_total": 12,
+    "extra_waveforms_passed": 3,
+    "extra_waveforms_total": 4,
+    "report": "native-injection/PREFILL_RESULTS.md",
+    "environment": "native-injection/PREFILL_ENVIRONMENT.json",
+    "local_verification": {
+      "focused_scheduling_and_distribution_passed": 103,
+      "full_suite_passed": 633,
+      "full_suite_skipped": 2,
+      "subtests_passed": 22,
+      "existing_concurrent_duplexlab_numpy_warnings": 3,
+      "ruff_F": "passed",
+      "reproduction_hash_checks": "cached and prefill passed",
+      "frozen_source_files_verified": 13,
+      "remote_disk_source_files_verified": 10,
+      "markdown_documents_checked": 16,
+      "local_links_checked": 277,
+      "missing_links": 0
+    }
+  }
+}

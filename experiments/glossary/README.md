@@ -13,7 +13,7 @@
 | [200 条冻结协议](protocols/ascend-val200-train-vocab30-v2/README.md) | 固定词表、样本 ID、模型参数与分析计划；本轮扩展实验 |
 | [200 条训练词表结果](ASCEND_200_RESULTS.md) | 600 次真实推理已完成；术语修复 0／5，新增 1 次词表错误替换；整体 MER 小幅下降但区间跨 0 |
 | [6 个关键事件复核](ASCEND_SIX_EVENT_REVIEW.md) | 文本／计分／音频字节已核对；没有完成人工听音，声学判断保留未知 |
-| [剩余 725 条冻结协议](protocols/ascend-val-remaining725-train-vocab30-v1/) | 用户授权后冻结全部剩余合格 validation；词表、主评分、模型及配置保持不变 |
+| [剩余 725 条冻结协议](protocols/ascend-val-remaining725-train-vocab30-v1) | 用户授权后冻结全部剩余合格 validation；词表、主评分、模型及配置保持不变 |
 | [本轮逐步记录](ASCEND_REMAINING_EXECUTION.md) | 改进理由、验证、来源与失败边界；机器时间线附 UTC 时间 |
 
 本轮完整运行记录为 `runs/glossary-ascend-val200-train-vocab30-cpu-001/`；已核对 600 条完整配对、输入／音频哈希、保存分数和耗时。报告保留严格计分结果，同时说明写法变体；没有据结果调整词表、选样或主评分。

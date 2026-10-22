@@ -1,0 +1,29 @@
+# Clean prefix reuse experiment
+
+2026-10-20, America/Chicago. Keep the active 8999/8768 deployment while testing on GPU 0, backend 8998 and gateway 8767. No fine-tuning, subagents, apex changes, commits or pushes.
+
+Feedback loop: existing paced synthetic scheduling smoke with independent Qwen waveform checks; preserve all failures. Measure `native_readback` to same-epoch gateway `native_voice_started` (RMS > .008), using the gateway clock. These endpoints exclude observer/tool wait, browser/hardware and strict cold start.
+
+Ranked hypotheses shared before instrumentation: (1) repeated fixed voice prefill dominates; restore a clean voice prefix in place; (2) tool text prefill also matters; consider token-identical static prefix reuse after measuring voice-only; (3) audio frame/codec output delay remains after prefill.
+
+Safety: capture before all tool/user facts, per connection and voice; restore tensors in place to retain CUDA graph addresses, including KV/end offsets and generator offsets/provided masks. Keep uncached reset modes. Superseding controls must not publish stale acknowledgement or prefix. Do not cache prior appointments, user history, or RNG state.
+
+Acceptance: original interruption/reschedule + same-ID confirmations, two sequential full runs, independent PCM date/time/reference checks, no fallback or repeated greeting; separate alternative-date probe. Compare exact same timing endpoints, retain failure denominators, and do not report small diagnostic samples as benchmark success rates or p95.
+
+Initial recheck 11: uncached run failed receipt waveform check (relative 'tomorrow' instead of explicit Friday); its three first-voice latencies were 3301.1/3486.8/3453.3 ms. Instrumented run 12 failed corrected proposal ('The available time is tight'); profiling itself increased observed latency (5906.5/4373.0 ms), so its absolute values are not an uninstrumented baseline.
+
+Implementation progression: voice-only cache run 13 improved timing but failed reference ASR. Run 14 with an explicit reference introduction passed all four waveform checks (five first-voice values: 2128.594, 2122.041, 2332.910, 2148.011, 2311.725 ms). Static prefix initially missed because SentencePiece emits a trailing space token; exact token-prefix tests and stripping the header space fix it. Final v2 caches voice + first silence + 18 persona tokens; mismatched prompts fall back to replay. Run 15 passed full flow and all four waveform/date/time/reference checks, five latencies 1480.584, 1518.722, 1670.106, 1473.212, 1740.138 ms. Repetition and cancellation/novel-date checks remain in progress.
+
+Run 16 failed the repeated receipt check: independent ASR transcribed BK00001/BK000001 rather than BK0001. Do not count it as passing or weaken reference comparison. Candidate reference wording now uses explicit double/triple-zero groups, with exact canonical expansion in the verifier (double-zero-one must fail BK0001). Waveform acceptance additionally requires an explicit matching month/day, with regression cases for wrong/missing dates. Runs 17 onward test this candidate; timing optimization remains the same c31d4d30 backend.
+
+Runs 17 and 18 both passed the full waveform-gated synthetic flow with counted reference wording; selected ten update-to-PCM values median 1570.8185 ms (52.94% below the previous 3338.1645 ms development baseline). Mid-prefill cancellation probe 19 suppressed obsolete epoch 2 and applied only 3/4/5/6/7; two novel proposals passed independent ASR, but Qwen collapsed the two receipt references to BK01/BK001. Keep those receipts unverified and deployment pending while separating pronunciation from ASR normalization using a second decoder.
+
+Count phrase probe 20 and full flow 21 did not pass: Qwen rendered three zeros as 30. Both remain unverified rather than accepted by zero-padding inference. Next candidate restores individual digit spelling, uses the existing protocol pace=5 for B/K/zero only (ordinary words stay 3), and keeps prefix KV caching. First-voice starts on Your before these spelling words, so measure first voice and full content separately. Cache backend source now 331578aa; unit tests lock token order and longer PAD duration without repeated text tokens.
+
+Paced probe 22 started before backend TCP readiness and failed to connect; no model conclusion. Keep its empty evidence and retry only after a readiness check.
+
+Pace-5 individual spelling passed novel probe 23 and full flow 24, but repetition 25 failed final reference ASR (extra zeros). Explicit BK number 1 opening alone in 26 failed because tool context still contained BK-0001. Correct representation at the source: both tool context and opening now call the same saved-reference alias function. Do not infer zeros for unmarked literals. A single-receipt probe 27 tests this minimal mismatch fix before full regressions.
+
+Minimal aligned-context probe 27 passed independent Qwen waveform verification: B K number one, Tuesday October 20 at 11 AM. This supports the mismatch hypothesis. Full flow 28 now tests the same shared alias in context and opening; complete literal BK-0001 remains in authoritative controller/UI data.
+
+Guided alias full runs 28/29 passed, median1532.0295ms, but novel probe30 failed: the Tuesday proposal was garbled and the Wednesday receipt duplicated the numeric reference. Three identical-wave Qwen repeats and Vosk corroborated these problems. Guided mode is not selected. Probe31 was an infrastructure missing-script failure; corrected fully-controlled native probe32 passed Tuesday11AM/reference. Final candidate now prefers read_cached: all authoritative tool wording is fixed, all waveform generation remains native, cancellation/prefix caching unchanged. Tests lock mode preference; 83 scheduling tests passed. Full controlled33/34 and novel35 are the final acceptance target.

@@ -1,0 +1,7 @@
+# Separate CPU gateway environment; PersonaPlex uses its own upstream GPU env.
+aiohttp>=3.10.5,<3.11
+numpy>=1.26,<2.2
+scipy>=1.13,<2
+soundfile>=0.12,<1
+sphn>=0.1.4,<0.2
+vosk==0.3.45; sys_platform == 'linux'

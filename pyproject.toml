@@ -38,5 +38,8 @@ Issues = "https://github.com/HenryVarro666/local-speaker-lab/issues"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+"speaker_lab.scheduling" = ["page.html"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,0 +1,392 @@
+{
+  "status": "verified_from_all_1920_paired_alignments",
+  "totals": {
+    "random": {
+      "S": 889,
+      "D": 296,
+      "I": 198,
+      "N": 10737
+    },
+    "filtered": {
+      "S": 859,
+      "D": 318,
+      "I": 178,
+      "N": 10737
+    }
+  },
+  "stable_deleted_positions": {
+    "random": 75,
+    "filtered": 82
+  },
+  "extra_stable_positions": 11,
+  "extra_stable_clips": 11,
+  "cases": [
+    {
+      "clip_id": "ascend-train-03611",
+      "stable_extra": [
+        {
+          "index": 0,
+          "token": "嗯",
+          "random_deleted_seeds": [
+            43,
+            44
+          ],
+          "candidate_forced_all_optimal_paths": true,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        1,
+        0,
+        0
+      ],
+      "delta_errors": [
+        1,
+        0,
+        0
+      ],
+      "interpretation": "head filler candidate; random also deletes in two seeds; listening pending"
+    },
+    {
+      "clip_id": "ascend-train-05996",
+      "stable_extra": [
+        {
+          "index": 1,
+          "token": "但",
+          "random_deleted_seeds": [
+            43,
+            44
+          ],
+          "candidate_forced_all_optimal_paths": false,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        1,
+        0,
+        0
+      ],
+      "delta_errors": [
+        0,
+        -1,
+        0
+      ],
+      "interpretation": "large cross-language mistranscription; deletion placement is uncertain"
+    },
+    {
+      "clip_id": "ascend-train-06064",
+      "stable_extra": [
+        {
+          "index": 30,
+          "token": "吧",
+          "random_deleted_seeds": [
+            44
+          ],
+          "candidate_forced_all_optimal_paths": true,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        1,
+        1,
+        0
+      ],
+      "delta_errors": [
+        1,
+        0,
+        0
+      ],
+      "interpretation": "tail particle candidate; random also deletes in seed44; listening pending"
+    },
+    {
+      "clip_id": "ascend-train-05988",
+      "stable_extra": [
+        {
+          "index": 15,
+          "token": "莱",
+          "random_deleted_seeds": [
+            43,
+            44
+          ],
+          "candidate_forced_all_optimal_paths": false,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        0,
+        0,
+        0
+      ],
+      "delta_errors": [
+        -2,
+        0,
+        0
+      ],
+      "interpretation": "UNK source plus Leica transliteration/segmentation; not verified lexical loss"
+    },
+    {
+      "clip_id": "ascend-train-08446",
+      "stable_extra": [
+        {
+          "index": 7,
+          "token": "了",
+          "random_deleted_seeds": [],
+          "candidate_forced_all_optimal_paths": true,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        1,
+        1,
+        1
+      ],
+      "delta_errors": [
+        -1,
+        -1,
+        -1
+      ],
+      "interpretation": "tail particle; random substitutes final particle in all seeds; D increase alone does not mean MER regression"
+    },
+    {
+      "clip_id": "ascend-train-04255",
+      "stable_extra": [
+        {
+          "index": 0,
+          "token": "as",
+          "random_deleted_seeds": [
+            42,
+            44
+          ],
+          "candidate_forced_all_optimal_paths": false,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        0,
+        1,
+        0
+      ],
+      "delta_errors": [
+        0,
+        0,
+        1
+      ],
+      "interpretation": "repeated English short phrase; minimum-edit position ambiguity"
+    },
+    {
+      "clip_id": "ascend-train-06633",
+      "stable_extra": [
+        {
+          "index": 8,
+          "token": "说",
+          "random_deleted_seeds": [
+            42,
+            43
+          ],
+          "candidate_forced_all_optimal_paths": true,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        0,
+        0,
+        -1
+      ],
+      "delta_errors": [
+        0,
+        1,
+        -2
+      ],
+      "interpretation": "source G math versus GMAT and adjacent word alignment; listening pending"
+    },
+    {
+      "clip_id": "ascend-train-08903",
+      "stable_extra": [
+        {
+          "index": 3,
+          "token": "很",
+          "random_deleted_seeds": [],
+          "candidate_forced_all_optimal_paths": false,
+          "random_exact_match_all_paths_all_seeds": true
+        }
+      ],
+      "delta_D": [
+        1,
+        1,
+        1
+      ],
+      "delta_errors": [
+        1,
+        1,
+        1
+      ],
+      "interpretation": "one fewer repeated character in every candidate seed; identity of deleted copy ambiguous; acoustic truth pending"
+    },
+    {
+      "clip_id": "ascend-train-04662",
+      "stable_extra": [
+        {
+          "index": 2,
+          "token": "是",
+          "random_deleted_seeds": [
+            44
+          ],
+          "candidate_forced_all_optimal_paths": false,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        0,
+        0,
+        0
+      ],
+      "delta_errors": [
+        1,
+        1,
+        0
+      ],
+      "interpretation": "function word substitution affects deletion placement; no extra D total"
+    },
+    {
+      "clip_id": "ascend-train-04706",
+      "stable_extra": [
+        {
+          "index": 11,
+          "token": "哼",
+          "random_deleted_seeds": [
+            43,
+            44
+          ],
+          "candidate_forced_all_optimal_paths": true,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        1,
+        0,
+        0
+      ],
+      "delta_errors": [
+        -1,
+        0,
+        0
+      ],
+      "interpretation": "tail interjection orthography; random also deletes in two seeds; listening pending"
+    },
+    {
+      "clip_id": "ascend-train-07082",
+      "stable_extra": [
+        {
+          "index": 19,
+          "token": "alphago",
+          "random_deleted_seeds": [],
+          "candidate_forced_all_optimal_paths": false,
+          "random_exact_match_all_paths_all_seeds": false
+        }
+      ],
+      "delta_D": [
+        1,
+        1,
+        1
+      ],
+      "delta_errors": [
+        2,
+        3,
+        1
+      ],
+      "interpretation": "alphago versus alpha go plus Chinese/English spelling; representation diagnostic, not verified swallowed word"
+    }
+  ],
+  "added_deletion_accounting": {
+    "per_seed": {
+      "42": {
+        "added_positions": 26,
+        "resolved_positions": 12,
+        "added_forced_across_optimal_paths": 12,
+        "net_D": 14
+      },
+      "43": {
+        "added_positions": 14,
+        "resolved_positions": 16,
+        "added_forced_across_optimal_paths": 7,
+        "net_D": -2
+      },
+      "44": {
+        "added_positions": 23,
+        "resolved_positions": 13,
+        "added_forced_across_optimal_paths": 16,
+        "net_D": 10
+      }
+    },
+    "added_total": 63,
+    "resolved_total": 41,
+    "added_forced_total": 35,
+    "added_by_kind": {
+      "filler": 5,
+      "other": 57,
+      "single_ascii_letter": 1
+    },
+    "resolved_by_kind": {
+      "other": 34,
+      "filler": 6,
+      "single_ascii_letter": 1
+    },
+    "note": "Additional accounting of the same observed old test after final training; no change to frozen selection/objective/new-test conditions"
+  },
+  "boundary_sensitivity": {
+    "alphago_boundary_case_07082": {
+      "random": {
+        "42": {
+          "S": 5,
+          "D": 0,
+          "I": 3,
+          "N": 25
+        },
+        "43": {
+          "S": 4,
+          "D": 0,
+          "I": 3,
+          "N": 25
+        },
+        "44": {
+          "S": 9,
+          "D": 0,
+          "I": 3,
+          "N": 25
+        }
+      },
+      "filtered": {
+        "42": {
+          "S": 5,
+          "D": 2,
+          "I": 3,
+          "N": 25
+        },
+        "43": {
+          "S": 6,
+          "D": 2,
+          "I": 2,
+          "N": 25
+        },
+        "44": {
+          "S": 7,
+          "D": 2,
+          "I": 3,
+          "N": 25
+        }
+      }
+    }
+  },
+  "stable_extra_forced_positions": 5,
+  "stable_extra_forced_and_random_exact_positions": 0,
+  "human_listening": "pending",
+  "primary_normalization_changed": false,
+  "source_sha256": {
+    "random-42": "19f31de5dc2ccd6158e8815a07129d9fd87a2fa997e8b7677974d2faf1374a55",
+    "random-43": "2ba20333f2f9f09e137eb1adf11db84e5329e4a739ef6ea81b183dc78847a05e",
+    "random-44": "846328d218bd4dddc921bbad68fec42bbb63e6899b5b166cccd1ebb1961d7d4a",
+    "filtered-42": "ca2c3b149697ab749383a547534a0b63d325842baaff3d9a268a8eb835e74174",
+    "filtered-43": "11511357276ed682a6966a2f3d5a57613668443d0fec0360c9fe3fa4daddd9b6",
+    "filtered-44": "62e156f39821f6aa69a7827b62ed5dc23c67e8298751dcd907c14c66c8d3592b"
+  }
+}

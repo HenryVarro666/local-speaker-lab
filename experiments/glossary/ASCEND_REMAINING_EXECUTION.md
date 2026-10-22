@@ -22,7 +22,7 @@
 
 ## 4. 锁定环境、来源与分析规则
 
-[冻结协议](protocols/ascend-val-remaining725-train-vocab30-v1/)保存词表原样副本、配置、725 个 ID、全合格音频哈希、分析计划、源码和模型快照文件哈希。原 runner、主 scorer、比较分析脚本均不改动。保持 CPU FP32／8 线程／Chinese／greedy／256 token／原种子；没有 LLM 后处理。
+[冻结协议](protocols/ascend-val-remaining725-train-vocab30-v1)保存词表原样副本、配置、725 个 ID、全合格音频哈希、分析计划、源码和模型快照文件哈希。原 runner、主 scorer、比较分析脚本均不改动。保持 CPU FP32／8 线程／Chinese／greedy／256 token／原种子；没有 LLM 后处理。
 
 复用原推理环境，没有升级依赖。该环境最初建立时未安装 pip，直接 `python -m pip check` 因缺少 pip 失败；改用已有开发环境的 `pip --python <原环境 Python> check`，确认无依赖冲突，没有向推理环境安装新包。原环境 editable 分发元数据仍显示 0.1.1；已核对实际 import 指向当前 checkout，并记录真正使用的源码哈希，避免把旧 metadata 当作执行代码版本。
 

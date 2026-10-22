@@ -1,0 +1,149 @@
+{
+  "scope": "Descriptive secondary analysis of the twelve cases selected from seed42 errors; not an unbiased failure-rate estimate.",
+  "cases": [
+    {
+      "clip_id": "ascend-train-01588",
+      "speaker": 18,
+      "language": "zh",
+      "text_observation": "Chinese filler rendered as English",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": 1,
+        "44": 1
+      },
+      "seeds_with_more_filtered_edits": 3
+    },
+    {
+      "clip_id": "ascend-train-01756",
+      "speaker": 18,
+      "language": "zh",
+      "text_observation": "Pronoun variant and extra character",
+      "delta_edits_by_seed": {
+        "42": 2,
+        "43": 1,
+        "44": -1
+      },
+      "seeds_with_more_filtered_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-01777",
+      "speaker": 18,
+      "language": "zh",
+      "text_observation": "Chinese filler rendered as English",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": 0,
+        "44": -1
+      },
+      "seeds_with_more_filtered_edits": 1
+    },
+    {
+      "clip_id": "ascend-train-02347",
+      "speaker": 24,
+      "language": "zh",
+      "text_observation": "Homophone orthography: pronoun character",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": -1,
+        "44": 0
+      },
+      "seeds_with_more_filtered_edits": 1
+    },
+    {
+      "clip_id": "ascend-train-01664",
+      "speaker": 18,
+      "language": "mixed",
+      "text_observation": "Chinese filler substitution; repeated syllables omitted in both arms",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": 0,
+        "44": 1
+      },
+      "seeds_with_more_filtered_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-01679",
+      "speaker": 18,
+      "language": "mixed",
+      "text_observation": "Mixed reference rendered as mostly English",
+      "delta_edits_by_seed": {
+        "42": 5,
+        "43": -1,
+        "44": 4
+      },
+      "seeds_with_more_filtered_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-01701",
+      "speaker": 18,
+      "language": "mixed",
+      "text_observation": "English span replaced with Chinese words",
+      "delta_edits_by_seed": {
+        "42": 4,
+        "43": -4,
+        "44": 2
+      },
+      "seeds_with_more_filtered_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-01723",
+      "speaker": 18,
+      "language": "mixed",
+      "text_observation": "Disfluency and acronym spelling/tokenization differences",
+      "delta_edits_by_seed": {
+        "42": 3,
+        "43": 4,
+        "44": -2
+      },
+      "seeds_with_more_filtered_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-02127",
+      "speaker": 24,
+      "language": "mixed",
+      "text_observation": "Similar English lexical item; source contains UNK",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": -1,
+        "44": 0
+      },
+      "seeds_with_more_filtered_edits": 1
+    },
+    {
+      "clip_id": "ascend-train-02145",
+      "speaker": 24,
+      "language": "mixed",
+      "text_observation": "English final word deletion",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": 0,
+        "44": 0
+      },
+      "seeds_with_more_filtered_edits": 1
+    },
+    {
+      "clip_id": "ascend-train-02302",
+      "speaker": 24,
+      "language": "mixed",
+      "text_observation": "Chinese filler rendered as English",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": 1,
+        "44": 0
+      },
+      "seeds_with_more_filtered_edits": 2
+    },
+    {
+      "clip_id": "ascend-train-02376",
+      "speaker": 24,
+      "language": "mixed",
+      "text_observation": "Chinese/English lexical switching; source contains UNK",
+      "delta_edits_by_seed": {
+        "42": 1,
+        "43": 3,
+        "44": 1
+      },
+      "seeds_with_more_filtered_edits": 3
+    }
+  ]
+}

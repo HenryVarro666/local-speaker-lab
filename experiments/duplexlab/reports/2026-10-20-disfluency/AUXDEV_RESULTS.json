@@ -1,0 +1,521 @@
+{
+  "policy": {
+    "count": 12,
+    "speaker_ids": [
+      5,
+      6
+    ],
+    "constraint_names": [
+      "count",
+      "speaker5",
+      "speaker6",
+      "zh",
+      "en",
+      "mixed",
+      "filler2+",
+      "repeat2+",
+      "mixed_switch4+",
+      "mixed_en_span3+"
+    ],
+    "minimums": [
+      12,
+      4,
+      4,
+      2,
+      2,
+      6,
+      2,
+      2,
+      2,
+      2
+    ],
+    "actual": [
+      12,
+      7,
+      5,
+      4,
+      2,
+      6,
+      2,
+      2,
+      2,
+      2
+    ],
+    "manifest_sha256": "7374413baa85822b0d3da653f5ab164e6b1c6d1e340cb3b76846ce73fe0894b4",
+    "protocol_sha256": "ff4256a51c6b144b07f352e473a7bf2bcf6b3e2531d5facb5cb7c559421deeda",
+    "new_test_unobserved_marker": {
+      "timestamp_unix": 1792534062.3686512,
+      "new_test_base_run_exists": false,
+      "primary_policy_sha256": "f6df6a7516c0bb91a90a16aca5866d14317e9d3b61a756d7b0d303343097bf3e"
+    },
+    "source_sha256": "981f5b741b2ce25213a0b3815245f85609b5bc93ddba63c46acee7e7ad46eaf3",
+    "candidate_count": 313,
+    "solver_status": 0,
+    "human_listening": "pending",
+    "evaluation_after_main_pipeline": true
+  },
+  "comparison": {
+    "schema_version": 1,
+    "unique_clips": 12,
+    "unique_reference_tokens": 140,
+    "unique_speakers": 2,
+    "training_seeds": [
+      42,
+      43,
+      44
+    ],
+    "per_seed": {
+      "42": {
+        "arms": {
+          "random": {
+            "S": 10,
+            "D": 1,
+            "I": 3,
+            "N": 140,
+            "errors": 14,
+            "mer": 0.1
+          },
+          "filtered": {
+            "S": 5,
+            "D": 2,
+            "I": 3,
+            "N": 140,
+            "errors": 10,
+            "mer": 0.07142857142857142
+          }
+        },
+        "speakers": {
+          "6": {
+            "random": {
+              "S": 3,
+              "D": 1,
+              "I": 1,
+              "N": 85,
+              "errors": 5,
+              "mer": 0.058823529411764705
+            },
+            "filtered": {
+              "S": 1,
+              "D": 2,
+              "I": 1,
+              "N": 85,
+              "errors": 4,
+              "mer": 0.047058823529411764
+            }
+          },
+          "5": {
+            "random": {
+              "S": 7,
+              "D": 0,
+              "I": 2,
+              "N": 55,
+              "errors": 9,
+              "mer": 0.16363636363636364
+            },
+            "filtered": {
+              "S": 4,
+              "D": 0,
+              "I": 2,
+              "N": 55,
+              "errors": 6,
+              "mer": 0.10909090909090909
+            }
+          }
+        },
+        "languages": {
+          "en": {
+            "random": {
+              "S": 2,
+              "D": 0,
+              "I": 1,
+              "N": 5,
+              "errors": 3,
+              "mer": 0.6
+            },
+            "filtered": {
+              "S": 2,
+              "D": 0,
+              "I": 1,
+              "N": 5,
+              "errors": 3,
+              "mer": 0.6
+            }
+          },
+          "mixed": {
+            "random": {
+              "S": 6,
+              "D": 0,
+              "I": 2,
+              "N": 77,
+              "errors": 8,
+              "mer": 0.1038961038961039
+            },
+            "filtered": {
+              "S": 3,
+              "D": 0,
+              "I": 2,
+              "N": 77,
+              "errors": 5,
+              "mer": 0.06493506493506493
+            }
+          },
+          "zh": {
+            "random": {
+              "S": 2,
+              "D": 1,
+              "I": 0,
+              "N": 58,
+              "errors": 3,
+              "mer": 0.05172413793103448
+            },
+            "filtered": {
+              "S": 0,
+              "D": 2,
+              "I": 0,
+              "N": 58,
+              "errors": 2,
+              "mer": 0.034482758620689655
+            }
+          }
+        },
+        "delta": -0.02857142857142858,
+        "speaker_macro_delta": -0.033155080213903745
+      },
+      "43": {
+        "arms": {
+          "random": {
+            "S": 4,
+            "D": 2,
+            "I": 2,
+            "N": 140,
+            "errors": 8,
+            "mer": 0.05714285714285714
+          },
+          "filtered": {
+            "S": 5,
+            "D": 1,
+            "I": 2,
+            "N": 140,
+            "errors": 8,
+            "mer": 0.05714285714285714
+          }
+        },
+        "speakers": {
+          "6": {
+            "random": {
+              "S": 0,
+              "D": 2,
+              "I": 0,
+              "N": 85,
+              "errors": 2,
+              "mer": 0.023529411764705882
+            },
+            "filtered": {
+              "S": 1,
+              "D": 1,
+              "I": 0,
+              "N": 85,
+              "errors": 2,
+              "mer": 0.023529411764705882
+            }
+          },
+          "5": {
+            "random": {
+              "S": 4,
+              "D": 0,
+              "I": 2,
+              "N": 55,
+              "errors": 6,
+              "mer": 0.10909090909090909
+            },
+            "filtered": {
+              "S": 4,
+              "D": 0,
+              "I": 2,
+              "N": 55,
+              "errors": 6,
+              "mer": 0.10909090909090909
+            }
+          }
+        },
+        "languages": {
+          "en": {
+            "random": {
+              "S": 1,
+              "D": 0,
+              "I": 0,
+              "N": 5,
+              "errors": 1,
+              "mer": 0.2
+            },
+            "filtered": {
+              "S": 1,
+              "D": 0,
+              "I": 0,
+              "N": 5,
+              "errors": 1,
+              "mer": 0.2
+            }
+          },
+          "mixed": {
+            "random": {
+              "S": 3,
+              "D": 0,
+              "I": 2,
+              "N": 77,
+              "errors": 5,
+              "mer": 0.06493506493506493
+            },
+            "filtered": {
+              "S": 3,
+              "D": 0,
+              "I": 2,
+              "N": 77,
+              "errors": 5,
+              "mer": 0.06493506493506493
+            }
+          },
+          "zh": {
+            "random": {
+              "S": 0,
+              "D": 2,
+              "I": 0,
+              "N": 58,
+              "errors": 2,
+              "mer": 0.034482758620689655
+            },
+            "filtered": {
+              "S": 1,
+              "D": 1,
+              "I": 0,
+              "N": 58,
+              "errors": 2,
+              "mer": 0.034482758620689655
+            }
+          }
+        },
+        "delta": 0.0,
+        "speaker_macro_delta": 0.0
+      },
+      "44": {
+        "arms": {
+          "random": {
+            "S": 5,
+            "D": 2,
+            "I": 4,
+            "N": 140,
+            "errors": 11,
+            "mer": 0.07857142857142857
+          },
+          "filtered": {
+            "S": 7,
+            "D": 1,
+            "I": 2,
+            "N": 140,
+            "errors": 10,
+            "mer": 0.07142857142857142
+          }
+        },
+        "speakers": {
+          "6": {
+            "random": {
+              "S": 1,
+              "D": 2,
+              "I": 1,
+              "N": 85,
+              "errors": 4,
+              "mer": 0.047058823529411764
+            },
+            "filtered": {
+              "S": 2,
+              "D": 1,
+              "I": 0,
+              "N": 85,
+              "errors": 3,
+              "mer": 0.03529411764705882
+            }
+          },
+          "5": {
+            "random": {
+              "S": 4,
+              "D": 0,
+              "I": 3,
+              "N": 55,
+              "errors": 7,
+              "mer": 0.12727272727272726
+            },
+            "filtered": {
+              "S": 5,
+              "D": 0,
+              "I": 2,
+              "N": 55,
+              "errors": 7,
+              "mer": 0.12727272727272726
+            }
+          }
+        },
+        "languages": {
+          "en": {
+            "random": {
+              "S": 2,
+              "D": 0,
+              "I": 1,
+              "N": 5,
+              "errors": 3,
+              "mer": 0.6
+            },
+            "filtered": {
+              "S": 1,
+              "D": 0,
+              "I": 0,
+              "N": 5,
+              "errors": 1,
+              "mer": 0.2
+            }
+          },
+          "mixed": {
+            "random": {
+              "S": 3,
+              "D": 0,
+              "I": 3,
+              "N": 77,
+              "errors": 6,
+              "mer": 0.07792207792207792
+            },
+            "filtered": {
+              "S": 4,
+              "D": 0,
+              "I": 2,
+              "N": 77,
+              "errors": 6,
+              "mer": 0.07792207792207792
+            }
+          },
+          "zh": {
+            "random": {
+              "S": 0,
+              "D": 2,
+              "I": 0,
+              "N": 58,
+              "errors": 2,
+              "mer": 0.034482758620689655
+            },
+            "filtered": {
+              "S": 2,
+              "D": 1,
+              "I": 0,
+              "N": 58,
+              "errors": 3,
+              "mer": 0.05172413793103448
+            }
+          }
+        },
+        "delta": -0.007142857142857145,
+        "speaker_macro_delta": -0.0058823529411764705
+      }
+    },
+    "mean_delta": -0.01190476190476191,
+    "sd_delta": 0.014869042853329524,
+    "range_delta": [
+      -0.02857142857142858,
+      0.0
+    ],
+    "mean_speaker_macro_delta": -0.013012477718360073,
+    "mean_mer": {
+      "random": 0.07857142857142857,
+      "filtered": 0.06666666666666667
+    },
+    "hierarchical_delta_interval": [
+      -0.03636363636363637,
+      0.0
+    ],
+    "bootstrap_seed": 20261020,
+    "bootstrap_replicates": 5000,
+    "interval_unit": "paired crossed resampling of training seeds and whole speakers; clips within speaker retained",
+    "limitations": "Only three training seeds and few public-data speakers; exploratory interval, not population proof."
+  },
+  "base": {
+    "overall": {
+      "S": 2,
+      "D": 3,
+      "I": 2,
+      "N": 140,
+      "term_ref_mentions": 0,
+      "term_hyp_mentions": 0,
+      "term_correct_mentions": 0,
+      "term_false_mentions": 0,
+      "mer": 0.05,
+      "term_recall": null,
+      "term_precision": null,
+      "clips": 12,
+      "no_term_clips": 12,
+      "no_term_false_mentions": 0,
+      "no_term_false_clips": 0,
+      "no_term_false_mentions_per_100_clips": 0.0,
+      "no_term_false_clip_rate": 0.0
+    },
+    "languages": {
+      "mixed": {
+        "S": 2,
+        "D": 1,
+        "I": 2,
+        "N": 77,
+        "term_ref_mentions": 0,
+        "term_hyp_mentions": 0,
+        "term_correct_mentions": 0,
+        "term_false_mentions": 0,
+        "mer": 0.06493506493506493,
+        "term_recall": null,
+        "term_precision": null,
+        "clips": 6,
+        "no_term_clips": 6,
+        "no_term_false_mentions": 0,
+        "no_term_false_clips": 0,
+        "no_term_false_mentions_per_100_clips": 0.0,
+        "no_term_false_clip_rate": 0.0
+      },
+      "zh": {
+        "S": 0,
+        "D": 2,
+        "I": 0,
+        "N": 58,
+        "term_ref_mentions": 0,
+        "term_hyp_mentions": 0,
+        "term_correct_mentions": 0,
+        "term_false_mentions": 0,
+        "mer": 0.034482758620689655,
+        "term_recall": null,
+        "term_precision": null,
+        "clips": 4,
+        "no_term_clips": 4,
+        "no_term_false_mentions": 0,
+        "no_term_false_clips": 0,
+        "no_term_false_mentions_per_100_clips": 0.0,
+        "no_term_false_clip_rate": 0.0
+      },
+      "en": {
+        "S": 0,
+        "D": 0,
+        "I": 0,
+        "N": 5,
+        "term_ref_mentions": 0,
+        "term_hyp_mentions": 0,
+        "term_correct_mentions": 0,
+        "term_false_mentions": 0,
+        "mer": 0.0,
+        "term_recall": null,
+        "term_precision": null,
+        "clips": 2,
+        "no_term_clips": 2,
+        "no_term_false_mentions": 0,
+        "no_term_false_clips": 0,
+        "no_term_false_mentions_per_100_clips": 0.0,
+        "no_term_false_clip_rate": 0.0
+      }
+    }
+  },
+  "data_frozen_before_main_test": true,
+  "evaluation_after_main_test": true,
+  "strategy_or_models_changed": false,
+  "timestamp_unix": 1792535654.8077483
+}

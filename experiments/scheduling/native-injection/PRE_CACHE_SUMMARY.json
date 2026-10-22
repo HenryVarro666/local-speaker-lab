@@ -1,0 +1,430 @@
+{
+  "date": "2026-10-20",
+  "default": "guided native: fixed reply opening/reference, generated date/time and native audio",
+  "finetuned": false,
+  "human_microphone_tested": false,
+  "subjective_audio_quality_reviewed": false,
+  "guided_runs": [
+    {
+      "run": "guided-waveform-08",
+      "status": "passed",
+      "elapsed_seconds": 62.765,
+      "native_pcm_chunks": 638,
+      "correction_during_native_voice": true,
+      "waveform_fact_checks": 4,
+      "model_handshakes": 1,
+      "device_fallbacks": 0,
+      "latencies_ms": [
+        3316.705,
+        3284.78,
+        3456.979,
+        3232.057,
+        3422.204
+      ]
+    },
+    {
+      "run": "guided-waveform-repeat-10",
+      "status": "passed",
+      "elapsed_seconds": 62.71,
+      "native_pcm_chunks": 637,
+      "correction_during_native_voice": true,
+      "waveform_fact_checks": 4,
+      "model_handshakes": 1,
+      "device_fallbacks": 0,
+      "latencies_ms": [
+        3359.624,
+        3279.071,
+        3428.369,
+        3267.199,
+        3421.605
+      ]
+    }
+  ],
+  "guided_waveform_checks": [
+    {
+      "run": "guided-waveform-08",
+      "kind": "native_waveform_verified",
+      "epoch": 7,
+      "purpose": "proposal",
+      "asr_text": "The available time is Friday, October 23rd at 4:30 PM Central. Would you like to save that time?",
+      "expected": {
+        "start": "2026-10-23T16:30:00-05:00",
+        "version": 3,
+        "operation": "create"
+      },
+      "file": "qa-epoch-7-attempt-2.wav",
+      "sha256": "a11fc6761966effb25fd98490783d24a093aad303cc519d50c8a67ca57e9b6b9",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "guided-waveform-08",
+      "kind": "native_waveform_verified",
+      "epoch": 10,
+      "purpose": "receipt",
+      "asr_text": "BK zero zero zero one confirmed for Friday October twenty third at four thirty p.m. Central.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-23T16:30:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-10-attempt-2.wav",
+      "sha256": "1ad5b1f1b2f87ddd973015fe766fea5338e353e399e96865349212e411eeb58c",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "guided-waveform-08",
+      "kind": "native_waveform_verified",
+      "epoch": 14,
+      "purpose": "proposal",
+      "asr_text": "The available time is Thursday, October twenty second at two p.m. Central. Would you like to reserve that slot?",
+      "expected": {
+        "start": "2026-10-22T14:00:00-05:00",
+        "version": 5,
+        "operation": "reschedule"
+      },
+      "file": "qa-epoch-14-attempt-2.wav",
+      "sha256": "334a2ce8a9a68adaea82a343b02d9dd2835817a9eb09f7b668dd93c21604ab10",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "guided-waveform-08",
+      "kind": "native_waveform_verified",
+      "epoch": 17,
+      "purpose": "receipt",
+      "asr_text": "BK zero zero zero one confirm for Thursday, October twenty two at two p.m. Central.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-22T14:00:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-17-attempt-2.wav",
+      "sha256": "50b7d6fa3cebc31de2e379dcadf43fcb64babcf45763d159c3afa648735635de",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "guided-waveform-repeat-10",
+      "kind": "native_waveform_verified",
+      "epoch": 7,
+      "purpose": "proposal",
+      "asr_text": "The available time is Friday, October twenty third at four thirty p.m. Central.",
+      "expected": {
+        "start": "2026-10-23T16:30:00-05:00",
+        "version": 3,
+        "operation": "create"
+      },
+      "file": "qa-epoch-7-attempt-2.wav",
+      "sha256": "da6ba74ed913cc736fa463b3198f6c70bb4ea7b9631b7b20f15433426b12f828",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "guided-waveform-repeat-10",
+      "kind": "native_waveform_verified",
+      "epoch": 10,
+      "purpose": "receipt",
+      "asr_text": "BK zero zero zero one confirmed for Friday October twenty third at four thirty PM Central. All set.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-23T16:30:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-10-attempt-2.wav",
+      "sha256": "a0eb903e172ff94c1969e4bc56a0ecc515eb1c05ef11fc045e4c95601c6ecc58",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "guided-waveform-repeat-10",
+      "kind": "native_waveform_verified",
+      "epoch": 14,
+      "purpose": "proposal",
+      "asr_text": "The available time is Thursday, October twenty two at two p.m. Central. Would you like to confirm that time?",
+      "expected": {
+        "start": "2026-10-22T14:00:00-05:00",
+        "version": 5,
+        "operation": "reschedule"
+      },
+      "file": "qa-epoch-14-attempt-2.wav",
+      "sha256": "5b1b7dedd37fb1e393eeb5be52ca218673b18f2f9d58412c99785d325330ce46",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "guided-waveform-repeat-10",
+      "kind": "native_waveform_verified",
+      "epoch": 17,
+      "purpose": "receipt",
+      "asr_text": "BK zero zero zero one confirmed for Thursday, October twenty second at two p.m. Central.",
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-22T14:00:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "file": "qa-epoch-17-attempt-2.wav",
+      "sha256": "0a18ef533fe0d7ff244d4507c2d2ebab45783362f22d7e435484fe12e08e65ce",
+      "model": "Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    {
+      "run": "novel-guided-09",
+      "stage": 1,
+      "expected": {
+        "start": "2026-10-20T11:00:00-05:00",
+        "version": 1,
+        "operation": "create"
+      },
+      "asr_text": "The available time is Tuesday, October 20th at 11:00 A.M. Central. Would you like to save that time?",
+      "passed": true
+    },
+    {
+      "run": "novel-guided-09",
+      "stage": 2,
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-20T11:00:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "asr_text": "BK zero zero zero one confirm for Tuesday, October twentieth at eleven a.m.",
+      "passed": true
+    },
+    {
+      "run": "novel-guided-09",
+      "stage": 3,
+      "expected": {
+        "start": "2026-10-21T09:30:00-05:00",
+        "version": 2,
+        "operation": "reschedule"
+      },
+      "asr_text": "The available time is Wednesday, October twenty-first at nine thirty a.m. Central. Would you like to save that slot?",
+      "passed": true
+    },
+    {
+      "run": "novel-guided-09",
+      "stage": 4,
+      "expected": {
+        "id": "BK-0001",
+        "start": "2026-10-21T09:30:00-05:00",
+        "service": "Consultation",
+        "timezone": "America/Chicago",
+        "simulated": true
+      },
+      "asr_text": "BK0001 confirmed for Wednesday, October 21st at 9:30 AM Central.",
+      "passed": true
+    }
+  ],
+  "guided_checks_passed": 12,
+  "guided_checks_total": 12,
+  "unique_datetime_values": [
+    "2026-10-23T16:30:00-05:00",
+    "2026-10-22T14:00:00-05:00",
+    "2026-10-20T11:00:00-05:00",
+    "2026-10-21T09:30:00-05:00"
+  ],
+  "timing": {
+    "start": "gateway native_readback event",
+    "end": "first same-epoch gateway PCM with RMS > 0.008",
+    "samples": [
+      3316.705,
+      3284.78,
+      3456.979,
+      3232.057,
+      3422.204,
+      3359.624,
+      3279.071,
+      3428.369,
+      3267.199,
+      3421.605
+    ],
+    "minimum_ms": 3232.057,
+    "median_ms": 3338.1645,
+    "maximum_ms": 3456.979,
+    "excludes": "user end-of-speech, observer/tool delay, browser/hardware; no strict cold-start or stable p95 claim"
+  },
+  "controlled_alternative": {
+    "accepted": true,
+    "checks": [
+      {
+        "epoch": 7,
+        "purpose": "proposal",
+        "expected": {
+          "start": "2026-10-23T16:30:00-05:00",
+          "version": 3,
+          "operation": "create"
+        },
+        "asr_text": "Friday, October twenty third at four thirty p.m. is available. So yes, confirm to save.",
+        "passed": true
+      },
+      {
+        "epoch": 10,
+        "purpose": "receipt",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-23T16:30:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "asr_text": "BK zero zero zero one confirmed for Friday October twenty third at four thirty p.m.",
+        "passed": true
+      },
+      {
+        "epoch": 14,
+        "purpose": "proposal",
+        "expected": {
+          "start": "2026-10-22T14:00:00-05:00",
+          "version": 5,
+          "operation": "reschedule"
+        },
+        "asr_text": "Thursday, October twenty second at two p.m. is available. Say yes, confirm to save.",
+        "passed": true
+      },
+      {
+        "epoch": 17,
+        "purpose": "receipt",
+        "expected": {
+          "id": "BK-0001",
+          "start": "2026-10-22T14:00:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        },
+        "asr_text": "B K zero zero zero one confirm for Thursday October twenty second at two p.m.",
+        "passed": true
+      }
+    ],
+    "first_proposal": "intentionally interrupted, excluded from full-readback denominator",
+    "network_connections_observed": 1,
+    "device_fallbacks": 0,
+    "update_to_first_voiced_pcm_ms": [
+      3327.963,
+      3310.42,
+      3465.769,
+      3232.421,
+      3456.988
+    ],
+    "timing_start": "gateway native_readback event",
+    "timing_end": "gateway first PCM with RMS > .008 in the same epoch",
+    "human_microphone": false,
+    "hardware_audibility": false
+  },
+  "important_correction": "free run 06 metadata omitted the hour 2; independent Qwen waveform ASR heard two p.m. Preserve failed metadata-guard run; do not call it a spoken-hour omission.",
+  "browser_validation": {
+    "input": "browser diagnostic text, live PersonaPlex/Vosk gateway",
+    "microphone_enabled": false,
+    "final_booking": {
+      "id": "BK-0001",
+      "start": "2026-10-22T14:00:00-05:00",
+      "service": "Consultation",
+      "timezone": "America/Chicago",
+      "simulated": true
+    },
+    "native_tool_jobs": 4,
+    "native_first_chunk_callbacks": [
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 78882.692,
+        "phase": "first_voiced_chunk_scheduled",
+        "epoch": 4,
+        "source": "browser_audio_context"
+      },
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 79066.297,
+        "phase": "first_voiced_chunk_ended",
+        "epoch": 4,
+        "source": "browser_audio_context"
+      },
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 137107.817,
+        "phase": "first_voiced_chunk_scheduled",
+        "epoch": 5,
+        "source": "browser_audio_context"
+      },
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 137178.095,
+        "phase": "first_voiced_chunk_ended",
+        "epoch": 5,
+        "source": "browser_audio_context"
+      },
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 179074.834,
+        "phase": "first_voiced_chunk_scheduled",
+        "epoch": 7,
+        "source": "browser_audio_context"
+      },
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 179321.035,
+        "phase": "first_voiced_chunk_ended",
+        "epoch": 7,
+        "source": "browser_audio_context"
+      },
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 283201.94,
+        "phase": "first_voiced_chunk_scheduled",
+        "epoch": 8,
+        "source": "browser_audio_context"
+      },
+      {
+        "kind": "native_playback_status",
+        "elapsed_ms": 283355.822,
+        "phase": "first_voiced_chunk_ended",
+        "epoch": 8,
+        "source": "browser_audio_context"
+      }
+    ],
+    "device_fallbacks": 0,
+    "model_handshakes": 1,
+    "stale_query_ignored": 1,
+    "hardware_audibility_tested": false,
+    "full_utterance_listening_reviewed": false,
+    "evidence_sha256": {
+      "browser-native-events.jsonl": "116521444f5a99aa54db52a64e8f5bbdf7a4f8d1d2030b44a80433c89b3f6966",
+      "browser-native-validation.txt": "cde9ae1296bdc4d6d57f3ee58d66bc55b69ade974ebaef60fe2295dcd528001a",
+      "demo-native-tool-receipt.png": "868e03caef44221488389647178c8c6ce1cd1d83435290e9b3bdffef5e2bf4aa"
+    },
+    "passed": true
+  },
+  "local_verification": {
+    "full_tests_passed": 581,
+    "optional_skips": 1,
+    "subtests_passed": 22,
+    "scheduling_tests_passed": 52,
+    "source_hashes_match": 8,
+    "native_backend_hash_match": true,
+    "packaging_tests_passed": 12,
+    "markdown_files_checked": 16,
+    "local_links_checked": 248,
+    "broken_links": 0,
+    "ruff_f": "passed",
+    "javascript_syntax": "passed"
+  },
+  "cleanup": {
+    "date": "2026-10-20",
+    "kept": "main loopback gateway 8768, native backend 8999, localhost tunnel 8769",
+    "stopped": "owned baseline backend 8998, candidate gateway 8767, candidate tunnel 8766",
+    "gpu0_memory_mib": 19623,
+    "gpu_total_mib": 95830,
+    "other_gpu_modified": false,
+    "apex_accessed": false,
+    "page_reset_for_new_session": true
+  }
+}

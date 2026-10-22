@@ -9,7 +9,7 @@ import time
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-INCLUDE = ["README.md", "README.zh-CN.md", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "CITATION.cff", "DEPLOYMENT.md", "DEPLOYMENT_REVIEW.md", "deploy_ubuntu.sh", "pyproject.toml", ".gitignore", ".gitattributes", ".editorconfig", ".github", "docs", "configs", "requirements", "scripts", "src/speaker_lab", "tests"]
+INCLUDE = ["README.md", "README.zh-CN.md", "PUBLICATION.md", "docs/figures/overview.svg", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "CITATION.cff", "DEPLOYMENT.md", "DEPLOYMENT_REVIEW.md", "deploy_ubuntu.sh", "pyproject.toml", ".gitignore", ".gitattributes", ".editorconfig", ".github", "docs", "configs", "requirements", "scripts", "src/speaker_lab", "tests"]
 # Include the checked-in examples referenced by README, not user recordings,
 # exported datasets, or subsequently edited personal glossary files.
 INCLUDE += ["experiments/glossary/README.md", "experiments/glossary/DESIGN_NOTES.md",
@@ -31,7 +31,54 @@ INCLUDE += ["experiments/glossary/protocols/ascend-val-remaining725-train-vocab3
                          "selection_audit.json", "FREEZE.json")]
 INCLUDE += ["experiments/glossary/audits/ascend-remaining-v1/" + name
             for name in ("six_event_audit.json", "preservation_before.json", "execution_log.jsonl")]
-SOURCE_SUFFIXES = {".py", ".sh", ".toml", ".txt", ".md", ".json", ".jsonl", ".yml", ".yaml", ".in"}
+# Reviewed DuplexLab documentation and aggregate evidence only. Keep local
+# replay pages, recordings, predictions and future unreviewed reports excluded.
+INCLUDE += ["experiments/duplexlab/README.md", "experiments/duplexlab/README.zh-CN.md"]
+INCLUDE += ["experiments/scheduling/README.md", "experiments/scheduling/README.zh-CN.md"]
+INCLUDE += ["experiments/scheduling/" + name for name in ("RESULTS.md", "SUMMARY.json", "ENVIRONMENT.json")]
+INCLUDE += ["experiments/duplexlab/reports/2026-10-20-mac-cpu/" + name
+            for name in ("RESULTS.md", "VALIDATION.md", "SUMMARY.json", "INPUTS.json")]
+INCLUDE += ["experiments/duplexlab/CONTINUATION_PROTOCOL.md"]
+INCLUDE += ["experiments/duplexlab/reports/2026-10-20-continuation/" + name
+            for name in ("RESULTS.md", "VALIDATION.md", "LANGUAGE_COMPARISON.json", "SUMMARY.json",
+                         "test-errors.svg", "test-errors.png", "training-loss.svg", "training-loss.png")]
+INCLUDE += ["experiments/duplexlab/MULTISEED_PROTOCOL.md", "experiments/duplexlab/MULTISEED_SENSITIVITY.md"]
+INCLUDE += ["experiments/duplexlab/reports/2026-10-20-multiseed/" + name
+            for name in ("RESULTS.md", "VALIDATION.md", "REPRODUCE.md", "REGRESSION_ANALYSIS.md",
+                         "SUMMARY.json", "REGRESSIONS.json", "REGRESSION_STABILITY.json",
+                         "seed-effects.svg", "seed-effects.png", "speaker-effects.svg", "speaker-effects.png")]
+INCLUDE += ["experiments/duplexlab/COVERAGE_PROTOCOL.md"]
+INCLUDE += ["experiments/duplexlab/DISFLUENCY_PROTOCOL.md", "experiments/duplexlab/DISFLUENCY_DEV_ADDENDUM.md"]
+INCLUDE += ["experiments/duplexlab/reports/2026-10-20-coverage/" + name
+            for name in ("DESIGN.md", "RESULTS.md", "VALIDATION.md", "REPRODUCE.md",
+                         "SUMMARY.json", "COVERAGE_AUDIT.json", "TRAIN_DEV_FEATURES.json",
+                         "test-seeds.svg", "test-seeds.png", "coverage-design.svg", "coverage-design.png")]
+INCLUDE += ["experiments/duplexlab/reports/2026-10-20-disfluency/" + name
+            for name in ("DESIGN.md", "RESULTS.md", "VALIDATION.md", "REPRODUCE.md", "REGRESSION_ANALYSIS.md",
+                         "SUMMARY.json", "COVERAGE_AUDIT.json", "TRAIN_DEV_FEATURES.json", "PRIOR_ANALYSIS.json",
+                         "DISFLUENCY_GROUPS.json", "AUXDEV_RESULTS.json",
+                         "test-seeds.svg", "test-seeds.png", "coverage-design.svg", "coverage-design.png")]
+INCLUDE += ["experiments/duplexlab/DELETION_PROTOCOL.md", "experiments/duplexlab/DELETION_EVAL_ADDENDUM.md"]
+INCLUDE += ["experiments/duplexlab/reports/2026-10-20-deletion/" + name
+            for name in ("DESIGN.md", "RESULTS.md", "VALIDATION.md", "REPRODUCE.md", "REGRESSION_ANALYSIS.md",
+                         "SUMMARY.json", "PRIOR_ANALYSIS.json", "COVERAGE_AUDIT.json", "DELETION_GROUPS.json",
+                         "test-seeds.svg", "test-seeds.png", "deletion-contrasts.svg", "deletion-contrasts.png")]
+INCLUDE += ["experiments/scheduling/native-injection/" + name
+            for name in ("PLAN.md", "RESULTS.md", "SUMMARY.json", "BACKEND.json", "server-native.patch",
+                         "transcribe_probe.py", "BASELINE_REPORT.md", "BASELINE_SUMMARY.json", "BASELINE_ENVIRONMENT.json",
+                         "LATENCY_PLAN.md", "LATENCY_RESULTS.md", "LATENCY_SUMMARY.json",
+                         "PREFILL_PLAN.md", "PREFILL_RESULTS.md", "PREFILL_SUMMARY.json", "PREFILL_ENVIRONMENT.json", "PREFILL_BACKEND.json", "server-prefill.patch",
+                         "CALENDAR_BACKEND.json", "server-calendar.patch",
+                         "PRE_CACHE_BACKEND.json", "PRE_CACHE_SUMMARY.json", "PRE_CACHE_ENVIRONMENT.json",
+                         "server-native-uncached.patch")]
+INCLUDE += ["experiments/scheduling/date-clarity-2026-10-21/" + name
+            for name in ("PLAN.md", "RESULTS.md", "SUMMARY.json", "ENVIRONMENT.json")]
+INCLUDE += ["experiments/duplexlab/NORMALIZATION_PROTOCOL.md"]
+INCLUDE += ["experiments/duplexlab/reports/2026-10-21-normalization/" + name
+            for name in ("DESIGN.md", "RESULTS.md", "VALIDATION.md", "REPRODUCE.md", "REGRESSION_ANALYSIS.md",
+                         "SUMMARY.json", "NORMALIZATION_DIAGNOSIS.json", "COVERAGE_AUDIT.json", "DELETION_GROUPS.json",
+                         "test-seeds.svg", "test-seeds.png", "deletion-contrasts.svg", "deletion-contrasts.png")]
+SOURCE_SUFFIXES = {".py", ".sh", ".toml", ".txt", ".md", ".json", ".jsonl", ".yml", ".yaml", ".in", ".html"}
 EXCLUDED_PARTS = {"__pycache__", ".cache", ".pytest_cache", ".venvs", "runs", "deployment_logs"}
 PRIVATE_NAMES = {".netrc", "credentials.json", "secrets.json", "token", "token.json"}
 

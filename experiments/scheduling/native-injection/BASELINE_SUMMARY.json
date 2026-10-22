@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-20",
+  "trained": false,
+  "real_microphone_tested": false,
+  "runs": [
+    {
+      "run": "hybrid-speech-05",
+      "status": "failed",
+      "error": "TimeoutError: native corrected proposal speech",
+      "elapsed_seconds": 77.033,
+      "native_pcm_chunks": null,
+      "correction_during_native_voice": null
+    },
+    {
+      "run": "hybrid-speech-06",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 47.726,
+      "native_pcm_chunks": 223,
+      "correction_during_native_voice": false
+    },
+    {
+      "run": "native-speech-01",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 64.917,
+      "native_pcm_chunks": 140,
+      "correction_during_native_voice": true
+    },
+    {
+      "run": "native-speech-02",
+      "status": "failed",
+      "error": "RuntimeError: PersonaPlex unavailable. Tools remain diagnostic; reconnect after checking the GPU service.",
+      "elapsed_seconds": 15.209,
+      "native_pcm_chunks": null,
+      "correction_during_native_voice": null
+    },
+    {
+      "run": "native-speech-03",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 57.242,
+      "native_pcm_chunks": 387,
+      "correction_during_native_voice": true
+    },
+    {
+      "run": "native-speech-04",
+      "status": "failed",
+      "error": "TimeoutError: native receipt speech",
+      "elapsed_seconds": 86.186,
+      "native_pcm_chunks": null,
+      "correction_during_native_voice": null
+    },
+    {
+      "run": "voice-tools-preflight-01",
+      "status": "passed",
+      "error": null,
+      "elapsed_seconds": 12.582,
+      "native_pcm_chunks": 0,
+      "correction_during_native_voice": false
+    }
+  ],
+  "current_contract": "PersonaPlex conversation + Vosk controller + controlled browser voice for tool proposals and receipts",
+  "final_automated_run": {
+    "status": "passed",
+    "input_origin": "synthetic_macOS_Samantha",
+    "real_microphone": false,
+    "native_model_required": true,
+    "first_booking": {
+      "id": "BK-0001",
+      "start": "2026-10-23T16:30:00-05:00",
+      "service": "Consultation",
+      "timezone": "America/Chicago",
+      "simulated": true
+    },
+    "final_booking": {
+      "id": "BK-0001",
+      "start": "2026-10-22T14:00:00-05:00",
+      "service": "Consultation",
+      "timezone": "America/Chicago",
+      "simulated": true
+    },
+    "native_pcm_frames": 223,
+    "receipt_mode": "device",
+    "device_readback_instructions": [
+      {
+        "text": "Your simulated appointment is confirmed for Friday, October 23, at 4:30 PM, Central Time. Your booking reference is B K 0 0 0 1.",
+        "receipt": {
+          "id": "BK-0001",
+          "start": "2026-10-23T16:30:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        }
+      },
+      {
+        "text": "Your simulated appointment is confirmed for Thursday, October 22, at 2:00 PM, Central Time. Your booking reference is B K 0 0 0 1.",
+        "receipt": {
+          "id": "BK-0001",
+          "start": "2026-10-22T14:00:00-05:00",
+          "service": "Consultation",
+          "timezone": "America/Chicago",
+          "simulated": true
+        }
+      }
+    ],
+    "browser_readback_tested": false,
+    "correction_during_native_voice": false,
+    "actions": [
+      {
+        "action": "book",
+        "text": "Book Thursday at three pm",
+        "client_elapsed_ms": 4331.676,
+        "agent_voice_within_previous_300ms": true,
+        "epoch": 1
+      },
+      {
+        "action": "correct",
+        "text": "Actually Friday at four thirty",
+        "client_elapsed_ms": 12211.712,
+        "agent_voice_within_previous_300ms": false,
+        "epoch": 3
+      },
+      {
+        "action": "confirm",
+        "text": "Yes confirm",
+        "client_elapsed_ms": 21129.342,
+        "agent_voice_within_previous_300ms": false,
+        "epoch": 6
+      },
+      {
+        "action": "move",
+        "text": "Move it to Thursday at two pm",
+        "client_elapsed_ms": 28513.354,
+        "agent_voice_within_previous_300ms": false,
+        "epoch": 8
+      },
+      {
+        "action": "confirm",
+        "text": "Yes confirm",
+        "client_elapsed_ms": 37358.249,
+        "agent_voice_within_previous_300ms": false,
+        "epoch": 11
+      }
+    ],
+    "input_audio": [
+      {
+        "name": "book",
+        "sha256": "7efa6eb2389307774275fcb9ac88a8ed734b1c25f24bbb856b83eb4c4d1c373c",
+        "samples": 40783,
+        "sample_rate": 24000
+      },
+      {
+        "name": "correct",
+        "sha256": "f0a8c5f2ad4e8ae1f064f2874945c404dcd607a70084122e56e4a393a58b89a5",
+        "samples": 65401,
+        "sample_rate": 24000
+      },
+      {
+        "name": "confirm",
+        "sha256": "c1a83443cdb92b8435d6f2735cbdb9dc5217c131a52927f704f8bce6dd3f1447",
+        "samples": 25732,
+        "sample_rate": 24000
+      },
+      {
+        "name": "move",
+        "sha256": "c071711153534a1370b5ff7dc754c7680398c5e5c936a008b71b82bfd16fa642",
+        "samples": 48029,
+        "sample_rate": 24000
+      },
+      {
+        "name": "confirm",
+        "sha256": "c1a83443cdb92b8435d6f2735cbdb9dc5217c131a52927f704f8bce6dd3f1447",
+        "samples": 25732,
+        "sample_rate": 24000
+      }
+    ],
+    "elapsed_seconds": 47.726,
+    "timing_boundary": "paced synthetic input to gateway PCM arrival; no browser or audio hardware"
+  },
+  "full_local_suite": {
+    "passed": 542,
+    "skipped": 1,
+    "subtests_passed": 22
+  },
+  "scheduling_tests": 26,
+  "browser_validation": {
+    "mode": "live PersonaPlex and Vosk gateway; diagnostic text input",
+    "real_microphone": false,
+    "headset_listening_tested": false,
+    "stale_query_ignored": true,
+    "final_booking": {
+      "id": "BK-0001",
+      "start": "2026-10-22T14:00:00-05:00",
+      "service": "Consultation",
+      "timezone": "America/Chicago",
+      "simulated": true
+    },
+    "readback_callbacks": [
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 108108.635,
+        "phase": "started",
+        "version": 2,
+        "purpose": "proposal",
+        "source": "browser_speech_synthesis"
+      },
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 116323.272,
+        "phase": "error",
+        "version": 2,
+        "purpose": "proposal",
+        "source": "browser_speech_synthesis"
+      },
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 116323.6,
+        "phase": "started",
+        "version": 2,
+        "purpose": "receipt",
+        "source": "browser_speech_synthesis"
+      },
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 126434.775,
+        "phase": "ended",
+        "version": 2,
+        "purpose": "receipt",
+        "source": "browser_speech_synthesis"
+      },
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 129562.651,
+        "phase": "started",
+        "version": 3,
+        "purpose": "proposal",
+        "source": "browser_speech_synthesis"
+      },
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 139228.215,
+        "phase": "ended",
+        "version": 3,
+        "purpose": "proposal",
+        "source": "browser_speech_synthesis"
+      },
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 142802.777,
+        "phase": "started",
+        "version": 3,
+        "purpose": "receipt",
+        "source": "browser_speech_synthesis"
+      },
+      {
+        "kind": "readback_status",
+        "elapsed_ms": 152829.024,
+        "phase": "ended",
+        "version": 3,
+        "purpose": "receipt",
+        "source": "browser_speech_synthesis"
+      }
+    ],
+    "interpretation": "Callbacks establish browser device speech lifecycle, not physical audibility. Proposal version 2 was intentionally interrupted by confirmation; version 3 proposal and both receipts completed.",
+    "evidence_location": "voice_ai/samples/2026-10-20-personaplex/browser-live-receipt-validation.txt"
+  },
+  "final_packaging_check": {
+    "passed": 12,
+    "earlier_attempt": "2 failures while concurrent DuplexLab manifest referenced a not-yet-created VALIDATION.md; same tests passed when that work completed. No unrelated source changed."
+  }
+}

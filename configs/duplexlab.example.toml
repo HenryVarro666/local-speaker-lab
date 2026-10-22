@@ -1,0 +1,21 @@
+# Copy and freeze with a local manifest. This is a CPU/offline starting point.
+# Keep the model and worker environment separate from the lightweight app.
+[asr]
+condition = "qwen06_cpu_auto"
+model = "/absolute/path/to/huggingface/snapshots/5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+model_revision = "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+# Set the downloaded fixed local snapshot path; the runner verifies its revision.
+python = ".venvs/asr-mac/bin/python"
+device = "cpu"
+dtype = "float32"
+language = ""
+aligner = ""
+max_new_tokens = 256
+timeout_seconds = 900
+
+[audit]
+min_seconds = 1.0
+max_seconds = 12.0
+quiet_dbfs = -50.0
+clipping_fraction = 0.01
+silence_fraction = 0.8
