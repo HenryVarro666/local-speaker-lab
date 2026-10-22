@@ -36,5 +36,11 @@
       "unittest_passed": 15
     }
   },
-  "limitations": "Local tests do not certify GPU inference, real microphones, hardware playback, human quality or production deployment."
+  "limitations": "Local tests do not certify GPU inference, real microphones, hardware playback, human quality or production deployment.",
+  "portability_followup": {
+    "observed": "First public CI passed all Linux jobs but failed Windows on missing tzdata and text-translated byte-hash fixtures",
+    "fix": "Declare Windows tzdata dependency; byte-write fixtures; explicitly skip only GNU-patch tests if tool absent",
+    "local_after_fix": "636 passed, 4 skipped, 22 subtests",
+    "remote_after_fix": "pending"
+  }
 }
