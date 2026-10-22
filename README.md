@@ -2,6 +2,8 @@
 
 # Local Speaker Lab
 
+**English** · [简体中文](README.zh-CN.md)
+
 **Reproducible local speech experiments: glossary-conditioned ASR and a two-speaker notes pipeline.**
 
 [![CI](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/HenryVarro666/local-speaker-lab/actions/workflows/tests.yml)
@@ -13,67 +15,96 @@
 
 </div>
 
-Propio 的本地语音实验代码，提供可复查的实验输入、模型运行和计分工具。核心实现位于 `src/speaker_lab/`，当前有两条工作流：
+Local speech-experiment code for Propio, with reviewable experiment inputs, model runs and scoring tools. The core implementation lives in `src/speaker_lab/` and currently serves two workflows:
 
-| 工作流 | 用途 | 入口 |
+| Workflow | Purpose | Entry point |
 | --- | --- | --- |
-| **单人中英混合词表实验 · 当前主要工作** | 同一批录音分别使用无词表、正确词表和无关词表，比较转写、术语命中与错误引入 | [实验说明](experiments/glossary/README.md) |
-| 双人分离、转写与纪要 | 分段与重叠分离 → 人物匹配 → Qwen 转写与对齐 → Ollama 纪要；已有 Ubuntu 部署路线 | [双人工作流完整指南](docs/TWO_SPEAKER_GUIDE.md) |
+| **Single-speaker Mandarin–English glossary experiment · current focus** | Runs the same recordings with no glossary, the correct glossary and an unrelated glossary, then compares transcripts, term hits and newly introduced errors | [Experiment guide](experiments/glossary/README.md) |
+| Two-speaker separation, transcription and notes | Segmentation and overlap separation → speaker matching → Qwen transcription and alignment → Ollama notes; an Ubuntu deployment path is in place | [Full two-speaker guide](docs/TWO_SPEAKER_GUIDE.md) |
 
-先读 [快速开始](docs/GETTING_STARTED.md)，选择轻量开发检查、Windows CPU 词表实验或 Ubuntu 双人工作流。核心包要求 **Python 3.11 或更高版本**；Ubuntu 双人部署使用 **Python 3.12** 的独立模型环境及锁定依赖。
+Start with [Getting started](docs/GETTING_STARTED.md) and pick a path: lightweight development checks, the Windows CPU glossary experiment, or the Ubuntu two-speaker workflow. The core package requires **Python 3.11 or later**; the Ubuntu two-speaker deployment uses separate **Python 3.12** model environments with locked dependencies.
 
-200 条录音 × 3 组的 CPU 词表实验已完成全部 600 次真实推理与配对核验。[冻结协议](experiments/glossary/protocols/ascend-val200-train-vocab30-v2/)提供词表、选中 ID 与分析计划；[正式结果](experiments/glossary/ASCEND_200_RESULTS.md)显示本轮未修复基线术语漏识，整体错误率的小幅下降尚不足以证明词表有效。复现入口见[实验说明](experiments/glossary/README.md)。
+The CPU glossary experiment (200 recordings × 3 conditions) has completed all 600 real inference runs and their paired verification. The [frozen protocol](experiments/glossary/protocols/ascend-val200-train-vocab30-v2/) provides the glossaries, selected IDs and analysis plan; the [formal results](experiments/glossary/ASCEND_200_RESULTS.md) show that this round did not fix the baseline's missed terms, and the small drop in overall error rate is not enough to show that the glossary helps. See the [experiment guide](experiments/glossary/README.md) to reproduce it.
 
-## 从这里继续
+## Architecture
 
-| 想做什么 | 文档 |
+```mermaid
+flowchart LR
+    subgraph gl ["Glossary experiment · glossary_experiment.py"]
+        direction LR
+        M[("frozen protocol<br/>manifest · glossaries")] --> R["run: 3 conditions<br/>Qwen3-ASR-1.7B"]
+        R --> P[("runs/<br/>predictions.jsonl")]
+        P --> S["score<br/>glossary_metrics.py"]
+        P --> C["analyze_glossary_comparison.py<br/>comparison.json"]
+    end
+    subgraph two ["Two-speaker pipeline · pipeline.py"]
+        direction LR
+        UI["cli.py · app.py<br/>CLI / Gradio"] --> N["FFmpeg normalize<br/>16 kHz mono"]
+        subgraph wk ["worker processes · runner.py"]
+            direction LR
+            D["diarize<br/>pyannote"] --> SEP["separate overlaps<br/>ClearVoice"]
+            SEP --> MA["match speakers<br/>pyannote embedding"]
+            MA --> T["transcribe + align<br/>Qwen3-ASR"]
+        end
+        N --> D
+        T --> O["summarize.py<br/>Ollama"]
+        T --> OUT[("runs/run_id/<br/>tracks · transcript · zip")]
+        O --> OUT
+    end
+```
+
+The two groups are the two workflows; both live in `src/speaker_lab/` and write their results under `runs/`. The glossary experiment loads one Qwen3-ASR model in-process, runs every clip under three conditions (no glossary, correct glossary, unrelated glossary), and scores and compares the saved predictions only after the run. The two-speaker pipeline runs each model stage as a separate worker process (`runner.py` → `worker.py`, one interpreter per stage set in `configs/default.toml`); separation and matching apply only to detected overlaps, and if the Ollama summary fails, the tracks and transcript are still kept.
+
+## Where to go next
+
+| Goal | Document |
 | --- | --- |
-| 首次安装、运行检查或配置开发环境 | [GETTING_STARTED](docs/GETTING_STARTED.md) |
-| 理解模块、环境与数据边界 | [ARCHITECTURE](docs/architecture.md) |
-| 开发环境、轻量回归、CI 与源码打包 | [开发与验证](docs/development.md) |
-| 阅读词表实验、复现固定对照 | [词表实验](experiments/glossary/README.md) |
-| 部署双人工作流、理解音轨和纪要输出 | [TWO_SPEAKER_GUIDE](docs/TWO_SPEAKER_GUIDE.md) |
-| 替换分离、识别、转写和 LLM 后端 | [模型接口](docs/model-backends.md) |
-| 查看一键部署、升级与既有验证范围 | [DEPLOYMENT](DEPLOYMENT.md) · [DEPLOYMENT_REVIEW](DEPLOYMENT_REVIEW.md) |
-| 修改代码、运行测试、维护实验记录 | [CONTRIBUTING](CONTRIBUTING.md) |
-| 查看当前交付版本的改动 | [CHANGELOG](CHANGELOG.md) |
-| 查看整体审查的问题、修复和证据边界 | [仓库审查](docs/repository-review.md) |
-| 上游仓库、模型和数据引用及许可 | [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md) |
-| 区分现有实现、实测证据与下一步 | [ROADMAP](docs/ROADMAP.md) |
+| First install, run checks or set up a development environment | [GETTING_STARTED](docs/GETTING_STARTED.md) |
+| Understand modules, environments and data boundaries | [ARCHITECTURE](docs/architecture.md) |
+| Development environment, lightweight regression tests, CI and source packaging | [Development and verification](docs/development.md) |
+| Read the glossary experiment and reproduce the fixed comparison | [Glossary experiment](experiments/glossary/README.md) |
+| Deploy the two-speaker workflow and understand its tracks and notes output | [TWO_SPEAKER_GUIDE](docs/TWO_SPEAKER_GUIDE.md) |
+| Swap separation, recognition, transcription and LLM backends | [Model interfaces](docs/model-backends.md) |
+| One-command deployment, upgrades and the scope of existing verification | [DEPLOYMENT](DEPLOYMENT.md) · [DEPLOYMENT_REVIEW](DEPLOYMENT_REVIEW.md) |
+| Change code, run tests and maintain experiment records | [CONTRIBUTING](CONTRIBUTING.md) |
+| See what changed in the current release | [CHANGELOG](CHANGELOG.md) |
+| See the issues, fixes and evidence boundaries from the full repository review | [Repository review](docs/repository-review.md) |
+| Upstream repositories, models, data citations and licenses | [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md) |
+| Separate what is implemented, what has been measured and what comes next | [ROADMAP](docs/ROADMAP.md) |
 
-源码、配置和可审阅协议与本地大产物分别保存：模型及环境在 `.cache/`、`.venv*/` 或 `.venvs/`，录音与数据副本在实验数据目录，推理输出在 `runs/`。具体边界见[架构说明](docs/architecture.md#目录与产物边界)。
+Source code, configs and reviewable protocols are stored apart from large local artifacts: models and environments live in `.cache/`, `.venv*/` or `.venvs/`, recordings and data copies in the experiment data directories, and inference outputs in `runs/`. See the [architecture notes](docs/architecture.md#目录与产物边界) for the exact boundaries.
 
-## Ubuntu 双人工作流：部署与升级
+## Two-speaker workflow on Ubuntu: deploy and upgrade
 
-将发布的 ZIP、同名 `.sha256` 和独立 `deploy_ubuntu.sh` 放在同一目录。首次安装并验收一段录音：
+Put the release ZIP, its matching `.sha256` file and the standalone `deploy_ubuntu.sh` in the same directory. First install, with acceptance on one recording:
 
 ```bash
 bash deploy_ubuntu.sh --zip ./local-speaker-lab.zip --audio /absolute/path/two-speakers.wav
 ```
 
-从 0.1.3 升级到 0.1.4，交互选择旧目录与新目录：
+Upgrade from 0.1.3 to 0.1.4, choosing the old and new directories interactively:
 
 ```bash
 bash deploy_ubuntu.sh --upgrade --zip ./local-speaker-lab.zip --audio /absolute/path/two-speakers.wav
 ```
 
-脚本保留旧版本，复用可用模型缓存，交互读取 `HF_TOKEN`，在失败时停止并脱敏保存日志，最后显示本次验收报告与失败日志的绝对路径。首次安装、驱动重启恢复、升级缓存策略与故障定位见[完整部署说明](docs/deployment.md)。
+The script keeps the old version, reuses usable model caches, reads `HF_TOKEN` interactively, stops on failure and saves redacted logs, and finally prints the absolute paths of this run's acceptance report and any failure logs. See the [full deployment guide](docs/deployment.md) for first install, recovery after a driver reboot, the upgrade cache policy and troubleshooting.
 
-## 仓库布局
+## Repository layout
 
 ```text
-src/speaker_lab/    核心流程、时轴、模型适配器、CLI 与 Gradio
-configs/           可替换后端和实验配置
-requirements/      分环境依赖与 Ubuntu/Python 3.12 锁文件
-scripts/           安装、升级、诊断、验收和打包入口
-tests/             契约、失败恢复、脱敏与流水线回归
-docs/              架构、部署、接口、开发和验证说明
-experiments/       独立实验说明与冻结协议
-.github/           Windows/Ubuntu CI、Issue 与 PR 模板
+src/speaker_lab/    Core pipeline, timeline, model adapters, CLI and Gradio
+configs/           Swappable backend and experiment configs
+requirements/      Per-environment dependencies and Ubuntu/Python 3.12 lock files
+scripts/           Install, upgrade, diagnostics, acceptance and packaging entry points
+tests/             Contract, failure-recovery, redaction and pipeline regression tests
+docs/              Architecture, deployment, interface, development and verification notes
+experiments/       Standalone experiment notes and frozen protocols
+.github/           Windows/Ubuntu CI, issue and PR templates
 ```
 
-轻量测试无需下载模型；真实 RTX 5080 推理通过目标机器上的验收流程检查。CI 的执行边界见[开发与验证](docs/development.md)。
+Lightweight tests need no model downloads; real RTX 5080 inference is checked by the acceptance flow on the target machine. See [Development and verification](docs/development.md) for what CI does and does not cover.
 
-## 上游与许可
+## Upstream projects and licenses
 
-本项目集成 [pyannote.audio](https://github.com/pyannote/pyannote-audio)、[ClearerVoice-Studio](https://github.com/modelscope/ClearerVoice-Studio)、[Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR)、[SpeechBrain](https://github.com/speechbrain/speechbrain)、[Ollama](https://github.com/ollama/ollama) 和 [Gradio](https://github.com/gradio-app/gradio)。原创编排与适配代码采用 MIT；第三方软件、模型和 ASCEND 数据保留各自许可。使用位置、官方模型卡、数据归属和论文链接见[上游说明](THIRD_PARTY_NOTICES.md)。源码发布不包含模型权重或语音数据。
+This project integrates [pyannote.audio](https://github.com/pyannote/pyannote-audio), [ClearerVoice-Studio](https://github.com/modelscope/ClearerVoice-Studio), [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR), [SpeechBrain](https://github.com/speechbrain/speechbrain), [Ollama](https://github.com/ollama/ollama) and [Gradio](https://github.com/gradio-app/gradio). The original orchestration and adapter code is MIT-licensed; third-party software, models and the ASCEND data keep their own licenses. See the [upstream notes](THIRD_PARTY_NOTICES.md) for where each one is used, official model cards, data attribution and paper links. The source release contains no model weights or speech data.

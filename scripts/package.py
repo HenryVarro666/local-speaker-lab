@@ -9,7 +9,7 @@ import time
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-INCLUDE = ["README.md", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "CITATION.cff", "DEPLOYMENT.md", "DEPLOYMENT_REVIEW.md", "deploy_ubuntu.sh", "pyproject.toml", ".gitignore", ".gitattributes", ".editorconfig", ".github", "docs", "configs", "requirements", "scripts", "src/speaker_lab", "tests"]
+INCLUDE = ["README.md", "README.zh-CN.md", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "CITATION.cff", "DEPLOYMENT.md", "DEPLOYMENT_REVIEW.md", "deploy_ubuntu.sh", "pyproject.toml", ".gitignore", ".gitattributes", ".editorconfig", ".github", "docs", "configs", "requirements", "scripts", "src/speaker_lab", "tests"]
 # Include the checked-in examples referenced by README, not user recordings,
 # exported datasets, or subsequently edited personal glossary files.
 INCLUDE += ["experiments/glossary/README.md", "experiments/glossary/DESIGN_NOTES.md",
