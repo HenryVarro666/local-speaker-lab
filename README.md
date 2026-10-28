@@ -17,7 +17,7 @@ The main interactive showcase is a simulated appointment assistant that listens 
 | Workflow | Method and intended use | Current state |
 |---|---|---|
 | [Native scheduling agent](experiments/scheduling/README.md) | PersonaPlex continuous audio, separate business recognition, versioned simulated tools and controlled native readback | Cached baseline exercised; faster date-readback candidates rejected |
-| [DuplexLab](experiments/duplexlab/README.md) | Audio/source hashes, review, matched-budget selection, Qwen3-ASR SFT, grouped errors and paired uncertainty | Multiple three-seed pilots complete; no reliable selection/weighting advantage established |
+| [Speech Data Curation Lab](experiments/duplexlab/README.md) | Audio/source hashes, review, matched-budget selection, Qwen3-ASR SFT, grouped errors and paired uncertainty | Multiple three-seed pilots complete; no reliable selection/weighting advantage established |
 | [Code-switching glossary](experiments/glossary/README.md) | No/correct/unrelated glossary on identical ASCEND clips with frozen train-derived vocabulary | 200 clips × 3 conditions complete; original term misses not repaired |
 | [Two-speaker notes](docs/TWO_SPEAKER_GUIDE.md) | Separation → speaker matching → ASR/alignment → Ollama notes | Existing Ubuntu deployment route; independent of scheduling and DuplexLab claims |
 

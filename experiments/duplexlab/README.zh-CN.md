@@ -1,8 +1,10 @@
-# DuplexLab 语音数据与识别实验
+# Speech Data Curation Lab · 语音数据整理实验
 
 [English](README.md) · 简体中文
 
-DuplexLab 在原 `speaker_lab` 包内新增独立实验入口，当前已实现离线数据闭环：冻结与校验 → 音频审计和精确去重 → 独立模型进程 → 原始转写 → 分组计分 → 本地回听与人工纠错记录。原双人和 glossary 入口保持可用。
+Speech Data Curation Lab（原展示名 DuplexLab）在原 `speaker_lab` 包内新增独立实验入口，当前已实现离线数据闭环：冻结与校验 → 音频审计和精确去重 → 独立模型进程 → 原始转写 → 分组计分 → 本地回听与人工纠错记录。原双人和 glossary 入口保持可用。
+
+实现入口仍为现有 [Local Speaker Lab 仓库](https://github.com/HenryVarro666/local-speaker-lab) 中的 `speaker_lab.duplex` 与 `experiments/duplexlab/`。公开备份仅含已审查源码和汇总证据，原音、权重与运行状态留在本地。2026-10-27 本次只复核既有证据，无新训练或模型调用。
 
 ## 最新：归一化与词元加权
 

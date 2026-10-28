@@ -1,8 +1,13 @@
-# DuplexLab speech data and ASR experiments
+# Speech Data Curation Lab
 
 English · [简体中文](README.zh-CN.md)
 
-DuplexLab extends the existing `speaker_lab` package with an offline loop: freeze sources and hashes, audit raw audio, detect exact duplicates, run ASR in an isolated process, score errors, replay audio, and import versioned listening reviews. The existing two-speaker and glossary workflows retain their original interfaces.
+Speech Data Curation Lab (formerly displayed as DuplexLab) extends the existing `speaker_lab` package with an offline loop: freeze sources and hashes, audit raw audio, detect exact duplicates, run ASR in an isolated process, score errors, replay audio, and import versioned listening reviews. The existing two-speaker and glossary workflows retain their original interfaces.
+
+The implementation remains under `speaker_lab.duplex` and `experiments/duplexlab/` in the
+[existing Local Speaker Lab repository](https://github.com/HenryVarro666/local-speaker-lab).
+The public export contains reviewed source and aggregate evidence; private audio, weights
+and run state remain outside it. Evidence reviewed on 2026-10-27; no new training or model call.
 
 ## Latest: normalization and token weighting
 

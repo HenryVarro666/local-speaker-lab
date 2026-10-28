@@ -17,7 +17,7 @@
 | 工作流 | 方法及用途 | 当前阶段 |
 |---|---|---|
 | [原生预约 Agent](experiments/scheduling/README.zh-CN.md) | PersonaPlex 持续听说、独立业务识别、版本化模拟工具、受控原生播报 | 缓存基线已验证；更快的日期播报候选未采用 |
-| [DuplexLab](experiments/duplexlab/README.zh-CN.md) | 音频/来源哈希、审阅、预算匹配筛选、Qwen3-ASR 微调、分组错误与配对区间 | 多轮三 seed pilot 完成；未证明可靠筛选/加权优势 |
+| [Speech Data Curation Lab · 语音数据整理](experiments/duplexlab/README.zh-CN.md) | 音频/来源哈希、审阅、预算匹配筛选、Qwen3-ASR 微调、分组错误与配对区间 | 多轮三 seed pilot 完成；未证明可靠筛选/加权优势 |
 | [中英混合词表](experiments/glossary/README.md) | 相同 ASCEND 原音上无/正确/无关词表，词表只来自训练数据 | 200 条×3 组完成；原术语漏识未修复 |
 | [双人纪要](docs/TWO_SPEAKER_GUIDE.md) | 分离→人物匹配→识别/对齐→Ollama 纪要 | 已有 Ubuntu 部署路线；与预约、DuplexLab 结论分开 |
 

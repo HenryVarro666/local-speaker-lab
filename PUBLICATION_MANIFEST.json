@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-22",
+  "date": "2026-10-28",
   "scope": "public source and reviewed metadata; no weights/credentials/raw media",
   "files": [
     {
@@ -84,13 +84,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "be2a6a818f466b93a29890013d1282cb4b0f9664fe74807f4654fd649f94cf4a",
-      "bytes": 6261
+      "sha256": "174f919caa07280fd8c1f9c5a0db502d6b6fc3d07d60f50ff7dc669d98497ee1",
+      "bytes": 6276
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "445781be9eeeb02d2076f63b1d619f888365cf625e3ba0b1a0d41ca227feecca",
-      "bytes": 5261
+      "sha256": "1dedfa0e9993af03e0083d2c9d93a9a828dc58d361756e7c23eeb7d1cd196cb0",
+      "bytes": 5298
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -254,13 +254,13 @@
     },
     {
       "path": "experiments/duplexlab/README.md",
-      "sha256": "2b8d7193947b22877cca860c4914ad3b8b23f2acdc0e8526278de9c2bf1240bd",
-      "bytes": 13227
+      "sha256": "cd0f8e8919d19dba8a70194a1deccc655e36a641ed391438e517ab461c7fafc3",
+      "bytes": 13630
     },
     {
       "path": "experiments/duplexlab/README.zh-CN.md",
-      "sha256": "d5a3a0e5bdcd82a31ae3a62d85994773eb32a16f2816dfecb70d25517394a5b2",
-      "bytes": 12357
+      "sha256": "65b0fc892feebcc401f3e7125a3fe28b6ff38e97827dbdb8fadda7cb7103cc1e",
+      "bytes": 12746
     },
     {
       "path": "experiments/duplexlab/reports/2026-10-20-continuation/LANGUAGE_COMPARISON.json",
